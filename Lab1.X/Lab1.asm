@@ -43,4 +43,6 @@ Inicio
  movwf aux2
  movf aux1,w
  subwf aux2
+ ;_______________________________________
+ ;Fin clase
 end
