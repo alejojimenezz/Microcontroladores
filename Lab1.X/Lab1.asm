@@ -17,13 +17,16 @@ Inicio
  movf aux2,w	;Llevar el valor de la variable var1 al sistema
  addlw .5	;Sumar la constante 5 al valor de la variable var1
  movwf aux3	;Llevar el resultado de la suma del sistema hasta la variable var2
- ;______________________________________________________________________________
+ ;________________________________________________Inicio de enunciados
+ ;Sumar 3 a la variable aux1 cargada previamente con el valor de 7.
  movlw .7
  movwf aux1
  movf aux1,w
- addlw .3
+ addlw .3	
  movwf aux4
  ;________________________
+ ;Sumar las variables aux1 y aux2 previamente cargadas
+ ;con los valores de 8 y 10 respectivamente.
  movlw .8
  movwf aux1
  movlw .10
@@ -31,12 +34,16 @@ Inicio
  movf aux1,w
  addwf aux2	;Guarda la suma en variable aux2
  ;___________________________
+ ;Restar a la constante 9 la variable aux1 cargada previamente
+ ;con el valor de 5.
  movlw .5
  movwf aux1
  movf aux1,w
  sublw .9	;Resta w de constante 9
  movwf aux2	;Guarda 9-5 en aux2
  ;__________________________________________
+ ;Restar la variable aux1 a la variable aux2 previamente cargadas
+ ;con los valores de 6 y 4 respectivamente.
  movlw .6
  movwf aux1
  movlw .4
@@ -44,5 +51,43 @@ Inicio
  movf aux1,w
  subwf aux2
  ;_______________________________________
+ ;Multiplicar a la constante 4 la variable aux1 cargada previamente
+ ;con el valor de 5.
+ 
+ ;Multiplicar la variable aux1 a la variable aux2 previamente cargadas
+ ;con los valores de 12 y 15 respectivamente.
+ 
+ ;Realizar el complemento a 1 de la variable aux1 cargada previamente
+ ;con el valor de 12.
+ 
+ ;Realizar el complemento a 2 de la variable aux1 cargada previamente
+ ;con el valor de 12.
+ 
+ ;Realizar la O lógica ?bitwise? entre el valor de 7 y la variable aux1
+ ;cargada previamente con el valor de 35.
+ 
+ ;Realizar la O lógica ?bitwise? entre las variables aux1 y aux2
+ ;cargadas previamente con los valores de 20 y 56 respectivamente.
+ 
+ ;Realizar la Y lógica ?bitwise? entre el valor de 15 y la variable aux1
+ ;cargada previamente con el valor de 62.
+ 
+ ;Realizar la Y lógica ?bitwise? entre las variables aux1 y aux2
+ ;cargadas previamente con los valores de 100 y 45 respectivamente.
+ 
+ ;Realizar la O lógica exclusiva ?bitwise? entre el valor de 1
+ ;y la variable aux1 cargada previamente con el valor de 120.
+ 
+ ;Realizar la O lógica exclusiva ?bitwise? entre las variables aux1 y aux2
+ ;cargadas previamente con los valores de 17 y 90 respectivamente.
+ 
+ ;Seguido se debe realizar la siguiente operación,
+ ;con aux1, aux2 y aux3 previamente cargadas con 25, 40 y 103 respectivamente:
+ ;aux4 <- (aux1 OR aux2) AND (aux3 XOR 0xD0)
+ 
+ ;Finalmente se debe realizar la siguiente operación, con aux1, aux2 y aux3
+ ;previamente cargadas con 18, 60 y 16 respectivamente:
+ ;aux4 <- (aux1 + aux2) - 3 * (aux3 - 0b11010)
+ 
  ;Fin clase
 end
