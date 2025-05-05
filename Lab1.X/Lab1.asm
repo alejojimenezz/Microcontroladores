@@ -16,15 +16,15 @@ Inicio
  ;256 es leido como 0 (8 bits)
  movf aux2,w	;Llevar el valor de la variable var1 al sistema
  addlw .5	;Sumar la constante 5 al valor de la variable var1
- movwf aux3	;Llevar el resultado de la suma del sistema hasta la variable var2
- ;________________________________________________Inicio de enunciados
+ movwf aux3	;Llevar el resultado de la suma a la variable var2
+ ;__________________________________________________________Inicio de enunciados
  ;Sumar 3 a la variable aux1 cargada previamente con el valor de 7.
  movlw .7
  movwf aux1
  movf aux1,w
  addlw .3	
  movwf aux4
- ;________________________
+ ;______________________________________________________________________________
  ;Sumar las variables aux1 y aux2 previamente cargadas
  ;con los valores de 8 y 10 respectivamente.
  movlw .8
@@ -33,7 +33,7 @@ Inicio
  movwf aux2
  movf aux1,w
  addwf aux2	;Guarda la suma en variable aux2
- ;___________________________
+ ;______________________________________________________________________________
  ;Restar a la constante 9 la variable aux1 cargada previamente
  ;con el valor de 5.
  movlw .5
@@ -41,7 +41,7 @@ Inicio
  movf aux1,w
  sublw .9	;Resta w de constante 9
  movwf aux2	;Guarda 9-5 en aux2
- ;__________________________________________
+ ;______________________________________________________________________________
  ;Restar la variable aux1 a la variable aux2 previamente cargadas
  ;con los valores de 6 y 4 respectivamente.
  movlw .6
@@ -50,15 +50,27 @@ Inicio
  movwf aux2
  movf aux1,w
  subwf aux2
- ;_______________________________________
+ ;______________________________________________________________________________
  ;Multiplicar a la constante 4 la variable aux1 cargada previamente
  ;con el valor de 5.
- 
+ movlw .5
+ movwf aux1
+ movf aux1,w
+ mullw .2
+ movwf aux2
+ ;______________________________________________________________________________
  ;Multiplicar la variable aux1 a la variable aux2 previamente cargadas
  ;con los valores de 12 y 15 respectivamente.
- 
+ movlw .12
+ movwf aux1
+ movlw .15
+ movwf aux2
+ mulwf aux1
+ ;______________________________________________________________________________
  ;Realizar el complemento a 1 de la variable aux1 cargada previamente
  ;con el valor de 12.
+ movlw .12
+ movwf aux1
  
  ;Realizar el complemento a 2 de la variable aux1 cargada previamente
  ;con el valor de 12.
