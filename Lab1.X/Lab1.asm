@@ -57,7 +57,6 @@ Inicio
  movwf aux1
  movf aux1,w
  mullw .2
- movwf aux2
  ;______________________________________________________________________________
  ;Multiplicar la variable aux1 a la variable aux2 previamente cargadas
  ;con los valores de 12 y 15 respectivamente.
@@ -71,12 +70,21 @@ Inicio
  ;con el valor de 12.
  movlw .12
  movwf aux1
- 
+ comf aux1
+ ;______________________________________________________________________________ 
  ;Realizar el complemento a 2 de la variable aux1 cargada previamente
  ;con el valor de 12.
- 
+ movlw .12
+ movwf aux1
+ comf aux1	;En aux1 queda complemento a 1
+ movf aux1,w
+ addlw .1	;Para complemento a 2 se suma 1
+ movwf aux1
+ ;______________________________________________________________________________
  ;Realizar la O lógica ?bitwise? entre el valor de 7 y la variable aux1
  ;cargada previamente con el valor de 35.
+ movlw .35
+ movwf aux1
  
  ;Realizar la O lógica ?bitwise? entre las variables aux1 y aux2
  ;cargadas previamente con los valores de 20 y 56 respectivamente.
