@@ -85,22 +85,50 @@ Inicio
  ;cargada previamente con el valor de 35.
  movlw .35
  movwf aux1
- 
+ iorlw .7
+ movwf aux2
+ ;______________________________________________________________________________
  ;Realizar la O lógica ?bitwise? entre las variables aux1 y aux2
  ;cargadas previamente con los valores de 20 y 56 respectivamente.
- 
+ movlw .20
+ movwf aux1
+ movlw .56
+ movwf aux2
+ iorwf aux1
+ movwf aux3
+ ;______________________________________________________________________________
  ;Realizar la Y lógica ?bitwise? entre el valor de 15 y la variable aux1
  ;cargada previamente con el valor de 62.
- 
+ movlw .62
+ movwf aux1
+ andlw .15
+ movwf aux2
+ ;______________________________________________________________________________
  ;Realizar la Y lógica ?bitwise? entre las variables aux1 y aux2
  ;cargadas previamente con los valores de 100 y 45 respectivamente.
- 
+ movlw .100
+ movwf aux1
+ movlw .45
+ movwf aux2
+ andwf aux1
+ movwf aux3
+ ;______________________________________________________________________________
  ;Realizar la O lógica exclusiva ?bitwise? entre el valor de 1
  ;y la variable aux1 cargada previamente con el valor de 120.
- 
+ movlw .120
+ movwf aux1
+ xorlw .1
+ movwf aux3
+ ;______________________________________________________________________________
  ;Realizar la O lógica exclusiva ?bitwise? entre las variables aux1 y aux2
  ;cargadas previamente con los valores de 17 y 90 respectivamente.
- 
+ movlw .17
+ movwf aux1
+ movlw .90
+ movwf aux2
+ xorwf aux1
+ movwf aux3
+ ;______________________________________________________________________________
  ;Seguido se debe realizar la siguiente operación,
  ;con aux1, aux2 y aux3 previamente cargadas con 25, 40 y 103 respectivamente:
  ;aux4 <- (aux1 OR aux2) AND (aux3 XOR 0xD0)
