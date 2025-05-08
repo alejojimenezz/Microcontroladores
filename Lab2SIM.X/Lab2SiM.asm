@@ -5,6 +5,10 @@ include P18F4550.inc
     CONFIG PBADEN=OFF
     CONFIG LVP=OFF
     
+    aux1 equ 0h
+    aux2 equ 1h
+    aux3 equ 2h	    ;ver codigo de retardos
+    
     Inicio  ;RB7 Rojo	RB6 amarillo	RB5 Verde
 	;movlw .31		    ;0b00011111
 	movlw b'00011111'
