@@ -15,6 +15,9 @@
    - Project Name = Project File
 3. Project Properties
    - mpasm (Global Options) &#8594; Build in absolute mode :white_check_mark:
+4. New File
+   - Assembler (.asm) o C
+   - Mismo nombre del proyecto
 
 ## [Git Guide](https://github.com/git-guides)
 
@@ -33,3 +36,5 @@ Para git bash mientras se usa MPLAB:
 * [**Laboratorio 1**](/Guias/Lab01.pdf)
      - [Presentación](https://docs.google.com/presentation/d/1keYl6i42yLfYA7a7t1YOM0G9IK62Owfi/edit?usp=sharing&ouid=100165221574825375189&rtpof=true&sd=true)
      - [Código](/Lab1.X/Lab1.asm)
+ 
+* [**Laoratorio 2**](/Guias)
