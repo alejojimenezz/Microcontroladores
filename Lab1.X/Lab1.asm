@@ -12,7 +12,7 @@ Inicio
  movwf aux1	;Guarda la constante en variable var1
  movlw .9	
  movwf aux2
- ;El valor más grande (decimal) que se puede cargar a la variable var1 es 255
+ ;El valor mï¿½s grande (decimal) que se puede cargar a la variable var1 es 255
  ;256 es leido como 0 (8 bits)
  movf aux2,w	;Llevar el valor de la variable var1 al sistema
  addlw .5	;Sumar la constante 5 al valor de la variable var1
@@ -81,14 +81,14 @@ Inicio
  addlw .1	;Para complemento a 2 se suma 1
  movwf aux1
  ;______________________________________________________________________________
- ;Realizar la O lógica ?bitwise? entre el valor de 7 y la variable aux1
+ ;Realizar la O lï¿½gica ?bitwise? entre el valor de 7 y la variable aux1
  ;cargada previamente con el valor de 35.
  movlw .35
  movwf aux1
  iorlw .7
  movwf aux2
  ;______________________________________________________________________________
- ;Realizar la O lógica ?bitwise? entre las variables aux1 y aux2
+ ;Realizar la O lï¿½gica ?bitwise? entre las variables aux1 y aux2
  ;cargadas previamente con los valores de 20 y 56 respectivamente.
  movlw .20
  movwf aux1
@@ -97,14 +97,14 @@ Inicio
  iorwf aux1
  movwf aux3
  ;______________________________________________________________________________
- ;Realizar la Y lógica ?bitwise? entre el valor de 15 y la variable aux1
+ ;Realizar la Y lï¿½gica ?bitwise? entre el valor de 15 y la variable aux1
  ;cargada previamente con el valor de 62.
  movlw .62
  movwf aux1
  andlw .15
  movwf aux2
  ;______________________________________________________________________________
- ;Realizar la Y lógica ?bitwise? entre las variables aux1 y aux2
+ ;Realizar la Y lï¿½gica ?bitwise? entre las variables aux1 y aux2
  ;cargadas previamente con los valores de 100 y 45 respectivamente.
  movlw .100
  movwf aux1
@@ -113,14 +113,14 @@ Inicio
  andwf aux1
  movwf aux3
  ;______________________________________________________________________________
- ;Realizar la O lógica exclusiva ?bitwise? entre el valor de 1
+ ;Realizar la O lï¿½gica exclusiva ?bitwise? entre el valor de 1
  ;y la variable aux1 cargada previamente con el valor de 120.
  movlw .120
  movwf aux1
  xorlw .1
  movwf aux3
  ;______________________________________________________________________________
- ;Realizar la O lógica exclusiva ?bitwise? entre las variables aux1 y aux2
+ ;Realizar la O lï¿½gica exclusiva ?bitwise? entre las variables aux1 y aux2
  ;cargadas previamente con los valores de 17 y 90 respectivamente.
  movlw .17
  movwf aux1
@@ -129,13 +129,55 @@ Inicio
  xorwf aux1
  movwf aux3
  ;______________________________________________________________________________
- ;Seguido se debe realizar la siguiente operación,
+ ;Seguido se debe realizar la siguiente operaciï¿½n,
  ;con aux1, aux2 y aux3 previamente cargadas con 25, 40 y 103 respectivamente:
  ;aux4 <- (aux1 OR aux2) AND (aux3 XOR 0xD0)
- 
- ;Finalmente se debe realizar la siguiente operación, con aux1, aux2 y aux3
+ movlw .25
+ movwf aux1
+ movlw .40
+ movwf aux2
+ movlw .103
+ movwf aux3
+
+ movf aux1,w
+ iorwf aux2,w
+ movwf aux4
+
+ movf aux3,w
+ xorlw 0xD0
+
+ andwf aux4,w
+ movwf aux4
+
+ ;Finalmente se debe realizar la siguiente operaciï¿½n, con aux1, aux2 y aux3
  ;previamente cargadas con 18, 60 y 16 respectivamente:
  ;aux4 <- (aux1 + aux2) - 3 * (aux3 - 0b11010)
+ movlw .18
+ movwf aux1
+ movlw .60
+ movwf aux2
+ movlw .16
+ movwf aux3
+
+ movf aux1,w
+ addwf aux2,w
+ movwf aux4
+
+ ; Realizamos la operacion A-B = A + (~B+1)
+ movlw .26
+ movwf aux2
+ comf aux2,w
+ addlw .1
+ addwf aux3,w
+ movwf aux2
+
+ movf aux2,w
+ mullw .3
+ movwf aux3
+
+ movf aux4,w
+ subwf aux3,w
+ movwf aux4
  
  ;Fin clase
 end
