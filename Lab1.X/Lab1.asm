@@ -118,7 +118,7 @@ Inicio
  movlw .120
  movwf aux1
  xorlw .1
- movwf aux3
+ ;movwf aux3
  ;______________________________________________________________________________
  ;Realizar la O l�gica exclusiva ?bitwise? entre las variables aux1 y aux2
  ;cargadas previamente con los valores de 17 y 90 respectivamente.
@@ -127,7 +127,7 @@ Inicio
  movlw .90
  movwf aux2
  xorwf aux1
- movwf aux3	;Irrelevante, XOR sobreescribe en aux1, no WREG
+ ;movwf aux3	;Irrelevante, XOR sobreescribe en aux1, no WREG
  ;______________________________________________________________________________
  ;Seguido se debe realizar la siguiente operaci�n,
  ;con aux1, aux2 y aux3 previamente cargadas con 25, 40 y 103 respectivamente:

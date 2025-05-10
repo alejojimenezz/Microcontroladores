@@ -1,4 +1,4 @@
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE  1
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ Warning[205]: Found directive in column 1. (include)
 000026 6E00           00040  movwf aux1
 000028 5000           00041  movf aux1,w
 00002A 0809           00042  sublw .9       ;Resta w de constante 9
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE  2
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -116,7 +116,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 000066 0E14           00093  movlw .20
 000068 6E00           00094  movwf aux1
 00006A 0E38           00095  movlw .56
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE  3
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -124,7 +124,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 
 00006C 6E01           00096  movwf aux2
 00006E 1200           00097  iorwf aux1
-000070 6E02           00098  movwf aux3
+000070 6E02           00098  movwf aux3     ;Irrelevante, OR sobreescribe en aux1, no WREG
                       00099  ;______________________________________________________________________________
                       00100  ;Realizar la Y l�gica ?bitwise? entre el valor de 15 y la variable aux1
                       00101  ;cargada previamente con el valor de 62.
@@ -140,84 +140,84 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 00007E 0E2D           00111  movlw .45
 000080 6E01           00112  movwf aux2
 000082 1600           00113  andwf aux1
-000084 6E02           00114  movwf aux3
+000084 6E02           00114  movwf aux3     ;Irrelevante, AND sobreescribe en aux1, no WREG
                       00115  ;______________________________________________________________________________
                       00116  ;Realizar la O l�gica exclusiva ?bitwise? entre el valor de 1
                       00117  ;y la variable aux1 cargada previamente con el valor de 120.
 000086 0E78           00118  movlw .120
 000088 6E00           00119  movwf aux1
 00008A 0A01           00120  xorlw .1
-00008C 6E02           00121  movwf aux3
+                      00121  ;movwf aux3
                       00122  ;______________________________________________________________________________
                       00123  ;Realizar la O l�gica exclusiva ?bitwise? entre las variables aux1 y aux2
                       00124  ;cargadas previamente con los valores de 17 y 90 respectivamente.
-00008E 0E11           00125  movlw .17
-000090 6E00           00126  movwf aux1
-000092 0E5A           00127  movlw .90
-000094 6E01           00128  movwf aux2
-000096 1A00           00129  xorwf aux1
-000098 6E02           00130  movwf aux3
+00008C 0E11           00125  movlw .17
+00008E 6E00           00126  movwf aux1
+000090 0E5A           00127  movlw .90
+000092 6E01           00128  movwf aux2
+000094 1A00           00129  xorwf aux1
+                      00130  ;movwf aux3    ;Irrelevante, XOR sobreescribe en aux1, no WREG
                       00131  ;______________________________________________________________________________
                       00132  ;Seguido se debe realizar la siguiente operaci�n,
                       00133  ;con aux1, aux2 y aux3 previamente cargadas con 25, 40 y 103 respectivamente:
                       00134  ;aux4 <- (aux1 OR aux2) AND (aux3 XOR 0xD0)
-00009A 0E19           00135  movlw .25
-00009C 6E00           00136  movwf aux1
-00009E 0E28           00137  movlw .40
-0000A0 6E01           00138  movwf aux2
-0000A2 0E67           00139  movlw .103
-0000A4 6E02           00140  movwf aux3
+000096 0E19           00135  movlw .25
+000098 6E00           00136  movwf aux1
+00009A 0E28           00137  movlw .40
+00009C 6E01           00138  movwf aux2
+00009E 0E67           00139  movlw .103
+0000A0 6E02           00140  movwf aux3
                       00141 
-0000A6 5000           00142  movf aux1,w
-0000A8 1001           00143  iorwf aux2,w
-0000AA 6E03           00144  movwf aux4
+0000A2 5000           00142  movf aux1,w
+0000A4 1001           00143  iorwf aux2,w
+0000A6 6E03           00144  movwf aux4
                       00145 
-0000AC 5002           00146  movf aux3,w
-0000AE 0AD0           00147  xorlw 0xD0
+0000A8 5002           00146  movf aux3,w
+0000AA 0AD0           00147  xorlw 0xD0
                       00148 
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE  4
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-0000B0 1403           00149  andwf aux4,w
-0000B2 6E03           00150  movwf aux4
+0000AC 1403           00149  andwf aux4,w
+0000AE 6E03           00150  movwf aux4
                       00151 
                       00152  ;Finalmente se debe realizar la siguiente operaci�n, con aux1, aux2 y aux3
                       00153  ;previamente cargadas con 18, 60 y 16 respectivamente:
                       00154  ;aux4 <- (aux1 + aux2) - 3 * (aux3 - 0b11010)
-0000B4 0E12           00155  movlw .18
-0000B6 6E00           00156  movwf aux1
-0000B8 0E3C           00157  movlw .60
-0000BA 6E01           00158  movwf aux2
-0000BC 0E10           00159  movlw .16
-0000BE 6E02           00160  movwf aux3
+0000B0 0E12           00155  movlw .18
+0000B2 6E00           00156  movwf aux1
+0000B4 0E3C           00157  movlw .60
+0000B6 6E01           00158  movwf aux2
+0000B8 0E10           00159  movlw .16
+0000BA 6E02           00160  movwf aux3
                       00161 
-0000C0 5000           00162  movf aux1,w
-0000C2 2401           00163  addwf aux2,w
-0000C4 6E03           00164  movwf aux4
+0000BC 5000           00162  movf aux1,w
+0000BE 2401           00163  addwf aux2,w
+0000C0 6E03           00164  movwf aux4
                       00165 
                       00166  ; Realizamos la operacion A-B = A + (~B+1)
-0000C6 0E1A           00167  movlw .26
-0000C8 6E01           00168  movwf aux2
-0000CA 1C01           00169  comf aux2,w
-0000CC 0F01           00170  addlw .1
-0000CE 2402           00171  addwf aux3,w
-0000D0 6E01           00172  movwf aux2
+0000C2 0E1A           00167  movlw .26
+0000C4 6E01           00168  movwf aux2
+0000C6 1C01           00169  comf aux2,w
+0000C8 0F01           00170  addlw .1
+0000CA 2402           00171  addwf aux3,w
+0000CC 6E01           00172  movwf aux2
                       00173 
-0000D2 5001           00174  movf aux2,w
-0000D4 0D03           00175  mullw .3
-0000D6 6E02           00176  movwf aux3
+0000CE 5001           00174  movf aux2,w
+0000D0 0D03           00175  mullw .3
+0000D2 6E02           00176  movwf aux3
                       00177 
-0000D8 5003           00178  movf aux4,w
-0000DA 5C02           00179  subwf aux3,w
-0000DC 6E03           00180  movwf aux4
+0000D4 5003           00178  movf aux4,w
+0000D6 5C02           00179  subwf aux3,w
+0000D8 6E03           00180  movwf aux4
                       00181  
                       00182  ;Fin clase
 Warning[205]: Found directive in column 1. (end)
                       00183 end
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE  5
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE  5
 
 
 SYMBOL TABLE
@@ -276,7 +276,7 @@ BRG16                             00000003
 BRGH                              00000002
 BSR                               00000FE0
 BTOEE                             00000004
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE  6
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE  6
 
 
 SYMBOL TABLE
@@ -335,7 +335,7 @@ CM2                               00000002
 CMCON                             00000FB4
 CMIE                              00000006
 CMIF                              00000006
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE  7
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE  7
 
 
 SYMBOL TABLE
@@ -394,7 +394,7 @@ EEIP                              00000004
 EEPGD                             00000007
 ENDP0                             00000003
 ENDP1                             00000004
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE  8
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE  8
 
 
 SYMBOL TABLE
@@ -453,7 +453,7 @@ HLVDL3                            00000003
 I2C_DAT                           00000005
 I2C_READ                          00000002
 I2C_START                         00000003
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE  9
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE  9
 
 
 SYMBOL TABLE
@@ -512,7 +512,7 @@ LATA5                             00000005
 LATA6                             00000006
 LATB                              00000F8A
 LATB0                             00000000
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 10
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 10
 
 
 SYMBOL TABLE
@@ -571,7 +571,7 @@ NOT_RI                            00000004
 NOT_T1SYNC                        00000002
 NOT_T3SYNC                        00000002
 NOT_TO                            00000003
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 11
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 11
 
 
 SYMBOL TABLE
@@ -630,7 +630,7 @@ PORTA                             00000F80
 PORTB                             00000F81
 PORTC                             00000F82
 PORTD                             00000F83
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 12
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 12
 
 
 SYMBOL TABLE
@@ -689,7 +689,7 @@ RC6                               00000006
 RC7                               00000007
 RCEN                              00000003
 RCIDL                             00000006
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 13
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 13
 
 
 SYMBOL TABLE
@@ -748,7 +748,7 @@ SPP2                              00000002
 SPP3                              00000003
 SPP4                              00000004
 SPP5                              00000005
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 14
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 14
 
 
 SYMBOL TABLE
@@ -807,7 +807,7 @@ T0IP                              00000002
 T0PS0                             00000000
 T0PS1                             00000001
 T0PS2                             00000002
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 15
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 15
 
 
 SYMBOL TABLE
@@ -866,7 +866,7 @@ TMR3                              00000FB2
 TMR3CS                            00000001
 TMR3H                             00000FB3
 TMR3IE                            00000001
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 16
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 16
 
 
 SYMBOL TABLE
@@ -925,7 +925,7 @@ TRMT                              00000001
 TRNIE                             00000003
 TRNIF                             00000003
 TUN0                              00000000
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 17
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 17
 
 
 SYMBOL TABLE
@@ -984,7 +984,7 @@ USBIF                             00000005
 USBIP                             00000005
 USTAT                             00000F6C
 UTEYE                             00000007
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 18
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 18
 
 
 SYMBOL TABLE
@@ -1043,7 +1043,7 @@ _CP3_ON_5L                        000000F7
 _CPB_OFF_5H                       000000FF
 _CPB_ON_5H                        000000BF
 _CPD_OFF_5H                       000000FF
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 19
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 19
 
 
 SYMBOL TABLE
@@ -1102,7 +1102,7 @@ _MCLRE_OFF_3H                     0000007F
 _MCLRE_ON_3H                      000000FF
 _PBADEN_OFF_3H                    000000FD
 _PBADEN_ON_3H                     000000FF
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 20
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 20
 
 
 SYMBOL TABLE
@@ -1161,7 +1161,7 @@ _XINST_ON_4L                      000000FF
 __18F4550                         00000001
 aux1                              00000000
 aux2                              00000001
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:25         PAGE 21
+MPASM 5.67                          LAB1.ASM   5-8-2025  15:53:59         PAGE 21
 
 
 SYMBOL TABLE
@@ -1176,12 +1176,12 @@ MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
 0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
 0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
 0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
-00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXX-- ---------------- ----------------
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXX------ ---------------- ----------------
 
 All other memory blocks unused.
 
-Program Memory Bytes Used:   222
-Program Memory Bytes Free: 32546
+Program Memory Bytes Used:   218
+Program Memory Bytes Free: 32550
 
 
 Errors   :     0

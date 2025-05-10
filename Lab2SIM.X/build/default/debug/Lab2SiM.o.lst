@@ -1,4 +1,4 @@
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE  1
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -16,208 +16,96 @@ Warning[205]: Found directive in column 1. (include)
                       00008 ;==========================================================================
                       00009 
                       01765         LIST
-                      00002  
-                      00003  ;4 variables
-  00000000            00004 aux1 equ 0h
-  00000001            00005 aux2 equ 1h
-  00000002            00006 aux3 equ 2h
-  00000003            00007 aux4 equ 3h
-                      00008  
-000000                00009 Inicio
-                      00010  ;Primer paso: Cargar 9 a var1
-000000 0E05           00011  movlw .5       ;Crea constante
-000002 6E00           00012  movwf aux1     ;Guarda la constante en variable var1
-000004 0E09           00013  movlw .9       
-000006 6E01           00014  movwf aux2
-                      00015  ;El valor m�s grande (decimal) que se puede cargar a la variable var1 es 255
-                      00016  ;256 es leido como 0 (8 bits)
-000008 5001           00017  movf aux2,w    ;Llevar el valor de la variable var1 al sistema
-00000A 0F05           00018  addlw .5       ;Sumar la constante 5 al valor de la variable var1
-00000C 6E02           00019  movwf aux3     ;Llevar el resultado de la suma a la variable var2
-                      00020  ;__________________________________________________________Inicio de enunciados
-                      00021  ;Sumar 3 a la variable aux1 cargada previamente con el valor de 7.
-00000E 0E07           00022  movlw .7
-000010 6E00           00023  movwf aux1
-000012 5000           00024  movf aux1,w
-000014 0F03           00025  addlw .3       
-000016 6E03           00026  movwf aux4
-                      00027  ;______________________________________________________________________________
-                      00028  ;Sumar las variables aux1 y aux2 previamente cargadas
-                      00029  ;con los valores de 8 y 10 respectivamente.
-000018 0E08           00030  movlw .8
-00001A 6E00           00031  movwf aux1
-00001C 0E0A           00032  movlw .10
-00001E 6E01           00033  movwf aux2
-000020 5000           00034  movf aux1,w
-000022 2601           00035  addwf aux2     ;Guarda la suma en variable aux2
-                      00036  ;______________________________________________________________________________
-                      00037  ;Restar a la constante 9 la variable aux1 cargada previamente
-                      00038  ;con el valor de 5.
-000024 0E05           00039  movlw .5
-000026 6E00           00040  movwf aux1
-000028 5000           00041  movf aux1,w
-00002A 0809           00042  sublw .9       ;Resta w de constante 9
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE  2
+                      00002     
+00 09 1F 1E 81 81 0F C00003     CONFIG FOSC=INTOSC_EC
+       0 0F E0 0F 40 
+                      00004     CONFIG WDT=OFF
+                      00005     CONFIG PBADEN=OFF
+                      00006     CONFIG LVP=OFF
+                      00007     
+Warning[207]: Found label after column 1. (aux1)
+  00000000            00008     aux1 equ 0h
+Warning[207]: Found label after column 1. (aux2)
+  00000001            00009     aux2 equ 1h
+Warning[207]: Found label after column 1. (aux3)
+  00000002            00010     aux3 equ 2h
+                      00011     
+000000                00012     ORG 0h
+000000 EF06 F000      00013         goto Inicio
+000008                00014     ORG 8h
+000008 EF24 F000      00015         goto ISR
+                      00016     
+Warning[207]: Found label after column 1. (Inicio)
+00000C                00017     Inicio  ;RB7 Rojo   RB6 amarillo    RB5 Verde
+                      00018         ;movlw .31                  ;0b00011111
+00000C 0E1F           00019         movlw b'00011111'
+00000E 6E93           00020         movwf TRISB
+000010 92F2           00021         bcf INTCON,INT0IF
+000012 88F2           00022         bsf INTCON,INT0IE
+000014 8EF2           00023         bsf INTCON,GIE
+000016 6A8A           00024         clrf LATB
+Warning[207]: Found label after column 1. (Menu)
+000018                00025     Menu
+Warning[207]: Found label after column 1. (Verde)
+000018                00026     Verde
+000018 0E20           00027         movlw b'00100000'
+00001A 6E8A           00028         movwf LATB
+                      00029         ;call RetardoVerde
+                      00030         ;call RetardoVerde
+                      00031         ;btfsc PORTB,0  ;RB0==0?    Entrada
+00001C EF0C F000      00032         goto Verde
+                      00033         
+Warning[207]: Found label after column 1. (RetardoVerde)
+000020                00034     RetardoVerde
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-00002C 6E01           00043  movwf aux2     ;Guarda 9-5 en aux2
-                      00044  ;______________________________________________________________________________
-                      00045  ;Restar la variable aux1 a la variable aux2 previamente cargadas
-                      00046  ;con los valores de 6 y 4 respectivamente.
-00002E 0E06           00047  movlw .6
-000030 6E00           00048  movwf aux1
-000032 0E04           00049  movlw .4
-000034 6E01           00050  movwf aux2
-000036 5000           00051  movf aux1,w
-000038 5E01           00052  subwf aux2
-                      00053  ;______________________________________________________________________________
-                      00054  ;Multiplicar a la constante 4 la variable aux1 cargada previamente
-                      00055  ;con el valor de 5.
-00003A 0E05           00056  movlw .5
-00003C 6E00           00057  movwf aux1
-00003E 5000           00058  movf aux1,w
-000040 0D02           00059  mullw .2
-                      00060  ;______________________________________________________________________________
-                      00061  ;Multiplicar la variable aux1 a la variable aux2 previamente cargadas
-                      00062  ;con los valores de 12 y 15 respectivamente.
-000042 0E0C           00063  movlw .12
-000044 6E00           00064  movwf aux1
-000046 0E0F           00065  movlw .15
-000048 6E01           00066  movwf aux2
-00004A 0200           00067  mulwf aux1
-                      00068  ;______________________________________________________________________________
-                      00069  ;Realizar el complemento a 1 de la variable aux1 cargada previamente
-                      00070  ;con el valor de 12.
-00004C 0E0C           00071  movlw .12
-00004E 6E00           00072  movwf aux1
-000050 1E00           00073  comf aux1
-                      00074  ;______________________________________________________________________________ 
-                      00075  ;Realizar el complemento a 2 de la variable aux1 cargada previamente
-                      00076  ;con el valor de 12.
-000052 0E0C           00077  movlw .12
-000054 6E00           00078  movwf aux1
-000056 1E00           00079  comf aux1      ;En aux1 queda complemento a 1
-000058 5000           00080  movf aux1,w
-00005A 0F01           00081  addlw .1       ;Para complemento a 2 se suma 1
-00005C 6E00           00082  movwf aux1
-                      00083  ;______________________________________________________________________________
-                      00084  ;Realizar la O l�gica ?bitwise? entre el valor de 7 y la variable aux1
-                      00085  ;cargada previamente con el valor de 35.
-00005E 0E23           00086  movlw .35
-000060 6E00           00087  movwf aux1
-000062 0907           00088  iorlw .7
-000064 6E01           00089  movwf aux2
-                      00090  ;______________________________________________________________________________
-                      00091  ;Realizar la O l�gica ?bitwise? entre las variables aux1 y aux2
-                      00092  ;cargadas previamente con los valores de 20 y 56 respectivamente.
-000066 0E14           00093  movlw .20
-000068 6E00           00094  movwf aux1
-00006A 0E38           00095  movlw .56
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE  3
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
-00006C 6E01           00096  movwf aux2
-00006E 1200           00097  iorwf aux1
-000070 6E02           00098  movwf aux3
-                      00099  ;______________________________________________________________________________
-                      00100  ;Realizar la Y l�gica ?bitwise? entre el valor de 15 y la variable aux1
-                      00101  ;cargada previamente con el valor de 62.
-000072 0E3E           00102  movlw .62
-000074 6E00           00103  movwf aux1
-000076 0B0F           00104  andlw .15
-000078 6E01           00105  movwf aux2
-                      00106  ;______________________________________________________________________________
-                      00107  ;Realizar la Y l�gica ?bitwise? entre las variables aux1 y aux2
-                      00108  ;cargadas previamente con los valores de 100 y 45 respectivamente.
-00007A 0E64           00109  movlw .100
-00007C 6E00           00110  movwf aux1
-00007E 0E2D           00111  movlw .45
-000080 6E01           00112  movwf aux2
-000082 1600           00113  andwf aux1
-000084 6E02           00114  movwf aux3
-                      00115  ;______________________________________________________________________________
-                      00116  ;Realizar la O l�gica exclusiva ?bitwise? entre el valor de 1
-                      00117  ;y la variable aux1 cargada previamente con el valor de 120.
-000086 0E78           00118  movlw .120
-000088 6E00           00119  movwf aux1
-00008A 0A01           00120  xorlw .1
-00008C 6E02           00121  movwf aux3
-                      00122  ;______________________________________________________________________________
-                      00123  ;Realizar la O l�gica exclusiva ?bitwise? entre las variables aux1 y aux2
-                      00124  ;cargadas previamente con los valores de 17 y 90 respectivamente.
-00008E 0E11           00125  movlw .17
-000090 6E00           00126  movwf aux1
-000092 0E5A           00127  movlw .90
-000094 6E01           00128  movwf aux2
-000096 1A00           00129  xorwf aux1
-000098 6E02           00130  movwf aux3
-                      00131  ;______________________________________________________________________________
-                      00132  ;Seguido se debe realizar la siguiente operaci�n,
-                      00133  ;con aux1, aux2 y aux3 previamente cargadas con 25, 40 y 103 respectivamente:
-                      00134  ;aux4 <- (aux1 OR aux2) AND (aux3 XOR 0xD0)
-00009A 0E19           00135  movlw .25
-00009C 6E00           00136  movwf aux1
-00009E 0E28           00137  movlw .40
-0000A0 6E01           00138  movwf aux2
-0000A2 0E67           00139  movlw .103
-0000A4 6E02           00140  movwf aux3
-                      00141 
-0000A6 5000           00142  movf aux1,w
-0000A8 1001           00143  iorwf aux2,w
-0000AA 6E03           00144  movwf aux4
-                      00145 
-0000AC 5002           00146  movf aux3,w
-0000AE 0AD0           00147  xorlw 0xD0
-                      00148 
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE  4
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
-0000B0 1403           00149  andwf aux4,w
-0000B2 6E03           00150  movwf aux4
-                      00151 
-                      00152  ;Finalmente se debe realizar la siguiente operaci�n, con aux1, aux2 y aux3
-                      00153  ;previamente cargadas con 18, 60 y 16 respectivamente:
-                      00154  ;aux4 <- (aux1 + aux2) - 3 * (aux3 - 0b11010)
-0000B4 0E12           00155  movlw .18
-0000B6 6E00           00156  movwf aux1
-0000B8 0E3C           00157  movlw .60
-0000BA 6E01           00158  movwf aux2
-0000BC 0E10           00159  movlw .16
-0000BE 6E02           00160  movwf aux3
-                      00161 
-0000C0 5000           00162  movf aux1,w
-0000C2 2401           00163  addwf aux2,w
-0000C4 6E03           00164  movwf aux4
-                      00165 
-                      00166  ; Realizamos la operacion A-B = A + (~B+1)
-0000C6 0E1A           00167  movlw .26
-0000C8 6E01           00168  movwf aux2
-0000CA 1C01           00169  comf aux2,w
-0000CC 0F01           00170  addlw .1
-0000CE 2402           00171  addwf aux3,w
-0000D0 6E01           00172  movwf aux2
-                      00173 
-0000D2 5001           00174  movf aux2,w
-0000D4 0D03           00175  mullw .3
-0000D6 6E02           00176  movwf aux3
-                      00177 
-0000D8 5003           00178  movf aux4,w
-0000DA 5C02           00179  subwf aux3,w
-0000DC 6E03           00180  movwf aux4
-                      00181  
-                      00182  ;Fin clase
-Warning[205]: Found directive in column 1. (end)
-                      00183 end
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE  5
+000020 0EFE           00035         movlw .254
+000022 6E00           00036         movwf aux1
+000024 0EA0           00037         movlw .160
+000026 6E01           00038         movwf aux2
+000028 0E02           00039         movlw .2
+00002A 6E02           00040         movwf aux3
+Warning[207]: Found label after column 1. (AuxRetardoVerde)
+00002C                00041     AuxRetardoVerde
+00002C 2E00           00042         decfsz aux1,f
+00002E EF16 F000      00043         goto AuxRetardoVerde
+000032 0EFE           00044         movlw .254
+000034 6E00           00045         movwf aux1
+000036 2E01           00046         decfsz aux2,f
+000038 EF16 F000      00047         goto AuxRetardoVerde
+00003C 0EA0           00048         movlw .160
+00003E 6E01           00049         movwf aux2
+000040 2E02           00050         decfsz aux3,f
+000042 EF16 F000      00051         goto AuxRetardoVerde
+000046 0012           00052         return
+                      00053         
+Warning[207]: Found label after column 1. (ISR)
+000048                00054     ISR
+000048 92F2           00055         bcf INTCON,INT0IF
+00004A EC10 F000      00056         call RetardoVerde
+Warning[207]: Found label after column 1. (Amarillo)
+00004E                00057         Amarillo
+00004E 0E40           00058             movlw b'01000000'
+000050 6E8A           00059             movwf LATB
+000052 EC10 F000      00060             call RetardoVerde
+Warning[207]: Found label after column 1. (Rojo)
+000056                00061         Rojo
+000056 0E80           00062             movlw b'10000000'
+000058 6E8A           00063             movwf LATB
+00005A EC10 F000      00064             call RetardoVerde
+Warning[207]: Found label after column 1. (RojoAmarillo)
+00005E                00065         RojoAmarillo
+00005E 0EC0           00066             movlw b'11000000'
+000060 6E8A           00067             movwf LATB
+000062 EC10 F000      00068             call RetardoVerde
+000066 92F2           00069             bcf INTCON,INT0IF
+000068 0010           00070         retfie
+                      00071     end
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE  3
 
 
 SYMBOL TABLE
@@ -263,6 +151,8 @@ AN1                               00000001
 AN2                               00000002
 AN3                               00000003
 AN4                               00000005
+Amarillo                          0000004E
+AuxRetardoVerde                   0000002C
 BANKED                            00000001
 BAUDCON                           00000FB8
 BAUDCTL                           00000FB8
@@ -274,14 +164,14 @@ BGST                              00000005
 BOR                               00000000
 BRG16                             00000003
 BRGH                              00000002
-BSR                               00000FE0
-BTOEE                             00000004
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE  6
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE  4
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+BSR                               00000FE0
+BTOEE                             00000004
 BTOEF                             00000004
 BTSEE                             00000007
 BTSEF                             00000007
@@ -333,14 +223,14 @@ CM0                               00000000
 CM1                               00000001
 CM2                               00000002
 CMCON                             00000FB4
-CMIE                              00000006
-CMIF                              00000006
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE  7
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE  5
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+CMIE                              00000006
+CMIF                              00000006
 CMIP                              00000006
 CRC16EE                           00000002
 CRC16EF                           00000002
@@ -392,14 +282,14 @@ EEIE                              00000004
 EEIF                              00000004
 EEIP                              00000004
 EEPGD                             00000007
-ENDP0                             00000003
-ENDP1                             00000004
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE  8
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE  6
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+ENDP0                             00000003
+ENDP1                             00000004
 ENDP2                             00000005
 ENDP3                             00000006
 EPCONDIS                          00000003
@@ -451,14 +341,14 @@ HLVDL1                            00000001
 HLVDL2                            00000002
 HLVDL3                            00000003
 I2C_DAT                           00000005
-I2C_READ                          00000002
-I2C_START                         00000003
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE  9
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE  7
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+I2C_READ                          00000002
+I2C_START                         00000003
 I2C_STOP                          00000004
 IDLEIE                            00000004
 IDLEIF                            00000004
@@ -500,8 +390,9 @@ IRCF0                             00000004
 IRCF1                             00000005
 IRCF2                             00000006
 IRVST                             00000005
+ISR                               00000048
 IVRST                             00000005
-Inicio                            00000000
+Inicio                            0000000C
 LATA                              00000F89
 LATA0                             00000000
 LATA1                             00000001
@@ -509,15 +400,15 @@ LATA2                             00000002
 LATA3                             00000003
 LATA4                             00000004
 LATA5                             00000005
-LATA6                             00000006
-LATB                              00000F8A
-LATB0                             00000000
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 10
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE  8
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+LATA6                             00000006
+LATB                              00000F8A
+LATB0                             00000000
 LATB1                             00000001
 LATB2                             00000002
 LATB3                             00000003
@@ -558,6 +449,7 @@ LVV0                              00000000
 LVV1                              00000001
 LVV2                              00000002
 LVV3                              00000003
+Menu                              00000018
 N                                 00000004
 NOT_A                             00000005
 NOT_ADDRESS                       00000005
@@ -567,16 +459,16 @@ NOT_IPEN                          00000007
 NOT_PD                            00000002
 NOT_POR                           00000001
 NOT_RBPU                          00000007
-NOT_RI                            00000004
-NOT_T1SYNC                        00000002
-NOT_T3SYNC                        00000002
-NOT_TO                            00000003
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 11
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE  9
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+NOT_RI                            00000004
+NOT_T1SYNC                        00000002
+NOT_T3SYNC                        00000002
+NOT_TO                            00000003
 NOT_W                             00000002
 NOT_WRITE                         00000002
 OERR                              00000001
@@ -626,16 +518,16 @@ PLUSW0                            00000FEB
 PLUSW1                            00000FE3
 PLUSW2                            00000FDB
 POR                               00000001
-PORTA                             00000F80
-PORTB                             00000F81
-PORTC                             00000F82
-PORTD                             00000F83
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 12
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE 10
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+PORTA                             00000F80
+PORTB                             00000F81
+PORTC                             00000F82
+PORTD                             00000F83
 PORTE                             00000F84
 POSTDEC0                          00000FED
 POSTDEC1                          00000FE5
@@ -685,16 +577,16 @@ RC1                               00000001
 RC2                               00000002
 RC4                               00000004
 RC5                               00000005
-RC6                               00000006
-RC7                               00000007
-RCEN                              00000003
-RCIDL                             00000006
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 13
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE 11
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+RC6                               00000006
+RC7                               00000007
+RCEN                              00000003
+RCIDL                             00000006
 RCIE                              00000005
 RCIF                              00000005
 RCIP                              00000005
@@ -728,6 +620,9 @@ RX9D                              00000000
 RXDTP                             00000005
 R_NOT_W                           00000002
 R_W                               00000002
+RetardoVerde                      00000020
+Rojo                              00000056
+RojoAmarillo                      0000005E
 S                                 00000003
 SBOREN                            00000006
 SCKP                              00000004
@@ -741,6 +636,12 @@ SOFIE                             00000006
 SOFIF                             00000006
 SPBRG                             00000FAF
 SPBRGH                            00000FB0
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE 12
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 SPEN                              00000007
 SPP0                              00000000
 SPP1                              00000001
@@ -748,12 +649,6 @@ SPP2                              00000002
 SPP3                              00000003
 SPP4                              00000004
 SPP5                              00000005
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 14
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 SPP6                              00000006
 SPP7                              00000007
 SPPBUSY                           00000004
@@ -800,6 +695,12 @@ SYNC                              00000004
 T08BIT                            00000006
 T0CKI                             00000004
 T0CON                             00000FD5
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE 13
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 T0CS                              00000005
 T0IE                              00000005
 T0IF                              00000002
@@ -807,12 +708,6 @@ T0IP                              00000002
 T0PS0                             00000000
 T0PS1                             00000001
 T0PS2                             00000002
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 15
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 T0SE                              00000004
 T13CKI                            00000000
 T1CKPS0                           00000004
@@ -859,6 +754,12 @@ TMR1L                             00000FCE
 TMR1ON                            00000000
 TMR2                              00000FCC
 TMR2IE                            00000001
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE 14
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 TMR2IF                            00000001
 TMR2IP                            00000001
 TMR2ON                            00000002
@@ -866,12 +767,6 @@ TMR3                              00000FB2
 TMR3CS                            00000001
 TMR3H                             00000FB3
 TMR3IE                            00000001
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 16
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 TMR3IF                            00000001
 TMR3IP                            00000001
 TMR3L                             00000FB2
@@ -918,6 +813,12 @@ TRISD5                            00000005
 TRISD6                            00000006
 TRISD7                            00000007
 TRISE                             00000F96
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE 15
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 TRISE0                            00000000
 TRISE1                            00000001
 TRISE2                            00000002
@@ -925,12 +826,6 @@ TRMT                              00000001
 TRNIE                             00000003
 TRNIF                             00000003
 TUN0                              00000000
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 17
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 TUN1                              00000001
 TUN2                              00000002
 TUN3                              00000003
@@ -977,6 +872,12 @@ UIR                               00000F68
 UOEMON                            00000006
 UPUEN                             00000004
 URSTIE                            00000000
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE 16
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 URSTIF                            00000000
 USBEN                             00000003
 USBIE                             00000005
@@ -984,18 +885,13 @@ USBIF                             00000005
 USBIP                             00000005
 USTAT                             00000F6C
 UTEYE                             00000007
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 18
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 UTRDIS                            00000003
 VCFG0                             00000004
 VCFG1                             00000005
 VDIRMAG                           00000007
 VREFM                             00000002
 VREFP                             00000003
+Verde                             00000018
 W                                 00000000
 WCOL                              00000007
 WDTCON                            00000FD1
@@ -1035,6 +931,12 @@ _CONFIG7L                         0030000C
 _CP0_OFF_5L                       000000FF
 _CP0_ON_5L                        000000FE
 _CP1_OFF_5L                       000000FF
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE 17
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 _CP1_ON_5L                        000000FD
 _CP2_OFF_5L                       000000FF
 _CP2_ON_5L                        000000FB
@@ -1043,12 +945,6 @@ _CP3_ON_5L                        000000F7
 _CPB_OFF_5H                       000000FF
 _CPB_ON_5H                        000000BF
 _CPD_OFF_5H                       000000FF
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 19
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 _CPD_ON_5H                        0000007F
 _CPUDIV_OSC1_PLL2_1L              000000E7
 _CPUDIV_OSC2_PLL3_1L              000000EF
@@ -1094,6 +990,12 @@ _IDLOC6                           00200006
 _IDLOC7                           00200007
 _IESO_OFF_1H                      0000007F
 _IESO_ON_1H                       000000FF
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE 18
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 _LPT1OSC_OFF_3H                   000000FB
 _LPT1OSC_ON_3H                    000000FF
 _LVP_OFF_4L                       000000FB
@@ -1102,12 +1004,6 @@ _MCLRE_OFF_3H                     0000007F
 _MCLRE_ON_3H                      000000FF
 _PBADEN_OFF_3H                    000000FD
 _PBADEN_ON_3H                     000000FF
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 20
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 _PLLDIV_10_1L                     000000FE
 _PLLDIV_12_1L                     000000FF
 _PLLDIV_1_1L                      000000F8
@@ -1153,6 +1049,12 @@ _WRT3_ON_6L                       000000F7
 _WRTB_OFF_6H                      000000FF
 _WRTB_ON_6H                       000000BF
 _WRTC_OFF_6H                      000000FF
+MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:50:00         PAGE 19
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 _WRTC_ON_6H                       000000DF
 _WRTD_OFF_6H                      000000FF
 _WRTD_ON_6H                       0000007F
@@ -1161,33 +1063,25 @@ _XINST_ON_4L                      000000FF
 __18F4550                         00000001
 __DEBUG                           
 __MPLAB_DEBUGGER_SIMULATOR        1
-MPASM 5.67                          LAB1.ASM   5-8-2025  11:46:29         PAGE 21
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 aux1                              00000000
 aux2                              00000001
 aux3                              00000002
-aux4                              00000003
 
 
 MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
 
-0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
-0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
-0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
-00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXX-- ---------------- ----------------
+0000 : XXXX----XXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXX------ ----------------
+0000 : XXXX-XX-XXXXXX-- ---------------- ---------------- ----------------
 
 All other memory blocks unused.
 
-Program Memory Bytes Used:   222
-Program Memory Bytes Free: 32546
+Program Memory Bytes Used:   114
+Program Memory Bytes Free: 32654
 
 
 Errors   :     0
-Warnings :     2 reported,     0 suppressed
+Warnings :    13 reported,     0 suppressed
 Messages :     0 reported,     0 suppressed
 
 
