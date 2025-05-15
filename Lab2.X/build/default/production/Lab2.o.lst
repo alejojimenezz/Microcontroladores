@@ -1,4 +1,4 @@
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE  1
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -16,96 +16,93 @@ Warning[205]: Found directive in column 1. (include)
                       00008 ;==========================================================================
                       00009 
                       01765         LIST
-                      00002     
-00 09 1F 1E 81 81 0F C00003     CONFIG FOSC=INTOSC_EC
+Warning[205]: Found directive in column 1. (CONFIG)
+00 09 1F 1E 83 81 0F C00002 CONFIG FOSC=INTOSC_EC    ;Fosc=1MHz
        0 0F E0 0F 40 
-                      00004     CONFIG WDT=OFF
-                      00005     CONFIG PBADEN=OFF
-                      00006     CONFIG LVP=OFF
-                      00007     
-Warning[207]: Found label after column 1. (aux1)
-  00000000            00008     aux1 equ 0h
-Warning[207]: Found label after column 1. (aux2)
-  00000001            00009     aux2 equ 1h
-Warning[207]: Found label after column 1. (aux3)
-  00000002            00010     aux3 equ 2h
-                      00011     
-000000                00012     ORG 0h
-000000 EF06 F000      00013         goto Inicio
-000008                00014     ORG 8h
-000008 EF24 F000      00015         goto ISR
-                      00016     
-Warning[207]: Found label after column 1. (Inicio)
-00000C                00017     Inicio  ;RB7 Rojo   RB6 amarillo    RB5 Verde
-                      00018         ;movlw .31                  ;0b00011111
-00000C 0E1F           00019         movlw b'00011111'
-00000E 6E93           00020         movwf TRISB
-000010 92F2           00021         bcf INTCON,INT0IF
-000012 88F2           00022         bsf INTCON,INT0IE
-000014 8EF2           00023         bsf INTCON,GIE
-000016 6A8A           00024         clrf LATB
-Warning[207]: Found label after column 1. (Menu)
-000018                00025     Menu
-Warning[207]: Found label after column 1. (Verde)
-000018                00026     Verde
-000018 0E20           00027         movlw b'00100000'
-00001A 6E8A           00028         movwf LATB
-                      00029         ;call RetardoVerde
-                      00030         ;call RetardoVerde
-                      00031         ;btfsc PORTB,0  ;RB0==0?    Entrada
-00001C EF0C F000      00032         goto Verde
-                      00033         
-Warning[207]: Found label after column 1. (RetardoVerde)
-000020                00034     RetardoVerde
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE  2
+Warning[205]: Found directive in column 1. (CONFIG)
+                      00003 CONFIG WDT=OFF
+Warning[205]: Found directive in column 1. (CONFIG)
+                      00004 CONFIG LVP=OFF
+  00000000            00005 aux1 equ 0h
+  00000001            00006 aux2 equ 1h
+  00000002            00007 aux3 equ 2h      ;RB0 Sensor
+Warning[205]: Found directive in column 1. (ORG)
+000000                00008 ORG 0h
+000000 EF06 F000      00009   goto Inicio
+Warning[205]: Found directive in column 1. (ORG)
+000008                00010 ORG 8h
+000008 EF3D F000      00011   goto ISR
+00000C                00012 Inicio    ;RB7 Rojo   RB6 Amarillo  RB5 Verde
+00000C 0E1F           00013   movlw    b'00011111'        ;0b00011111
+00000E 6E93           00014   movwf TRISB
+000010 9095           00015   bcf TRISD,0
+000012 908C           00016   bcf LATD,0
+000014 0E01           00017   movlw b'00000001'
+000016 6ED5           00018   movwf T0CON
+000018 0E0B           00019   movlw 0xB
+00001A 6ED7           00020   movwf TMR0H
+00001C 0EDC           00021   movlw 0xDC
+00001E 6ED6           00022   movwf TMR0L
+000020 94F2           00023   bcf INTCON,TMR0IF
+000022 8AF2           00024   bsf INTCON,TMR0IE
+000024 8EF2           00025   bsf INTCON,GIE
+000026 8ED5           00026   bsf T0CON,TMR0ON
+000028 6A8A           00027   clrf LATB
+00002A                00028 Menu
+00002A                00029 Verde
+00002A 0E20           00030   movlw b'00100000'
+00002C 6E8A           00031   movwf LATB
+00002E EC29 F000      00032   call RetardoVerde
+000032                00033 Amarillo
+000032 0E40           00034   movlw b'01000000'
+000034 6E8A           00035   movwf LATB
+000036 EC29 F000      00036   call RetardoVerde
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-000020 0EFE           00035         movlw .254
-000022 6E00           00036         movwf aux1
-000024 0EA0           00037         movlw .160
-000026 6E01           00038         movwf aux2
-000028 0E02           00039         movlw .2
-00002A 6E02           00040         movwf aux3
-Warning[207]: Found label after column 1. (AuxRetardoVerde)
-00002C                00041     AuxRetardoVerde
-00002C 2E00           00042         decfsz aux1,f
-00002E EF16 F000      00043         goto AuxRetardoVerde
-000032 0EFE           00044         movlw .254
-000034 6E00           00045         movwf aux1
-000036 2E01           00046         decfsz aux2,f
-000038 EF16 F000      00047         goto AuxRetardoVerde
-00003C 0EA0           00048         movlw .160
-00003E 6E01           00049         movwf aux2
-000040 2E02           00050         decfsz aux3,f
-000042 EF16 F000      00051         goto AuxRetardoVerde
-000046 0012           00052         return
-                      00053         
-Warning[207]: Found label after column 1. (ISR)
-000048                00054     ISR
-000048 92F2           00055         bcf INTCON,INT0IF
-00004A EC10 F000      00056         call RetardoVerde
-Warning[207]: Found label after column 1. (Amarillo)
-00004E                00057         Amarillo
-00004E 0E40           00058             movlw b'01000000'
-000050 6E8A           00059             movwf LATB
-000052 EC10 F000      00060             call RetardoVerde
-Warning[207]: Found label after column 1. (Rojo)
-000056                00061         Rojo
-000056 0E80           00062             movlw b'10000000'
-000058 6E8A           00063             movwf LATB
-00005A EC10 F000      00064             call RetardoVerde
-Warning[207]: Found label after column 1. (RojoAmarillo)
-00005E                00065         RojoAmarillo
-00005E 0EC0           00066             movlw b'11000000'
-000060 6E8A           00067             movwf LATB
-000062 EC10 F000      00068             call RetardoVerde
-000066 92F2           00069             bcf INTCON,INT0IF
-000068 0010           00070         retfie
-                      00071     end
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE  3
+00003A                00037 Rojo
+00003A 0E80           00038   movlw b'10000000'
+00003C 6E8A           00039   movwf LATB
+00003E EC29 F000      00040   call RetardoVerde
+000042 EC29 F000      00041   call RetardoVerde
+000046                00042 RojoAmarillo  
+000046 0EC0           00043   movlw b'11000000'
+000048 6E8A           00044   movwf LATB
+00004A EC29 F000      00045   call RetardoVerde
+00004E EF15 F000      00046   goto Menu
+000052                00047 RetardoVerde
+000052 0EFF           00048   movlw .255
+000054 6E00           00049   movwf aux1
+000056 0EA1           00050   movlw .161
+000058 6E01           00051   movwf aux2
+00005A 0E02           00052   movlw .2
+00005C 6E02           00053   movwf aux3
+00005E                00054 AuxRetardoVerde
+00005E 2E00           00055   decfsz aux1,f
+000060 EF2F F000      00056   goto AuxRetardoVerde
+000064 0EFF           00057   movlw .255
+000066 6E00           00058   movwf aux1
+000068 2E01           00059   decfsz aux2,f
+00006A EF2F F000      00060   goto AuxRetardoVerde
+00006E 0EA1           00061   movlw .161
+000070 6E01           00062   movwf aux2
+000072 2E02           00063   decfsz aux3,f
+000074 EF2F F000      00064   goto AuxRetardoVerde
+000078 0012           00065   return
+00007A                00066 ISR
+00007A 94F2           00067   bcf INTCON,TMR0IF
+00007C 0E0B           00068   movlw 0xB
+00007E 6ED7           00069   movwf TMR0H
+000080 0EDC           00070   movlw 0xDC
+000082 6ED6           00071   movwf TMR0L
+000084 708C           00072   btg LATD,0
+000086 0010           00073   retfie
+Warning[205]: Found directive in column 1. (end)
+                      00074 end
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE  3
 
 
 SYMBOL TABLE
@@ -151,8 +148,8 @@ AN1                               00000001
 AN2                               00000002
 AN3                               00000003
 AN4                               00000005
-Amarillo                          0000004E
-AuxRetardoVerde                   0000002C
+Amarillo                          00000032
+AuxRetardoVerde                   0000005E
 BANKED                            00000001
 BAUDCON                           00000FB8
 BAUDCTL                           00000FB8
@@ -164,7 +161,7 @@ BGST                              00000005
 BOR                               00000000
 BRG16                             00000003
 BRGH                              00000002
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE  4
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE  4
 
 
 SYMBOL TABLE
@@ -223,7 +220,7 @@ CM0                               00000000
 CM1                               00000001
 CM2                               00000002
 CMCON                             00000FB4
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE  5
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE  5
 
 
 SYMBOL TABLE
@@ -282,7 +279,7 @@ EEIE                              00000004
 EEIF                              00000004
 EEIP                              00000004
 EEPGD                             00000007
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE  6
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE  6
 
 
 SYMBOL TABLE
@@ -341,7 +338,7 @@ HLVDL1                            00000001
 HLVDL2                            00000002
 HLVDL3                            00000003
 I2C_DAT                           00000005
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE  7
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE  7
 
 
 SYMBOL TABLE
@@ -390,7 +387,7 @@ IRCF0                             00000004
 IRCF1                             00000005
 IRCF2                             00000006
 IRVST                             00000005
-ISR                               00000048
+ISR                               0000007A
 IVRST                             00000005
 Inicio                            0000000C
 LATA                              00000F89
@@ -400,7 +397,7 @@ LATA2                             00000002
 LATA3                             00000003
 LATA4                             00000004
 LATA5                             00000005
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE  8
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE  8
 
 
 SYMBOL TABLE
@@ -449,7 +446,7 @@ LVV0                              00000000
 LVV1                              00000001
 LVV2                              00000002
 LVV3                              00000003
-Menu                              00000018
+Menu                              0000002A
 N                                 00000004
 NOT_A                             00000005
 NOT_ADDRESS                       00000005
@@ -459,7 +456,7 @@ NOT_IPEN                          00000007
 NOT_PD                            00000002
 NOT_POR                           00000001
 NOT_RBPU                          00000007
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE  9
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE  9
 
 
 SYMBOL TABLE
@@ -518,7 +515,7 @@ PLUSW0                            00000FEB
 PLUSW1                            00000FE3
 PLUSW2                            00000FDB
 POR                               00000001
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE 10
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE 10
 
 
 SYMBOL TABLE
@@ -577,7 +574,7 @@ RC1                               00000001
 RC2                               00000002
 RC4                               00000004
 RC5                               00000005
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE 11
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE 11
 
 
 SYMBOL TABLE
@@ -620,9 +617,9 @@ RX9D                              00000000
 RXDTP                             00000005
 R_NOT_W                           00000002
 R_W                               00000002
-RetardoVerde                      00000020
-Rojo                              00000056
-RojoAmarillo                      0000005E
+RetardoVerde                      00000052
+Rojo                              0000003A
+RojoAmarillo                      00000046
 S                                 00000003
 SBOREN                            00000006
 SCKP                              00000004
@@ -636,7 +633,7 @@ SOFIE                             00000006
 SOFIF                             00000006
 SPBRG                             00000FAF
 SPBRGH                            00000FB0
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE 12
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE 12
 
 
 SYMBOL TABLE
@@ -695,7 +692,7 @@ SYNC                              00000004
 T08BIT                            00000006
 T0CKI                             00000004
 T0CON                             00000FD5
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE 13
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE 13
 
 
 SYMBOL TABLE
@@ -754,7 +751,7 @@ TMR1L                             00000FCE
 TMR1ON                            00000000
 TMR2                              00000FCC
 TMR2IE                            00000001
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE 14
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE 14
 
 
 SYMBOL TABLE
@@ -813,7 +810,7 @@ TRISD5                            00000005
 TRISD6                            00000006
 TRISD7                            00000007
 TRISE                             00000F96
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE 15
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE 15
 
 
 SYMBOL TABLE
@@ -872,7 +869,7 @@ UIR                               00000F68
 UOEMON                            00000006
 UPUEN                             00000004
 URSTIE                            00000000
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE 16
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE 16
 
 
 SYMBOL TABLE
@@ -891,7 +888,7 @@ VCFG1                             00000005
 VDIRMAG                           00000007
 VREFM                             00000002
 VREFP                             00000003
-Verde                             00000018
+Verde                             0000002A
 W                                 00000000
 WCOL                              00000007
 WDTCON                            00000FD1
@@ -931,7 +928,7 @@ _CONFIG7L                         0030000C
 _CP0_OFF_5L                       000000FF
 _CP0_ON_5L                        000000FE
 _CP1_OFF_5L                       000000FF
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE 17
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE 17
 
 
 SYMBOL TABLE
@@ -990,7 +987,7 @@ _IDLOC6                           00200006
 _IDLOC7                           00200007
 _IESO_OFF_1H                      0000007F
 _IESO_ON_1H                       000000FF
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE 18
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE 18
 
 
 SYMBOL TABLE
@@ -1049,7 +1046,7 @@ _WRT3_ON_6L                       000000F7
 _WRTB_OFF_6H                      000000FF
 _WRTB_ON_6H                       000000BF
 _WRTC_OFF_6H                      000000FF
-MPASM 5.67                       LAB2SIM.ASM   5-8-2025  15:49:54         PAGE 19
+MPASM 5.67                          LAB2.ASM   5-15-2025  12:53:25         PAGE 19
 
 
 SYMBOL TABLE
@@ -1069,17 +1066,18 @@ aux3                              00000002
 MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
 
 0000 : XXXX----XXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
-0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXX------ ----------------
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXX-------- ---------------- ---------------- ----------------
 0000 : XXXX-XX-XXXXXX-- ---------------- ---------------- ----------------
 
 All other memory blocks unused.
 
-Program Memory Bytes Used:   114
-Program Memory Bytes Free: 32654
+Program Memory Bytes Used:   144
+Program Memory Bytes Free: 32624
 
 
 Errors   :     0
-Warnings :    13 reported,     0 suppressed
+Warnings :     7 reported,     0 suppressed
 Messages :     0 reported,     0 suppressed
 
 

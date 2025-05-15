@@ -12,8 +12,10 @@ include P18F4550.inc
     ORG 0h
 	goto Inicio
     ORG 8h
-	goto ISR
-    
+	goto ISRH
+    ORG 18h
+	goto ISRL
+	
     Inicio  ;RB7 Rojo	RB6 amarillo	RB5 Verde
 	;movlw .31		    ;0b00011111
 	movlw b'00011111'
@@ -22,20 +24,35 @@ include P18F4550.inc
 	bsf INTCON2,INTEDG1
 	bcf INTCON,INT0IF
 	bsf INTCON,INT0IE
+	
 	bcf INTCON,INT1IF
 	bsf INTCON,INT1IE
+	bcf INTCON3,INT1IP  ;bcf -> Baja prioridad bsf -> Alta prioridad
+	bsf RCON,IPEN
 	bsf INTCON,PETE
-	bsf INTCON,GIE
+	bcf INTCON,GIE
 	clrf LATB
     Menu
-    Verde
-	movlw b'00100000'
-	movwf LATB
-	;call RetardoVerde
-	;call RetardoVerde
-	;btfsc PORTB,0	;RB0==0?    Entrada
-	goto Verde
-	
+	Verde
+	    movlw b'00100000'
+	    movwf LATB
+	    call RetardoVerde
+	    ;btfsc PORTB,0	;RB0==0?    Entrada
+	    ;goto Verde
+	Amarillo
+	    movlw b'01000000'
+	    movwf LATB
+	    call RetardoVerde
+	Rojo
+	    movlw b'10000000'
+	    movwf LATB
+	    call RetardoVerde
+	RojoAmarillo
+	    movlw b'11000000'
+	    movwf LATB
+	    call RetardoVerde
+	    bcf INTCON,INT0IF
+	retfie
     RetardoVerde
 	movlw .254
 	movwf aux1
@@ -57,22 +74,14 @@ include P18F4550.inc
 	return
 	
     ISR
-	bcf INTCON,INT0IF
-	call RetardoVerde
-	Amarillo
-	    movlw b'01000000'
-	    movwf LATB
-	    call RetardoVerde
-	Rojo
-	    movlw b'10000000'
-	    movwf LATB
-	    call RetardoVerde
-	RojoAmarillo
-	    movlw b'11000000'
-	    movwf LATB
-	    call RetardoVerde
-	    bcf INTCON,INT0IF
+	;bcf INTCON,INT0IF
+	btfsc INTCON,INT0IF
+	goto ISR_INT1
+	btfsc INTCON3,INT1IF
+	goto ISR_INT0
 	retfie
+	
+	call RetardoVerde
     end
 
 
