@@ -1,4 +1,4 @@
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE  1
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ Warning[205]: Found directive in column 1. (ORG)
 000032 0E40           00034   movlw b'01000000'
 000034 6E8A           00035   movwf LATB
 000036 EC29 F000      00036   call RetardoVerde
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE  2
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -102,7 +102,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 000086 0010           00073   retfie
 Warning[205]: Found directive in column 1. (end)
                       00074 end
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE  3
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE  3
 
 
 SYMBOL TABLE
@@ -161,7 +161,7 @@ BGST                              00000005
 BOR                               00000000
 BRG16                             00000003
 BRGH                              00000002
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE  4
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE  4
 
 
 SYMBOL TABLE
@@ -220,7 +220,7 @@ CM0                               00000000
 CM1                               00000001
 CM2                               00000002
 CMCON                             00000FB4
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE  5
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE  5
 
 
 SYMBOL TABLE
@@ -279,7 +279,7 @@ EEIE                              00000004
 EEIF                              00000004
 EEIP                              00000004
 EEPGD                             00000007
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE  6
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE  6
 
 
 SYMBOL TABLE
@@ -338,7 +338,7 @@ HLVDL1                            00000001
 HLVDL2                            00000002
 HLVDL3                            00000003
 I2C_DAT                           00000005
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE  7
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE  7
 
 
 SYMBOL TABLE
@@ -397,7 +397,7 @@ LATA2                             00000002
 LATA3                             00000003
 LATA4                             00000004
 LATA5                             00000005
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE  8
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE  8
 
 
 SYMBOL TABLE
@@ -456,7 +456,7 @@ NOT_IPEN                          00000007
 NOT_PD                            00000002
 NOT_POR                           00000001
 NOT_RBPU                          00000007
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE  9
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE  9
 
 
 SYMBOL TABLE
@@ -515,7 +515,7 @@ PLUSW0                            00000FEB
 PLUSW1                            00000FE3
 PLUSW2                            00000FDB
 POR                               00000001
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE 10
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE 10
 
 
 SYMBOL TABLE
@@ -574,7 +574,7 @@ RC1                               00000001
 RC2                               00000002
 RC4                               00000004
 RC5                               00000005
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE 11
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE 11
 
 
 SYMBOL TABLE
@@ -633,7 +633,7 @@ SOFIE                             00000006
 SOFIF                             00000006
 SPBRG                             00000FAF
 SPBRGH                            00000FB0
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE 12
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE 12
 
 
 SYMBOL TABLE
@@ -692,7 +692,7 @@ SYNC                              00000004
 T08BIT                            00000006
 T0CKI                             00000004
 T0CON                             00000FD5
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE 13
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE 13
 
 
 SYMBOL TABLE
@@ -751,7 +751,7 @@ TMR1L                             00000FCE
 TMR1ON                            00000000
 TMR2                              00000FCC
 TMR2IE                            00000001
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE 14
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE 14
 
 
 SYMBOL TABLE
@@ -810,7 +810,7 @@ TRISD5                            00000005
 TRISD6                            00000006
 TRISD7                            00000007
 TRISE                             00000F96
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE 15
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE 15
 
 
 SYMBOL TABLE
@@ -869,7 +869,7 @@ UIR                               00000F68
 UOEMON                            00000006
 UPUEN                             00000004
 URSTIE                            00000000
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE 16
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE 16
 
 
 SYMBOL TABLE
@@ -928,7 +928,7 @@ _CONFIG7L                         0030000C
 _CP0_OFF_5L                       000000FF
 _CP0_ON_5L                        000000FE
 _CP1_OFF_5L                       000000FF
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE 17
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE 17
 
 
 SYMBOL TABLE
@@ -987,7 +987,7 @@ _IDLOC6                           00200006
 _IDLOC7                           00200007
 _IESO_OFF_1H                      0000007F
 _IESO_ON_1H                       000000FF
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE 18
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE 18
 
 
 SYMBOL TABLE
@@ -1046,7 +1046,7 @@ _WRT3_ON_6L                       000000F7
 _WRTB_OFF_6H                      000000FF
 _WRTB_ON_6H                       000000BF
 _WRTC_OFF_6H                      000000FF
-MPASM 5.67                          LAB2.ASM   5-15-2025  14:44:18         PAGE 19
+MPASM 5.67                          LAB2.ASM   5-15-2025  15:40:39         PAGE 19
 
 
 SYMBOL TABLE

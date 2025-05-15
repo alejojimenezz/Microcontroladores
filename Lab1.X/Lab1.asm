@@ -12,7 +12,7 @@ Inicio
  movwf aux1	;Guarda la constante en variable var1
  movlw .9	
  movwf aux2
- ;El valor m�s grande (decimal) que se puede cargar a la variable var1 es 255
+ ;El valor mas grande (decimal) que se puede cargar a la variable var1 es 255
  ;256 es leido como 0 (8 bits)
  movf aux2,w	;Llevar el valor de la variable var1 al sistema
  addlw .5	;Sumar la constante 5 al valor de la variable var1
@@ -56,7 +56,7 @@ Inicio
  movlw .5
  movwf aux1
  movf aux1,w
- mullw .2
+ mullw .4
  ;______________________________________________________________________________
  ;Multiplicar la variable aux1 a la variable aux2 previamente cargadas
  ;con los valores de 12 y 15 respectivamente.
@@ -76,10 +76,7 @@ Inicio
  ;con el valor de 12.
  movlw .12
  movwf aux1
- comf aux1	;En aux1 queda complemento a 1
- movf aux1,w
- addlw .1	;Para complemento a 2 se suma 1
- movwf aux1
+ negf aux1
  ;______________________________________________________________________________
  ;Realizar la O logica ?bitwise? entre el valor de 7 y la variable aux1
  ;cargada previamente con el valor de 35.
@@ -88,7 +85,7 @@ Inicio
  iorlw .7
  movwf aux2
  ;______________________________________________________________________________
- ;Realizar la O l�gica ?bitwise? entre las variables aux1 y aux2
+ ;Realizar la O logica ?bitwise? entre las variables aux1 y aux2
  ;cargadas previamente con los valores de 20 y 56 respectivamente.
  movlw .20
  movwf aux1
@@ -97,7 +94,7 @@ Inicio
  iorwf aux1
  movwf aux3	;Irrelevante, OR sobreescribe en aux1, no WREG
  ;______________________________________________________________________________
- ;Realizar la Y l�gica ?bitwise? entre el valor de 15 y la variable aux1
+ ;Realizar la Y logica ?bitwise? entre el valor de 15 y la variable aux1
  ;cargada previamente con el valor de 62.
  movlw .62
  movwf aux1
@@ -164,20 +161,22 @@ Inicio
  movwf aux4
 
  ; Realizamos la operacion A-B = A + (~B+1)
- movlw .26
- movwf aux2
- comf aux2,w
- addlw .1
- addwf aux3,w
- movwf aux2
+ movlw b'00110101'
+ subwf aux3
+ ;comf aux2,w
+ ;addlw .1
+ ;addwf aux3,w
+ ;movwf aux2
 
- movf aux2,w
+ movf aux3,w
  mullw .3
- movwf aux3
+ movf PRODL,w
+ 
+ subwf aux4
 
- movf aux4,w
- subwf aux3,w
- movwf aux4
+ ;movf aux4,w
+ ;subwf aux3,w
+ ;movwf aux4
  
  ;Fin clase
 end
