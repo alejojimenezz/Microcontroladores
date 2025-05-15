@@ -81,7 +81,7 @@ Inicio
  addlw .1	;Para complemento a 2 se suma 1
  movwf aux1
  ;______________________________________________________________________________
- ;Realizar la O l�gica ?bitwise? entre el valor de 7 y la variable aux1
+ ;Realizar la O logica ?bitwise? entre el valor de 7 y la variable aux1
  ;cargada previamente con el valor de 35.
  movlw .35
  movwf aux1
