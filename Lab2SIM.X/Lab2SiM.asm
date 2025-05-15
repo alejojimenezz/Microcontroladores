@@ -18,8 +18,13 @@ include P18F4550.inc
 	;movlw .31		    ;0b00011111
 	movlw b'00011111'
 	movwf TRISB
+	bcf INTCON2,INTEDG0
+	bsf INTCON2,INTEDG1
 	bcf INTCON,INT0IF
 	bsf INTCON,INT0IE
+	bcf INTCON,INT1IF
+	bsf INTCON,INT1IE
+	bsf INTCON,PETE
 	bsf INTCON,GIE
 	clrf LATB
     Menu
