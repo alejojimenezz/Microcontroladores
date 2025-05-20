@@ -159,9 +159,8 @@ Inicio
  movf aux1,w
  addwf aux2,w
  movwf aux4
-
- ; Realizamos la operacion A-B = A + (~B+1)
- movlw b'00110101'
+ 
+ movlw b'00011010'
  subwf aux3
  ;comf aux2,w
  ;addlw .1

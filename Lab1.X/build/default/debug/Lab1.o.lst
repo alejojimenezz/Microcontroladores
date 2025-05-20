@@ -1,4 +1,4 @@
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE  1
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ Warning[205]: Found directive in column 1. (include)
 000026 6E00           00040  movwf aux1
 000028 5000           00041  movf aux1,w
 00002A 0809           00042  sublw .9       ;Resta w de constante 9
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE  2
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -116,7 +116,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 000066 6E01           00093  movwf aux2
 000068 1200           00094  iorwf aux1
 00006A 6E02           00095  movwf aux3     ;Irrelevante, OR sobreescribe en aux1, no WREG
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE  3
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -175,7 +175,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0000A6 1403           00146  andwf aux4,w
 0000A8 6E03           00147  movwf aux4
                       00148 
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE  4
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -194,29 +194,28 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0000B6 5000           00159  movf aux1,w
 0000B8 2401           00160  addwf aux2,w
 0000BA 6E03           00161  movwf aux4
-                      00162 
-                      00163  ; Realizamos la operacion A-B = A + (~B+1)
-0000BC 0E35           00164  movlw b'00110101'
-0000BE 5E02           00165  subwf aux3
-                      00166  ;comf aux2,w
-                      00167  ;addlw .1
-                      00168  ;addwf aux3,w
-                      00169  ;movwf aux2
-                      00170 
-0000C0 5002           00171  movf aux3,w
-0000C2 0D03           00172  mullw .3
-0000C4 50F3           00173  movf PRODL,w
-                      00174  
-0000C6 5E03           00175  subwf aux4
-                      00176 
-                      00177  ;movf aux4,w
-                      00178  ;subwf aux3,w
-                      00179  ;movwf aux4
-                      00180  
-                      00181  ;Fin clase
+                      00162  
+0000BC 0E1A           00163  movlw b'00011010'
+0000BE 5E02           00164  subwf aux3
+                      00165  ;comf aux2,w
+                      00166  ;addlw .1
+                      00167  ;addwf aux3,w
+                      00168  ;movwf aux2
+                      00169 
+0000C0 5002           00170  movf aux3,w
+0000C2 0D03           00171  mullw .3
+0000C4 50F3           00172  movf PRODL,w
+                      00173  
+0000C6 5E03           00174  subwf aux4
+                      00175 
+                      00176  ;movf aux4,w
+                      00177  ;subwf aux3,w
+                      00178  ;movwf aux4
+                      00179  
+                      00180  ;Fin clase
 Warning[205]: Found directive in column 1. (end)
-                      00182 end
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE  5
+                      00181 end
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE  5
 
 
 SYMBOL TABLE
@@ -275,7 +274,7 @@ BRG16                             00000003
 BRGH                              00000002
 BSR                               00000FE0
 BTOEE                             00000004
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE  6
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE  6
 
 
 SYMBOL TABLE
@@ -334,7 +333,7 @@ CM2                               00000002
 CMCON                             00000FB4
 CMIE                              00000006
 CMIF                              00000006
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE  7
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE  7
 
 
 SYMBOL TABLE
@@ -393,7 +392,7 @@ EEIP                              00000004
 EEPGD                             00000007
 ENDP0                             00000003
 ENDP1                             00000004
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE  8
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE  8
 
 
 SYMBOL TABLE
@@ -452,7 +451,7 @@ HLVDL3                            00000003
 I2C_DAT                           00000005
 I2C_READ                          00000002
 I2C_START                         00000003
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE  9
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE  9
 
 
 SYMBOL TABLE
@@ -511,7 +510,7 @@ LATA5                             00000005
 LATA6                             00000006
 LATB                              00000F8A
 LATB0                             00000000
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 10
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 10
 
 
 SYMBOL TABLE
@@ -570,7 +569,7 @@ NOT_RI                            00000004
 NOT_T1SYNC                        00000002
 NOT_T3SYNC                        00000002
 NOT_TO                            00000003
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 11
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 11
 
 
 SYMBOL TABLE
@@ -629,7 +628,7 @@ PORTA                             00000F80
 PORTB                             00000F81
 PORTC                             00000F82
 PORTD                             00000F83
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 12
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 12
 
 
 SYMBOL TABLE
@@ -688,7 +687,7 @@ RC6                               00000006
 RC7                               00000007
 RCEN                              00000003
 RCIDL                             00000006
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 13
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 13
 
 
 SYMBOL TABLE
@@ -747,7 +746,7 @@ SPP2                              00000002
 SPP3                              00000003
 SPP4                              00000004
 SPP5                              00000005
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 14
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 14
 
 
 SYMBOL TABLE
@@ -806,7 +805,7 @@ T0IP                              00000002
 T0PS0                             00000000
 T0PS1                             00000001
 T0PS2                             00000002
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 15
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 15
 
 
 SYMBOL TABLE
@@ -865,7 +864,7 @@ TMR3                              00000FB2
 TMR3CS                            00000001
 TMR3H                             00000FB3
 TMR3IE                            00000001
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 16
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 16
 
 
 SYMBOL TABLE
@@ -924,7 +923,7 @@ TRMT                              00000001
 TRNIE                             00000003
 TRNIF                             00000003
 TUN0                              00000000
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 17
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 17
 
 
 SYMBOL TABLE
@@ -983,7 +982,7 @@ USBIF                             00000005
 USBIP                             00000005
 USTAT                             00000F6C
 UTEYE                             00000007
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 18
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 18
 
 
 SYMBOL TABLE
@@ -1042,7 +1041,7 @@ _CP3_ON_5L                        000000F7
 _CPB_OFF_5H                       000000FF
 _CPB_ON_5H                        000000BF
 _CPD_OFF_5H                       000000FF
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 19
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 19
 
 
 SYMBOL TABLE
@@ -1101,7 +1100,7 @@ _MCLRE_OFF_3H                     0000007F
 _MCLRE_ON_3H                      000000FF
 _PBADEN_OFF_3H                    000000FD
 _PBADEN_ON_3H                     000000FF
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 20
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 20
 
 
 SYMBOL TABLE
@@ -1160,7 +1159,7 @@ _XINST_ON_4L                      000000FF
 __18F4550                         00000001
 __DEBUG                           
 __MPLAB_DEBUGGER_SIMULATOR        1
-MPASM 5.67                          LAB1.ASM   5-15-2025  15:54:51         PAGE 21
+MPASM 5.67                          LAB1.ASM   5-20-2025  7:36:12         PAGE 21
 
 
 SYMBOL TABLE
