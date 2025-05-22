@@ -11,12 +11,16 @@
    - Microchip Embedded &#8594; Standalone Project
    - Device: PIC18F4550
    - Tool: Simulator / PICkit3
-   - Compiler: mpasm (Ensamblador)
+   - Compiler:
+     - mpasm (Ensamblador)
+     - XC8: Para trabajar en lenguaje C, distinguir los archivos de proyecto trabajados en C, agregando "C" al final.  
+       **NOTA: Para MPLab X v3.30, se requiere XC8 v2.50 o menor** <!--HostID: 8c16456dc0bb-->
    - Project Name = Project File
 3. Project Properties
    - mpasm (Global Options) &#8594; Build in absolute mode :white_check_mark:
 4. New File
    - Assembler (.asm) o C
+        - Para C: Solo puede haber un archivo con "main", en carpeta "Header Files"
    - Mismo nombre del proyecto
 
 ## [Git Guide](https://github.com/git-guides)
@@ -38,3 +42,4 @@ Para git bash mientras se usa MPLAB:
      - [Código](/Lab1.X/Lab1.asm)
  
 * [**Laoratorio 2**](/Guias)
+* [**Laoratorio 3**](/Guias)
