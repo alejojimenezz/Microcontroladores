@@ -42,4 +42,9 @@ Para git bash mientras se usa MPLAB:
      - [Código](/Lab1.X/Lab1.asm)
  
 * [**Laoratorio 2**](/Guias)
+     - [Código de clase](/Lab2.X/Lab2.asm)
+     - [Código para pruebas](/Lab2B.X/Lab2B.asm)
+     - [Código para sustentación](/Lab2Final.X/Lab2Final.asm)
+
 * [**Laoratorio 3**](/Guias)
+     - [Código](/Lab3C.X/Lab3C.asm)
