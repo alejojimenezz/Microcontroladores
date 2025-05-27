@@ -10,7 +10,7 @@ ORG 0h
 ORG 8h
   goto ISR
 Inicio	;RB7 Rojo   RB6 Amarillo  RB5 Verde - Semaforo
-	;RB7 Rojo   RB6 Azul	  RB5 Verde - LED RGB
+	;RD0 Rojo   RD1 Azul	  RD2you Verde - LED RGB
   movlw    b'00011111'        ;0b00011111
   movwf TRISB
   bcf TRISD,0
@@ -73,8 +73,3 @@ ISR
   btg LATD,0
   retfie
 end
-
-
-
-
-
