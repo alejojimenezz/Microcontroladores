@@ -29,16 +29,36 @@ Inicio  ;RD0 Rojo   RD1 Azul	  RD2you Verde - LED RGB
   clrf LATD
   
 Menu
+;Negro
+;  movlw b'00000000'
+;  movwf LATD
+;  call Retardo1s
+;Azul
+;  movlw b'00000100'
+;  movwf LATD
+;  call Retardo1s
+;Cyan
+;  movlw b'00000110'
+;  movwf LATD
+;  call Retardo1s
+;Verde
+;  movlw b'00000010'
+;  movwf LATD
+;  call Retardo1s
+;Amarillo
+;  movlw b'00000101'
+;  movwf LATD
+;  call Retardo1s
+;Blanco
+;  movlw b'00000111'
+;  movwf LATD
+;  call Retardo1s
+;Magenta
+;  movlw b'00000011'
+;  movwf LATD
+;  call Retardo1s
 Rojo
   movlw b'00000001'
-  movwf LATD
-  call Retardo1s
-Verde
-  movlw b'00000010'
-  movwf LATD
-  call Retardo1s
-Azul
-  movlw b'00000100'
   movwf LATD
   call Retardo1s
   goto Menu

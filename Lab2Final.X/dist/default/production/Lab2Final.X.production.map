@@ -1,0 +1,59 @@
+MPLINK 5.08, LINKER
+Linker Map File - Created Wed May 28 22:22:44 2025
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000004
+                   .org_2       code   0x000008    program   0x000060
+.config_300000_LAB2FINAL.O    romdata   0x300000    program   0x000001
+.config_300001_LAB2FINAL.O    romdata   0x300001    program   0x000001
+.config_300002_LAB2FINAL.O    romdata   0x300002    program   0x000001
+.config_300003_LAB2FINAL.O    romdata   0x300003    program   0x000001
+.config_300005_LAB2FINAL.O    romdata   0x300005    program   0x000001
+.config_300006_LAB2FINAL.O    romdata   0x300006    program   0x000001
+.config_300008_LAB2FINAL.O    romdata   0x300008    program   0x000001
+.config_300009_LAB2FINAL.O    romdata   0x300009    program   0x000001
+.config_30000A_LAB2FINAL.O    romdata   0x30000a    program   0x000001
+.config_30000B_LAB2FINAL.O    romdata   0x30000b    program   0x000001
+.config_30000C_LAB2FINAL.O    romdata   0x30000c    program   0x000001
+.config_30000D_LAB2FINAL.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000003      
+                            0x000008    0x000067      
+                            0x300000    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            112 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+             AuxRetardo1s   0x00003e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                      ISR   0x00005a    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                   Inicio   0x00000c    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Menu   0x000026    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                Retardo1s   0x000032    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Rojo   0x000026    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   Inicio   0x00000c    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Menu   0x000026    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Rojo   0x000026    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                Retardo1s   0x000032    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+             AuxRetardo1s   0x00003e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                      ISR   0x00005a    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+
+
