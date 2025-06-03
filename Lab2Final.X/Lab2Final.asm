@@ -9,8 +9,8 @@ aux3 equ 2h      ;RB0 Sensor
  
 ORG 0h
   goto Inicio
-ORG 8h
-  goto ISR
+;ORG 8h
+;  goto ISR
   
 Inicio  ;RD0 Rojo   RD1 Azul	  RD2you Verde - LED RGB
   movlw b'11111000'
@@ -26,13 +26,13 @@ Inicio  ;RD0 Rojo   RD1 Azul	  RD2you Verde - LED RGB
   bsf INTCON,TMR0IE
   bsf INTCON,GIE
   bsf INTCON,TMR0ON
-  clrf LATD
+  clrf LATB
   
 Menu
-;Negro
-;  movlw b'00000000'
-;  movwf LATD
-;  call Retardo1s
+Negro
+  movlw b'00000000'
+  movwf LATD
+  call Retardo1s
 ;Azul
 ;  movlw b'00000100'
 ;  movwf LATD
@@ -82,12 +82,12 @@ AuxRetardo1s
   decfsz aux3,f
   goto AuxRetardo1s
   return
-ISR
-  bcf INTCON,TMR0IF
-  movlw 0xB
-  movwf TMR0H
-  movlw 0xDC
-  movwf TMR0L
-  btg LATD,0
-  retfie
+;ISR
+;  bcf INTCON,TMR0IF
+;  movlw 0xB
+;  movwf TMR0H
+;  movlw 0xDC
+;  movwf TMR0L
+;  btg LATD,0
+;  retfie
 end

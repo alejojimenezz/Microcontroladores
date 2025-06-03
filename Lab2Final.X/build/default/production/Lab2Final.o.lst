@@ -1,4 +1,4 @@
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE  1
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -30,40 +30,39 @@ Warning[205]: Found directive in column 1. (CONFIG)
                       00009  
 Warning[205]: Found directive in column 1. (ORG)
 000000                00010 ORG 0h
-000000 EF06 F000      00011   goto Inicio
-Warning[205]: Found directive in column 1. (ORG)
-000008                00012 ORG 8h
-000008 EF2D F000      00013   goto ISR
+000000 EF02 F000      00011   goto Inicio
+                      00012 ;ORG 8h
+                      00013 ;  goto ISR
                       00014   
-00000C                00015 Inicio  ;RD0 Rojo   RD1 Azul      RD2you Verde - LED RGB
-00000C 0EF8           00016   movlw b'11111000'
-00000E 6E95           00017   movwf TRISD
+000004                00015 Inicio  ;RD0 Rojo   RD1 Azul      RD2you Verde - LED RGB
+000004 0EF8           00016   movlw b'11111000'
+000006 6E95           00017   movwf TRISD
                       00018   ;________________________________
-000010 0E01           00019   movlw b'00000001'
-000012 6ED5           00020   movwf T0CON
-000014 0E0B           00021   movlw 0xB
-000016 6ED7           00022   movwf TMR0H
-000018 0EDC           00023   movlw 0xDC
-00001A 6ED6           00024   movwf TMR0L
-00001C 94F2           00025   bcf INTCON,TMR0IF
-00001E 8AF2           00026   bsf INTCON,TMR0IE
-000020 8EF2           00027   bsf INTCON,GIE
-000022 8EF2           00028   bsf INTCON,TMR0ON
-000024 6A8C           00029   clrf LATD
+000008 0E01           00019   movlw b'00000001'
+00000A 6ED5           00020   movwf T0CON
+00000C 0E0B           00021   movlw 0xB
+00000E 6ED7           00022   movwf TMR0H
+000010 0EDC           00023   movlw 0xDC
+000012 6ED6           00024   movwf TMR0L
+000014 94F2           00025   bcf INTCON,TMR0IF
+000016 8AF2           00026   bsf INTCON,TMR0IE
+000018 8EF2           00027   bsf INTCON,GIE
+00001A 8EF2           00028   bsf INTCON,TMR0ON
+00001C 6A8A           00029   clrf LATB
                       00030   
-000026                00031 Menu
-                      00032 ;Negro
-                      00033 ;  movlw b'00000000'
-                      00034 ;  movwf LATD
-                      00035 ;  call Retardo1s
+00001E                00031 Menu
+00001E                00032 Negro
+00001E 0E00           00033   movlw b'00000000'
+000020 6E8C           00034   movwf LATD
+000022 EC19 F000      00035   call Retardo1s
                       00036 ;Azul
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE  2
+                      00037 ;  movlw b'00000100'
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                      00037 ;  movlw b'00000100'
                       00038 ;  movwf LATD
                       00039 ;  call Retardo1s
                       00040 ;Cyan
@@ -90,7 +89,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 000026 0E01           00061   movlw b'00000001'
 000028 6E8C           00062   movwf LATD
 00002A EC19 F000      00063   call Retardo1s
-00002E EF13 F000      00064   goto Menu
+00002E EF0F F000      00064   goto Menu
                       00065   
 000032                00066 Retardo1s
 000032 0EFE           00067   movlw .254
@@ -111,23 +110,23 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 000052 2E02           00082   decfsz aux3,f
 000054 EF1F F000      00083   goto AuxRetardo1s
 000058 0012           00084   return
-00005A                00085 ISR
-00005A 94F2           00086   bcf INTCON,TMR0IF
-00005C 0E0B           00087   movlw 0xB
-00005E 6ED7           00088   movwf TMR0H
-000060 0EDC           00089   movlw 0xDC
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE  3
+                      00085 ;ISR
+                      00086 ;  bcf INTCON,TMR0IF
+                      00087 ;  movlw 0xB
+                      00088 ;  movwf TMR0H
+                      00089 ;  movlw 0xDC
+                      00090 ;  movwf TMR0L
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-000062 6ED6           00090   movwf TMR0L
-000064 708C           00091   btg LATD,0
-000066 0010           00092   retfie
+                      00091 ;  btg LATD,0
+                      00092 ;  retfie
 Warning[205]: Found directive in column 1. (end)
                       00093 end
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE  4
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE  4
 
 
 SYMBOL TABLE
@@ -186,7 +185,7 @@ BOR                               00000000
 BRG16                             00000003
 BRGH                              00000002
 BSR                               00000FE0
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE  5
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE  5
 
 
 SYMBOL TABLE
@@ -245,7 +244,7 @@ CM1                               00000001
 CM2                               00000002
 CMCON                             00000FB4
 CMIE                              00000006
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE  6
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE  6
 
 
 SYMBOL TABLE
@@ -304,7 +303,7 @@ EEIF                              00000004
 EEIP                              00000004
 EEPGD                             00000007
 ENDP0                             00000003
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE  7
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE  7
 
 
 SYMBOL TABLE
@@ -363,7 +362,7 @@ HLVDL2                            00000002
 HLVDL3                            00000003
 I2C_DAT                           00000005
 I2C_READ                          00000002
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE  8
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE  8
 
 
 SYMBOL TABLE
@@ -411,9 +410,8 @@ IRCF0                             00000004
 IRCF1                             00000005
 IRCF2                             00000006
 IRVST                             00000005
-ISR                               0000005A
 IVRST                             00000005
-Inicio                            0000000C
+Inicio                            00000004
 LATA                              00000F89
 LATA0                             00000000
 LATA1                             00000001
@@ -422,13 +420,13 @@ LATA3                             00000003
 LATA4                             00000004
 LATA5                             00000005
 LATA6                             00000006
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE  9
+LATB                              00000F8A
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE  9
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
-LATB                              00000F8A
 LATB0                             00000000
 LATB1                             00000001
 LATB2                             00000002
@@ -470,7 +468,7 @@ LVV0                              00000000
 LVV1                              00000001
 LVV2                              00000002
 LVV3                              00000003
-Menu                              00000026
+Menu                              0000001E
 N                                 00000004
 NOT_A                             00000005
 NOT_ADDRESS                       00000005
@@ -481,17 +479,18 @@ NOT_PD                            00000002
 NOT_POR                           00000001
 NOT_RBPU                          00000007
 NOT_RI                            00000004
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE 10
+NOT_T1SYNC                        00000002
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE 10
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
-NOT_T1SYNC                        00000002
 NOT_T3SYNC                        00000002
 NOT_TO                            00000003
 NOT_W                             00000002
 NOT_WRITE                         00000002
+Negro                             0000001E
 OERR                              00000001
 OESPP                             00000002
 OSC2                              00000006
@@ -540,7 +539,7 @@ PLUSW1                            00000FE3
 PLUSW2                            00000FDB
 POR                               00000001
 PORTA                             00000F80
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE 11
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE 11
 
 
 SYMBOL TABLE
@@ -599,7 +598,7 @@ RC2                               00000002
 RC4                               00000004
 RC5                               00000005
 RC6                               00000006
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE 12
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE 12
 
 
 SYMBOL TABLE
@@ -658,7 +657,7 @@ SPBRG                             00000FAF
 SPBRGH                            00000FB0
 SPEN                              00000007
 SPP0                              00000000
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE 13
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE 13
 
 
 SYMBOL TABLE
@@ -717,7 +716,7 @@ T0CKI                             00000004
 T0CON                             00000FD5
 T0CS                              00000005
 T0IE                              00000005
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE 14
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE 14
 
 
 SYMBOL TABLE
@@ -776,7 +775,7 @@ TMR2                              00000FCC
 TMR2IE                            00000001
 TMR2IF                            00000001
 TMR2IP                            00000001
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE 15
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE 15
 
 
 SYMBOL TABLE
@@ -835,7 +834,7 @@ TRISD7                            00000007
 TRISE                             00000F96
 TRISE0                            00000000
 TRISE1                            00000001
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE 16
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE 16
 
 
 SYMBOL TABLE
@@ -894,7 +893,7 @@ UPUEN                             00000004
 URSTIE                            00000000
 URSTIF                            00000000
 USBEN                             00000003
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE 17
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE 17
 
 
 SYMBOL TABLE
@@ -953,7 +952,7 @@ _CP1_OFF_5L                       000000FF
 _CP1_ON_5L                        000000FD
 _CP2_OFF_5L                       000000FF
 _CP2_ON_5L                        000000FB
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE 18
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE 18
 
 
 SYMBOL TABLE
@@ -1012,7 +1011,7 @@ _IESO_ON_1H                       000000FF
 _LPT1OSC_OFF_3H                   000000FB
 _LPT1OSC_ON_3H                    000000FF
 _LVP_OFF_4L                       000000FB
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE 19
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE 19
 
 
 SYMBOL TABLE
@@ -1071,7 +1070,7 @@ _WRTC_OFF_6H                      000000FF
 _WRTC_ON_6H                       000000DF
 _WRTD_OFF_6H                      000000FF
 _WRTD_ON_6H                       0000007F
-MPASM 5.67                     LAB2FINAL.ASM   5-28-2025  22:22:42         PAGE 20
+MPASM 5.67                     LAB2FINAL.ASM   5-29-2025  15:59:03         PAGE 20
 
 
 SYMBOL TABLE
@@ -1087,18 +1086,18 @@ aux3                              00000002
 
 MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
 
-0000 : XXXX----XXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
-0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXX-------- ----------------
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXX------ ---------------- ----------------
 0000 : XXXX-XX-XXXXXX-- ---------------- ---------------- ----------------
 
 All other memory blocks unused.
 
-Program Memory Bytes Used:   112
-Program Memory Bytes Free: 32656
+Program Memory Bytes Used:   102
+Program Memory Bytes Free: 32666
 
 
 Errors   :     0
-Warnings :     7 reported,     0 suppressed
+Warnings :     6 reported,     0 suppressed
 Messages :     0 reported,     0 suppressed
 
 

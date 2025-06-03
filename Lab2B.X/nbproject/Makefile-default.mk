@@ -92,7 +92,11 @@ ${OBJECTDIR}/Lab2B.o: Lab2B.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Lab2B.o.d 
 	@${RM} ${OBJECTDIR}/Lab2B.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Lab2B.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Lab2B.lst\" -e\"${OBJECTDIR}/Lab2B.err\" $(ASM_OPTIONS)   -o\"${OBJECTDIR}/Lab2B.o\" \"Lab2B.asm\" 
+	@${FIXDEPS} dummy.d -e "C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.asm\" 
+	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.O ${OBJECTDIR}/Lab2B.o
+	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.ERR ${OBJECTDIR}/Lab2B.o.err
+	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.LST ${OBJECTDIR}/Lab2B.o.lst
+	@${RM}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/Lab2B.o"
 	@${FIXDEPS} "${OBJECTDIR}/Lab2B.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -101,7 +105,11 @@ ${OBJECTDIR}/Lab2B.o: Lab2B.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Lab2B.o.d 
 	@${RM} ${OBJECTDIR}/Lab2B.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Lab2B.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Lab2B.lst\" -e\"${OBJECTDIR}/Lab2B.err\" $(ASM_OPTIONS)   -o\"${OBJECTDIR}/Lab2B.o\" \"Lab2B.asm\" 
+	@${FIXDEPS} dummy.d -e "C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.asm\" 
+	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.O ${OBJECTDIR}/Lab2B.o
+	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.ERR ${OBJECTDIR}/Lab2B.o.err
+	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.LST ${OBJECTDIR}/Lab2B.o.lst
+	@${RM}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/Lab2B.o"
 	@${FIXDEPS} "${OBJECTDIR}/Lab2B.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
