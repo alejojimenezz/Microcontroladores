@@ -1,5 +1,5 @@
 MPLINK 5.08, LINKER
-Linker Map File - Created Thu May 29 15:59:04 2025
+Linker Map File - Created Mon Jun 02 22:39:50 2025
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -35,12 +35,11 @@ Linker Map File - Created Thu May 29 15:59:04 2025
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-             AuxRetardo1s   0x00003e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+             AuxRetardo1s   0x000030    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                      ISR   0x00004c    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
                    Inicio   0x000004    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                     Menu   0x00001e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                    Negro   0x00001e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                Retardo1s   0x000032    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                     Rojo   0x000026    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Menu   0x000020    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                Retardo1s   0x000024    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
 
 
 
@@ -48,10 +47,9 @@ Linker Map File - Created Thu May 29 15:59:04 2025
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
                    Inicio   0x000004    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                     Menu   0x00001e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                    Negro   0x00001e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                     Rojo   0x000026    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                Retardo1s   0x000032    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-             AuxRetardo1s   0x00003e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Menu   0x000020    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                Retardo1s   0x000024    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+             AuxRetardo1s   0x000030    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                      ISR   0x00004c    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
 
 

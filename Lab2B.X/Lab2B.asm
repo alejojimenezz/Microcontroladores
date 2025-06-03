@@ -1,75 +1,99 @@
 include P18F4550.inc
+    
 CONFIG FOSC=INTOSC_EC    ;Fosc=1MHz
 CONFIG WDT=OFF
 CONFIG LVP=OFF
 aux1 equ 0h
 aux2 equ 1h
 aux3 equ 2h      ;RB0 Sensor
+ 
 ORG 0h
   goto Inicio
-ORG 8h
-  goto ISR
-Inicio	;RB7 Rojo   RB6 Amarillo  RB5 Verde - Semaforo
-	;RD0 Rojo   RD1 Azul	  RD2you Verde - LED RGB
-  movlw    b'00011111'        ;0b00011111
-  movwf TRISB
-  bcf TRISD,0
-  bcf LATD,0
-  movlw b'00000001'
-  movwf T0CON
-  movlw 0xB
-  movwf TMR0H
-  movlw 0xDC
-  movwf TMR0L
-  bcf INTCON,TMR0IF
-  bsf INTCON,TMR0IE
-  bsf INTCON,GIE
-  bsf T0CON,TMR0ON
-  clrf LATB
+;ORG 8h
+;  goto ISR
+  
+Inicio  ;RD0 Rojo   RD1 Azul	  RD2you Verde - LED RGB
+  
+  movlw b'01100000'
+  movwf OSCCON
+  
+  movlw b'11111000'
+  movwf TRISD
+  ;clrf LATB
+  ;________________________________
+  ;movlw b'00000001'
+  ;movwf T0CON
+  ;movlw 0xB
+  ;movwf TMR0H
+  ;movlw 0xDC
+  ;movwf TMR0L
+  ;bcf INTCON,TMR0IF
+  bcf INTCON,TMR0IE
+  bcf INTCON,GIE
+  bcf PIE1, TMR0IE
+  bcf INTCON,TMR0ON
+  clrf LATD
+  
 Menu
-Verde
-  movlw b'00100000'
-  movwf LATB
-  call RetardoVerde
-Amarillo
-  movlw b'01000000'
-  movwf LATB
-  call RetardoVerde
+Negro
+  movlw b'00000000'
+  movwf LATD
+  call Retardo1s
+;Azul
+;  movlw b'00000100'
+;  movwf LATD
+;  call Retardo1s
+;Cyan
+;  movlw b'00000110'
+;  movwf LATD
+;  call Retardo1s
+;Verde
+;  movlw b'00000010'
+;  movwf LATD
+;  call Retardo1s
+;Amarillo
+;  movlw b'00000101'
+;  movwf LATD
+;  call Retardo1s
+;Blanco
+;  movlw b'00000111'
+;  movwf LATD
+;  call Retardo1s
+;Magenta
+;  movlw b'00000011'
+;  movwf LATD
+;  call Retardo1s
 Rojo
-  movlw b'10000000'
-  movwf LATB
-  call RetardoVerde
-  call RetardoVerde
-RojoAmarillo  
-  movlw b'11000000'
-  movwf LATB
-  call RetardoVerde
+  movlw b'00000001'
+  movwf LATD
+  call Retardo1s
   goto Menu
-RetardoVerde
-  movlw .255
+  
+Retardo1s
+  movlw .254
   movwf aux1
-  movlw .161
+  movlw .155
   movwf aux2
   movlw .2
   movwf aux3
-AuxRetardoVerde
+AuxRetardo1s
   decfsz aux1,f
-  goto AuxRetardoVerde
-  movlw .255
+  goto AuxRetardo1s
+  movlw .254
   movwf aux1
   decfsz aux2,f
-  goto AuxRetardoVerde
-  movlw .161
+  goto AuxRetardo1s
+  movlw .155
   movwf aux2
   decfsz aux3,f
-  goto AuxRetardoVerde
+  goto AuxRetardo1s
   return
-ISR
-  bcf INTCON,TMR0IF
-  movlw 0xB
-  movwf TMR0H
-  movlw 0xDC
-  movwf TMR0L
-  btg LATD,0
-  retfie
+;ISR
+;  bcf INTCON,TMR0IF
+;  movlw 0xB
+;  movwf TMR0H
+;  movlw 0xDC
+;  movwf TMR0L
+;  btg LATD,0
+;  retfie
 end

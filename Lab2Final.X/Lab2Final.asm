@@ -15,6 +15,7 @@ ORG 0h
 Inicio  ;RD0 Rojo   RD1 Azul	  RD2you Verde - LED RGB
   movlw b'11111000'
   movwf TRISD
+  ;clrf LATD
   ;________________________________
   movlw b'00000001'
   movwf T0CON
