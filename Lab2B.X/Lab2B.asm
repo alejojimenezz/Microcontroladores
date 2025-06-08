@@ -14,20 +14,17 @@ ORG 8h
   
 Inicio  ;RD0 Rojo   RD1 Azul	  RD2you Verde - LED RGB
   
-  movlw b'01100000'
-  movwf OSCCON
-  
   movlw b'11111000'
   movwf TRISD
   ;clrf LATB
   ;________________________________
-  ;movlw b'00000001'
-  ;movwf T0CON
-  ;movlw 0xB
-  ;movwf TMR0H
-  ;movlw 0xDC
-  ;movwf TMR0L
-  ;bcf INTCON,TMR0IF
+  movlw b'00000001'
+  movwf T0CON
+  movlw 0xB
+  movwf TMR0H
+  movlw 0xDC
+  movwf TMR0L
+  bcf INTCON,TMR0IF
   bcf INTCON,TMR0IE
   bcf INTCON,GIE
   bcf PIE1, TMR0IE
