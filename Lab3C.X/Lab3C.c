@@ -25,7 +25,7 @@
 #pragma config PBADEN=OFF
 #define _XTAL_FREQ 1000000  //Frecuencia de funcionamiento de reloj - Constante
 
-//Tercera sección
+//Tercera secciï¿½n
 /*
 bit a;		//1 bit
 char b=10;	//8 bits
