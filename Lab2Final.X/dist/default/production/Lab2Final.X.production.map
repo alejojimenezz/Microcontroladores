@@ -1,11 +1,10 @@
 MPLINK 5.08, LINKER
-Linker Map File - Created Thu May 29 15:59:04 2025
+Linker Map File - Created Thu Jun 19 16:05:38 2025
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
-                   .org_0       code   0x000000    program   0x000000
-                   .org_1       code   0x000000    program   0x00005a
+                   .org_0       code   0x000000    program   0x000016
 .config_300000_LAB2FINAL.O    romdata   0x300000    program   0x000001
 .config_300001_LAB2FINAL.O    romdata   0x300001    program   0x000001
 .config_300002_LAB2FINAL.O    romdata   0x300002    program   0x000001
@@ -24,34 +23,42 @@ Linker Map File - Created Thu May 29 15:59:04 2025
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000059      
+                            0x000000    0x000015      
                             0x300000    0x300003      
                             0x300005    0x300006      
                             0x300008    0x30000d      
-            102 out of 33048 program addresses used, program memory utilization is 0%
+            34 out of 33048 program addresses used, program memory utilization is 0%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-             AuxRetardo1s   0x00003e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                   Inicio   0x000004    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                     Menu   0x00001e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                    Negro   0x00001e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                Retardo1s   0x000032    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                     Rojo   0x000026    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                 Amarillo   0x00000a    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Azul   0x000004    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                   Blanco   0x00000c    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Cyan   0x000006    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                   Inicio   0x000000    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                  Magenta   0x00000e    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Menu   0x000002    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                    Negro   0x000002    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Rojo   0x000010    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                    Verde   0x000008    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
 
 
 
                               Symbols - Sorted by Address
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   Inicio   0x000004    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                     Menu   0x00001e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                    Negro   0x00001e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                     Rojo   0x000026    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-                Retardo1s   0x000032    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
-             AuxRetardo1s   0x00003e    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                   Inicio   0x000000    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Menu   0x000002    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                    Negro   0x000002    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Azul   0x000004    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Cyan   0x000006    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                    Verde   0x000008    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                 Amarillo   0x00000a    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                   Blanco   0x00000c    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                  Magenta   0x00000e    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
+                     Rojo   0x000010    program     static D:\UN_Santiago\Microcontroladores\Microcontroladores\Lab2Final.X\Lab2Final.asm
 
 

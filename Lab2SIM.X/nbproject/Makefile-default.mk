@@ -92,11 +92,11 @@ ${OBJECTDIR}/Lab2SiM.o: Lab2SiM.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Lab2SiM.o.d 
 	@${RM} ${OBJECTDIR}/Lab2SiM.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.asm\" 
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.O ${OBJECTDIR}/Lab2SiM.o
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.ERR ${OBJECTDIR}/Lab2SiM.o.err
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.LST ${OBJECTDIR}/Lab2SiM.o.lst
-	@${RM}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.HEX 
+	@${FIXDEPS} dummy.d -e "D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.asm\" 
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.O ${OBJECTDIR}/Lab2SiM.o
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.ERR ${OBJECTDIR}/Lab2SiM.o.err
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.LST ${OBJECTDIR}/Lab2SiM.o.lst
+	@${RM}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/Lab2SiM.o"
 	@${FIXDEPS} "${OBJECTDIR}/Lab2SiM.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -105,11 +105,11 @@ ${OBJECTDIR}/Lab2SiM.o: Lab2SiM.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Lab2SiM.o.d 
 	@${RM} ${OBJECTDIR}/Lab2SiM.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.asm\" 
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.O ${OBJECTDIR}/Lab2SiM.o
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.ERR ${OBJECTDIR}/Lab2SiM.o.err
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.LST ${OBJECTDIR}/Lab2SiM.o.lst
-	@${RM}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2SIM.X/Lab2SiM.HEX 
+	@${FIXDEPS} dummy.d -e "D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.asm\" 
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.O ${OBJECTDIR}/Lab2SiM.o
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.ERR ${OBJECTDIR}/Lab2SiM.o.err
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.LST ${OBJECTDIR}/Lab2SiM.o.lst
+	@${RM}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2SIM.X/Lab2SiM.HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/Lab2SiM.o"
 	@${FIXDEPS} "${OBJECTDIR}/Lab2SiM.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	

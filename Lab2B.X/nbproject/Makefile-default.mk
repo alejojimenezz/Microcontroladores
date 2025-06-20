@@ -84,7 +84,7 @@ endif
 	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/Lab2B.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=18f4550
-MP_LINKER_DEBUG_OPTION= 
+MP_LINKER_DEBUG_OPTION=-r=ROM@0x7DC0:0x7FFF -r=RAM@GPR:0x3F4:0x3FF
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
@@ -92,11 +92,11 @@ ${OBJECTDIR}/Lab2B.o: Lab2B.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Lab2B.o.d 
 	@${RM} ${OBJECTDIR}/Lab2B.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.asm\" 
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.O ${OBJECTDIR}/Lab2B.o
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.ERR ${OBJECTDIR}/Lab2B.o.err
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.LST ${OBJECTDIR}/Lab2B.o.lst
-	@${RM}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.HEX 
+	@${FIXDEPS} dummy.d -e "D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.asm\" 
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.O ${OBJECTDIR}/Lab2B.o
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.ERR ${OBJECTDIR}/Lab2B.o.err
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.LST ${OBJECTDIR}/Lab2B.o.lst
+	@${RM}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/Lab2B.o"
 	@${FIXDEPS} "${OBJECTDIR}/Lab2B.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -105,11 +105,11 @@ ${OBJECTDIR}/Lab2B.o: Lab2B.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Lab2B.o.d 
 	@${RM} ${OBJECTDIR}/Lab2B.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.asm\" 
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.O ${OBJECTDIR}/Lab2B.o
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.ERR ${OBJECTDIR}/Lab2B.o.err
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.LST ${OBJECTDIR}/Lab2B.o.lst
-	@${RM}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2B.X/Lab2B.HEX 
+	@${FIXDEPS} dummy.d -e "D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.asm\" 
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.O ${OBJECTDIR}/Lab2B.o
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.ERR ${OBJECTDIR}/Lab2B.o.err
+	@${MV}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.LST ${OBJECTDIR}/Lab2B.o.lst
+	@${RM}  D:/UN_Santiago/Microcontroladores/Microcontroladores/Lab2B.X/Lab2B.HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/Lab2B.o"
 	@${FIXDEPS} "${OBJECTDIR}/Lab2B.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -120,7 +120,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/Lab2B.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_SIMULATOR=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/Lab2B.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_PK3=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/Lab2B.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/Lab2B.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 

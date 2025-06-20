@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Lab3.asm
+SOURCEFILES_QUOTED_IF_SPACED=Lab3.asm Lab3.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Lab3.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Lab3.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Lab3.o ${OBJECTDIR}/Lab3.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Lab3.o.d ${OBJECTDIR}/Lab3.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Lab3.o
+OBJECTFILES=${OBJECTDIR}/Lab3.o ${OBJECTDIR}/Lab3.o
 
 # Source Files
-SOURCEFILES=Lab3.asm
+SOURCEFILES=Lab3.asm Lab3.c
 
 
 CFLAGS=
@@ -92,11 +92,7 @@ ${OBJECTDIR}/Lab3.o: Lab3.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Lab3.o.d 
 	@${RM} ${OBJECTDIR}/Lab3.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.asm\" 
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.O ${OBJECTDIR}/Lab3.o
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.ERR ${OBJECTDIR}/Lab3.o.err
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.LST ${OBJECTDIR}/Lab3.o.lst
-	@${RM}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.HEX 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Lab3.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Lab3.lst\" -e\"${OBJECTDIR}/Lab3.err\" $(ASM_OPTIONS)   -o\"${OBJECTDIR}/Lab3.o\" \"Lab3.asm\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/Lab3.o"
 	@${FIXDEPS} "${OBJECTDIR}/Lab3.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -105,11 +101,7 @@ ${OBJECTDIR}/Lab3.o: Lab3.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Lab3.o.d 
 	@${RM} ${OBJECTDIR}/Lab3.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.asm\" 
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.O ${OBJECTDIR}/Lab3.o
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.ERR ${OBJECTDIR}/Lab3.o.err
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.LST ${OBJECTDIR}/Lab3.o.lst
-	@${RM}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab3.X/Lab3.HEX 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Lab3.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Lab3.lst\" -e\"${OBJECTDIR}/Lab3.err\" $(ASM_OPTIONS)   -o\"${OBJECTDIR}/Lab3.o\" \"Lab3.asm\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/Lab3.o"
 	@${FIXDEPS} "${OBJECTDIR}/Lab3.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -120,11 +112,11 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/Lab3.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_SIMULATOR=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/Lab3.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -u_CRUNTIME -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_SIMULATOR=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/Lab3.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/Lab3.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w  -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -odist/${CND_CONF}/${IMAGE_TYPE}/Lab3.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w  -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -u_CRUNTIME -odist/${CND_CONF}/${IMAGE_TYPE}/Lab3.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 endif
 
 

@@ -19,6 +19,7 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
     <itemPath>Lab3.asm</itemPath>
+    <itemPath>Lab3.c</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
