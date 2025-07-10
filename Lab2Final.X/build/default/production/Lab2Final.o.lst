@@ -1,4 +1,4 @@
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE  1
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -48,7 +48,7 @@ Warning[205]: Found directive in column 1. (CONFIG)
                       00028   
 Warning[205]: Found directive in column 1. (end)
                       00029 end
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE  2
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE  2
 
 
 SYMBOL TABLE
@@ -107,7 +107,7 @@ BGST                              00000005
 BOR                               00000000
 BRG16                             00000003
 BRGH                              00000002
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE  3
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE  3
 
 
 SYMBOL TABLE
@@ -166,7 +166,7 @@ CLKCFG1                           00000007
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE  4
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE  4
 
 
 SYMBOL TABLE
@@ -225,7 +225,7 @@ EECON2                            00000FA7
 EEDATA                            00000FA8
 EEIE                              00000004
 EEIF                              00000004
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE  5
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE  5
 
 
 SYMBOL TABLE
@@ -284,7 +284,7 @@ HLVDIP                            00000002
 HLVDL0                            00000000
 HLVDL1                            00000001
 HLVDL2                            00000002
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE  6
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE  6
 
 
 SYMBOL TABLE
@@ -343,7 +343,7 @@ LATA1                             00000001
 LATA2                             00000002
 LATA3                             00000003
 LATA4                             00000004
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE  7
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE  7
 
 
 SYMBOL TABLE
@@ -402,7 +402,7 @@ NOT_BOR                           00000000
 NOT_DONE                          00000001
 NOT_IPEN                          00000007
 NOT_PD                            00000002
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE  8
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE  8
 
 
 SYMBOL TABLE
@@ -461,7 +461,7 @@ PIR1                              00000F9E
 PIR2                              00000FA1
 PKTDIS                            00000004
 PLUSW0                            00000FEB
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE  9
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE  9
 
 
 SYMBOL TABLE
@@ -520,7 +520,7 @@ RBIP                              00000000
 RBPU                              00000007
 RC0                               00000000
 RC1                               00000001
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE 10
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE 10
 
 
 SYMBOL TABLE
@@ -579,7 +579,7 @@ SMP                               00000007
 SOFIE                             00000006
 SOFIF                             00000006
 SPBRG                             00000FAF
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE 11
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE 11
 
 
 SYMBOL TABLE
@@ -638,7 +638,7 @@ SWDTEN                            00000000
 SYNC                              00000004
 T08BIT                            00000006
 T0CKI                             00000004
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE 12
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE 12
 
 
 SYMBOL TABLE
@@ -697,7 +697,7 @@ TMR1IP                            00000000
 TMR1L                             00000FCE
 TMR1ON                            00000000
 TMR2                              00000FCC
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE 13
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE 13
 
 
 SYMBOL TABLE
@@ -756,7 +756,7 @@ TRISD4                            00000004
 TRISD5                            00000005
 TRISD6                            00000006
 TRISD7                            00000007
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE 14
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE 14
 
 
 SYMBOL TABLE
@@ -815,7 +815,7 @@ UIE                               00000F69
 UIR                               00000F68
 UOEMON                            00000006
 UPUEN                             00000004
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE 15
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE 15
 
 
 SYMBOL TABLE
@@ -874,7 +874,7 @@ _CONFIG7H                         0030000D
 _CONFIG7L                         0030000C
 _CP0_OFF_5L                       000000FF
 _CP0_ON_5L                        000000FE
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE 16
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE 16
 
 
 SYMBOL TABLE
@@ -933,7 +933,7 @@ _IDLOC5                           00200005
 _IDLOC6                           00200006
 _IDLOC7                           00200007
 _IESO_OFF_1H                      0000007F
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE 17
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE 17
 
 
 SYMBOL TABLE
@@ -992,7 +992,7 @@ _WRT3_OFF_6L                      000000FF
 _WRT3_ON_6L                       000000F7
 _WRTB_OFF_6H                      000000FF
 _WRTB_ON_6H                       000000BF
-MPASM 5.67                     LAB2FINAL.ASM   6-19-2025  16:05:33         PAGE 18
+MPASM 5.67                     LAB2FINAL.ASM   7-9-2025  23:27:00         PAGE 18
 
 
 SYMBOL TABLE
