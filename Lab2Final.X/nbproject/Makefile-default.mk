@@ -92,11 +92,11 @@ ${OBJECTDIR}/Lab2Final.o: Lab2Final.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Lab2Final.o.d 
 	@${RM} ${OBJECTDIR}/Lab2Final.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.asm\" 
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.O ${OBJECTDIR}/Lab2Final.o
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.ERR ${OBJECTDIR}/Lab2Final.o.err
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.LST ${OBJECTDIR}/Lab2Final.o.lst
-	@${RM}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.HEX 
+	@${FIXDEPS} dummy.d -e "C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.asm\" 
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.O ${OBJECTDIR}/Lab2Final.o
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.ERR ${OBJECTDIR}/Lab2Final.o.err
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.LST ${OBJECTDIR}/Lab2Final.o.lst
+	@${RM}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/Lab2Final.o"
 	@${FIXDEPS} "${OBJECTDIR}/Lab2Final.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -105,11 +105,11 @@ ${OBJECTDIR}/Lab2Final.o: Lab2Final.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Lab2Final.o.d 
 	@${RM} ${OBJECTDIR}/Lab2Final.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.asm\" 
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.O ${OBJECTDIR}/Lab2Final.o
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.ERR ${OBJECTDIR}/Lab2Final.o.err
-	@${MV}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.LST ${OBJECTDIR}/Lab2Final.o.lst
-	@${RM}  C:/Users/ThinkPad/MPLABXProjects/Microcontroladores/Lab2Final.X/Lab2Final.HEX 
+	@${FIXDEPS} dummy.d -e "C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.asm\" 
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.O ${OBJECTDIR}/Lab2Final.o
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.ERR ${OBJECTDIR}/Lab2Final.o.err
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.LST ${OBJECTDIR}/Lab2Final.o.lst
+	@${RM}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2Final.X/Lab2Final.HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/Lab2Final.o"
 	@${FIXDEPS} "${OBJECTDIR}/Lab2Final.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	

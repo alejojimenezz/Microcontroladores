@@ -5,25 +5,25 @@ CONFIG FOSC=EC_EC
 CONFIG WDT=OFF
   
 Inicio  ;RD0 Rojo RD1 Azul  RD2 Verde - LED RGB
-  clrf TRISD
+  clrf TRISE
   
 Menu
 Negro
-  clrf LATD
+  clrf LATE
 Azul
-  bsf LATD,2
+  bsf LATE,2
 Cyan
-  bsf LATD,1
+  bsf LATE,1
 Verde
-  bcf LATD,2
+  bcf LATE,2
 Amarillo
-  bsf LATD,0
+  bsf LATE,0
 Blanco
-  bsf LATD,2
+  bsf LATE,2
 Magenta
-  bcf LATD,1
+  bcf LATE,1
 Rojo
-  bcf LATD,2
+  bcf LATE,2
   goto Menu
   
 end

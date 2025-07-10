@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Lab2.asm
+SOURCEFILES_QUOTED_IF_SPACED=Lab2B3.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Lab2.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Lab2.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Lab2B3.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Lab2B3.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Lab2.o
+OBJECTFILES=${OBJECTDIR}/Lab2B3.o
 
 # Source Files
-SOURCEFILES=Lab2.asm
+SOURCEFILES=Lab2B3.asm
 
 
 CFLAGS=
@@ -84,34 +84,34 @@ endif
 	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/Lab2B3.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=18f4550
-MP_LINKER_DEBUG_OPTION= 
+MP_LINKER_DEBUG_OPTION=-r=ROM@0x7DC0:0x7FFF -r=RAM@GPR:0x3F4:0x3FF
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/Lab2.o: Lab2.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Lab2B3.o: Lab2B3.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Lab2.o.d 
-	@${RM} ${OBJECTDIR}/Lab2.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.asm\" 
-	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.O ${OBJECTDIR}/Lab2.o
-	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.ERR ${OBJECTDIR}/Lab2.o.err
-	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.LST ${OBJECTDIR}/Lab2.o.lst
-	@${RM}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.HEX 
-	@${DEP_GEN} -d "${OBJECTDIR}/Lab2.o"
-	@${FIXDEPS} "${OBJECTDIR}/Lab2.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/Lab2B3.o.d 
+	@${RM} ${OBJECTDIR}/Lab2B3.o 
+	@${FIXDEPS} dummy.d -e "C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.asm\" 
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.O ${OBJECTDIR}/Lab2B3.o
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.ERR ${OBJECTDIR}/Lab2B3.o.err
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.LST ${OBJECTDIR}/Lab2B3.o.lst
+	@${RM}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.HEX 
+	@${DEP_GEN} -d "${OBJECTDIR}/Lab2B3.o"
+	@${FIXDEPS} "${OBJECTDIR}/Lab2B3.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 else
-${OBJECTDIR}/Lab2.o: Lab2.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Lab2B3.o: Lab2B3.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Lab2.o.d 
-	@${RM} ${OBJECTDIR}/Lab2.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.asm\" 
-	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.O ${OBJECTDIR}/Lab2.o
-	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.ERR ${OBJECTDIR}/Lab2.o.err
-	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.LST ${OBJECTDIR}/Lab2.o.lst
-	@${RM}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2.HEX 
-	@${DEP_GEN} -d "${OBJECTDIR}/Lab2.o"
-	@${FIXDEPS} "${OBJECTDIR}/Lab2.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/Lab2B3.o.d 
+	@${RM} ${OBJECTDIR}/Lab2B3.o 
+	@${FIXDEPS} dummy.d -e "C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.asm\" 
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.O ${OBJECTDIR}/Lab2B3.o
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.ERR ${OBJECTDIR}/Lab2B3.o.err
+	@${MV}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.LST ${OBJECTDIR}/Lab2B3.o.lst
+	@${RM}  C:/Users/Pc/Documents/TeoriaMicro/Microcontroladores/Lab2B3.X/Lab2B3.HEX 
+	@${DEP_GEN} -d "${OBJECTDIR}/Lab2B3.o"
+	@${FIXDEPS} "${OBJECTDIR}/Lab2B3.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 
@@ -120,7 +120,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/Lab2B3.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_SIMULATOR=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/Lab2B3.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_PK3=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/Lab2B3.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/Lab2B3.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
