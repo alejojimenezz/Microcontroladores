@@ -21,9 +21,9 @@
 
 // Pines de salida
 #define LED_HEARTBEAT RC0
-#define LED_R         RC1
-#define LED_G         RC2
-#define LED_B         RC3
+#define LED_R         RE0
+#define LED_G         RE1
+#define LED_B         RE2
 
 // Variables
 unsigned char contador = 0;
@@ -31,7 +31,8 @@ unsigned char color_estado = 0;
 bit sistema_bloqueado = 0;
 
 // Tabla del display de 7 segmentos (común cátodo)
-const char display_7seg[10] = {
+//const char display_7seg[10] = {
+    /*
     0b00111111, // 0
     0b00000110, // 1
     0b01011011, // 2
@@ -42,11 +43,14 @@ const char display_7seg[10] = {
     0b00000111, // 7
     0b01111111, // 8
     0b01101111  // 9
-};
+    */
+//};
 
 // Función para mostrar un número en el display
 void mostrarDisplay(unsigned char numero) {
-    PORTD = display_7seg[numero];
+    //PORTD = display_7seg[numero];
+    //PORTD = (PORTD & 0xF0) | (numero & 0x0F);
+    PORTD = numero
 }
 
 // Función para establecer el color del LED RGB
@@ -73,9 +77,9 @@ void setRGBColor(unsigned char color) {
 
 // Inicialización de puertos
 void init() {
-    TRISD = 0x00;
-    TRISC = 0xF0;
-    TRISB = 0xFF;
+    TRISD = 0x00;  //Salida  - 7seg
+    TRISE = 0xF0;  //Salida  - LED
+    TRISB = 0xFF;  //Entrada - Botones
     PORTD = 0;
     PORTC = 0;
     
