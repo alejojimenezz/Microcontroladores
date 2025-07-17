@@ -33,9 +33,11 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"16 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab4C.X\Lab4C.c
+"17 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab4C.X\Lab4C.c
+[v _obtenerNumero obtenerNumero `(uc  1 e 1 0 ]
+"39
 [v _main main `(v  1 e 1 0 ]
-"176
+"269
 [v _ISR ISR `II(v  1 e 1 0 ]
 "55 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab4C.X\LibLCDXC8.h
 [v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
@@ -95,14 +97,24 @@
 [v _Tecla Tecla `uc  1 e 1 0 ]
 "11
 [v _piezasAContar piezasAContar `uc  1 e 1 0 ]
+"12
+[v _regresiva regresiva `uc  1 e 1 0 ]
 "35 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab4C.X\LibLCDXC8.h
 [v _interfaz interfaz `uc  1 e 1 0 ]
-"16 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab4C.X\Lab4C.c
+"39 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab4C.X\Lab4C.c
 [v _main main `(v  1 e 1 0 ]
 {
-"79
-[v main@numero numero `uc  1 a 1 18 ]
-"150
+"102
+[v main@Numero Numero `uc  1 a 1 16 ]
+"243
+} 0
+"17
+[v _obtenerNumero obtenerNumero `(uc  1 e 1 0 ]
+{
+[v obtenerNumero@tecla tecla `uc  1 p 1 wreg ]
+[v obtenerNumero@tecla tecla `uc  1 p 1 wreg ]
+[v obtenerNumero@tecla tecla `uc  1 p 1 1 ]
+"37
 } 0
 "71 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab4C.X\LibLCDXC8.h
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
@@ -206,8 +218,8 @@
 [v ConfiguraLCD@a a `uc  1 p 1 1 ]
 "58
 } 0
-"176 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab4C.X\Lab4C.c
+"269 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores\Lab4C.X\Lab4C.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"216
+"309
 } 0
