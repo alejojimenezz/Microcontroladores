@@ -298,7 +298,7 @@ cstackCOMRAM 1 16 COMRAM 1 1
 text0 802 10D2 CODE 802 0
 %locals
 dist/default/production\Lab4C.X.production.obj
-C:\Users\ThinkPad\AppData\Local\Temp\xcAsi0g.\driver_tmp_1.as
+C:\Users\ThinkPad\AppData\Local\Temp\xcAsdk8.\driver_tmp_1.as
 540 1046 0 CODE 0
 542 1046 0 CODE 0
 545 1046 0 CODE 0
@@ -679,7 +679,7 @@ LibLCDXC8.h
 56 106E 0 CODE 0
 57 107E 0 CODE 0
 58 1082 0 CODE 0
-C:\Users\ThinkPad\AppData\Local\Temp\xcAsi0g.\driver_tmp_1.as
+C:\Users\ThinkPad\AppData\Local\Temp\xcAsdk8.\driver_tmp_1.as
 3840 8 0 CODE 0
 Lab4C.c
 269 8 0 CODE 0

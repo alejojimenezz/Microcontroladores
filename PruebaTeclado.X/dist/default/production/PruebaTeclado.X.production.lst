@@ -1,29 +1,29 @@
 
 
-Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Tue Nov 23 15:50:57 2021
+Microchip MPLAB XC8 Assembler V2.50 build 20240725155939 
+                                                                                               Thu Jul 17 12:34:37 2025
 
-Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9 
+Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og9 
      1                           	processor	18F4550
      2                           	fnconf	rparam,??,?,0
      3                           	pagewidth 120
      4                           	opt	flic
-     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     5                           	psect	cinit,global,reloc=2,class=CODE,space=0,delta=1
      6                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
      7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
-     8                           	psect	text0,global,reloc=2,class=CODE,delta=1
-     9                           	psect	intcode,global,reloc=2,class=CODE,delta=1
-    10                           	psect	intcode_body,global,reloc=2,class=CODE,delta=1
-    11                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
-    12                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
-    13                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1
-    14                           	psect	idloc,global,abs,ovrld,class=IDLOC,space=5,delta=1,noexec
-    15                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=1,noexec
-    16  0000                     
-    17                           ; Version 2.32
-    18                           ; Generated 02/02/2021 GMT
+     8                           	psect	text0,global,reloc=2,class=CODE,space=0,delta=1
+     9                           	psect	intcode,global,reloc=2,class=CODE,space=0,delta=1
+    10                           	psect	intcode_body,global,reloc=2,class=CODE,space=0,delta=1
+    11                           	psect	smallconst,global,reloc=2,class=SMALLCONST,space=0,delta=1,noexec
+    12                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    13                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    14                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1,lowdata
+    15                           	psect	idloc,global,abs,ovrld,class=IDLOC,space=5,delta=1,noexec
+    16                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=1,noexec
+    17   000000                     
+    18                           ; Generated 25/07/2024 GMT
     19                           ; 
-    20                           ; Copyright © 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    20                           ; Copyright © 2024, Microchip Technology Inc. and its subsidiaries ("Microchip")
     21                           ; All rights reserved.
     22                           ; 
     23                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
@@ -63,665 +63,881 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og9
     49                           ; Code-generator required, PIC18F4550 Definitions
     50                           ; 
     51                           ; SFR Addresses
-    52  0000                     _TMR0	set	4054
-    53  0000                     _PORTB	set	3969
-    54  0000                     _LATD	set	3980
-    55  0000                     _LATB	set	3978
-    56  0000                     _TRISD	set	3989
-    57  0000                     _TRISB	set	3987
-    58  0000                     _LATD1	set	31841
-    59  0000                     _TMR0IF	set	32658
-    60  0000                     _RB7	set	31759
-    61  0000                     _RB6	set	31758
-    62  0000                     _RB5	set	31757
-    63  0000                     _RB4	set	31756
-    64  0000                     _LATD0	set	31840
-    65  0000                     _GIE	set	32663
-    66  0000                     _RBIE	set	32659
-    67  0000                     _RBIF	set	32656
-    68  0000                     _RBPU	set	32655
-    69                           
-    70                           ; #config settings
-    71                           
-    72                           	psect	cinit
-    73  000144                     __pcinit:
-    74                           	callstack 0
-    75  000144                     start_initialization:
-    76                           	callstack 0
-    77  000144                     __initialization:
-    78                           	callstack 0
-    79                           
-    80                           ; Clear objects allocated to COMRAM (1 bytes)
-    81  000144  6A04               	clrf	__pbssCOMRAM& (0+255),c
-    82  000146                     end_of_initialization:
-    83                           	callstack 0
-    84  000146                     __end_of__initialization:
-    85                           	callstack 0
-    86  000146  9005               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
-    87  000148  9205               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
-    88  00014A  0100               	movlb	0
-    89  00014C  EF73  F000         	goto	_main	;jump to C main() function
-    90                           
-    91                           	psect	bssCOMRAM
-    92  000004                     __pbssCOMRAM:
-    93                           	callstack 0
-    94  000004                     _Tecla:
-    95                           	callstack 0
-    96  000004                     	ds	1
-    97                           
-    98                           	psect	cstackCOMRAM
-    99  000001                     __pcstackCOMRAM:
-   100                           	callstack 0
-   101  000001                     ??_ISR:
-   102                           
-   103                           ; 1 bytes @ 0x0
-   104  000001                     	ds	1
-   105  000002                     ??_main:
-   106                           
-   107                           ; 1 bytes @ 0x1
-   108  000002                     	ds	1
-   109  000003                     main@i:
-   110                           	callstack 0
-   111                           
-   112                           ; 1 bytes @ 0x2
-   113  000003                     	ds	1
-   114                           
-   115 ;;
-   116 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
-   117 ;;
-   118 ;; *************** function _main *****************
-   119 ;; Defined at:
-   120 ;;		line 14 in file "PruebaTeclado.c"
-   121 ;; Parameters:    Size  Location     Type
-   122 ;;		None
-   123 ;; Auto vars:     Size  Location     Type
-   124 ;;  i               1    2[COMRAM] unsigned char 
-   125 ;; Return value:  Size  Location     Type
-   126 ;;                  1    wreg      void 
-   127 ;; Registers used:
-   128 ;;		wreg, status,2, status,0
-   129 ;; Tracked objects:
-   130 ;;		On entry : 0/0
-   131 ;;		On exit  : 0/0
-   132 ;;		Unchanged: 0/0
-   133 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   134 ;;      Params:         0       0       0       0       0       0       0       0       0
-   135 ;;      Locals:         1       0       0       0       0       0       0       0       0
-   136 ;;      Temps:          1       0       0       0       0       0       0       0       0
-   137 ;;      Totals:         2       0       0       0       0       0       0       0       0
-   138 ;;Total ram usage:        2 bytes
-   139 ;; Hardware stack levels required when called: 1
-   140 ;; This function calls:
-   141 ;;		Nothing
-   142 ;; This function is called by:
-   143 ;;		Startup code after reset
-   144 ;; This function uses a non-reentrant model
-   145 ;;
-   146                           
-   147                           	psect	text0
-   148  0000E6                     __ptext0:
-   149                           	callstack 0
-   150  0000E6                     _main:
-   151                           	callstack 30
-   152                           
-   153                           ;PruebaTeclado.c: 15: unsigned char i;;PruebaTeclado.c: 16: TRISB=0b11110000;
-   154                           
-   155                           ;incstack = 0
-   156  0000E6  0EF0               	movlw	240
-   157  0000E8  6E93               	movwf	147,c	;volatile
-   158                           
-   159                           ;PruebaTeclado.c: 17: TRISD=0;
-   160  0000EA  0E00               	movlw	0
-   161  0000EC  6E95               	movwf	149,c	;volatile
-   162                           
-   163                           ;PruebaTeclado.c: 18: LATB=0b00000000;
-   164  0000EE  0E00               	movlw	0
-   165  0000F0  6E8A               	movwf	138,c	;volatile
-   166                           
-   167                           ;PruebaTeclado.c: 19: LATD=0;
-   168  0000F2  0E00               	movlw	0
-   169  0000F4  6E8C               	movwf	140,c	;volatile
-   170                           
-   171                           ;PruebaTeclado.c: 20: RBPU=0;
-   172  0000F6  9EF1               	bcf	4081,7,c	;volatile
-   173                           
-   174                           ;PruebaTeclado.c: 21: _delay((unsigned long)((100)*(1000000/4000.0)));
-   175  0000F8  0E21               	movlw	33
-   176  0000FA  6E02               	movwf	??_main^0,c
-   177  0000FC  0E76               	movlw	118
-   178  0000FE                     u237:
-   179  0000FE  2EE8               	decfsz	wreg,f,c
-   180  000100  D7FE               	bra	u237
-   181  000102  2E02               	decfsz	??_main^0,f,c
-   182  000104  D7FC               	bra	u237
-   183  000106  D000               	nop2	
-   184                           
-   185                           ;PruebaTeclado.c: 27: RBIF=0;
-   186  000108  90F2               	bcf	4082,0,c	;volatile
-   187                           
-   188                           ;PruebaTeclado.c: 28: RBIE=1;
-   189  00010A  86F2               	bsf	4082,3,c	;volatile
-   190                           
-   191                           ;PruebaTeclado.c: 29: GIE=1;
-   192  00010C  8EF2               	bsf	4082,7,c	;volatile
-   193  00010E                     l872:
-   194                           
-   195                           ;PruebaTeclado.c: 62: for(i=0;i<Tecla;i++){
-   196  00010E  0E00               	movlw	0
-   197  000110  6E03               	movwf	main@i^0,c
-   198  000112  D011               	goto	l44
-   199  000114                     l45:
-   200                           
-   201                           ;PruebaTeclado.c: 63: LATD0=1;
-   202  000114  808C               	bsf	3980,0,c	;volatile
-   203                           
-   204                           ;PruebaTeclado.c: 64: _delay((unsigned long)((400)*(1000000/4000.0)));
-   205  000116  0E82               	movlw	130
-   206  000118  6E02               	movwf	??_main^0,c
-   207  00011A  0EDE               	movlw	222
-   208  00011C                     u247:
-   209  00011C  2EE8               	decfsz	wreg,f,c
-   210  00011E  D7FE               	bra	u247
-   211  000120  2E02               	decfsz	??_main^0,f,c
-   212  000122  D7FC               	bra	u247
-   213                           
-   214                           ;PruebaTeclado.c: 65: LATD0=0;
-   215  000124  908C               	bcf	3980,0,c	;volatile
-   216                           
-   217                           ;PruebaTeclado.c: 66: _delay((unsigned long)((400)*(1000000/4000.0)));
-   218  000126  0E82               	movlw	130
-   219  000128  6E02               	movwf	??_main^0,c
-   220  00012A  0EDE               	movlw	222
-   221  00012C                     u257:
-   222  00012C  2EE8               	decfsz	wreg,f,c
-   223  00012E  D7FE               	bra	u257
-   224  000130  2E02               	decfsz	??_main^0,f,c
-   225  000132  D7FC               	bra	u257
-   226  000134  2A03               	incf	main@i^0,f,c
-   227  000136                     l44:
-   228  000136  5004               	movf	_Tecla^0,w,c
-   229  000138  5C03               	subwf	main@i^0,w,c
-   230  00013A  A0D8               	btfss	status,0,c
-   231  00013C  D7EB               	goto	l45
-   232                           
-   233                           ;PruebaTeclado.c: 67: };PruebaTeclado.c: 68: Tecla=0;
-   234  00013E  0E00               	movlw	0
-   235  000140  6E04               	movwf	_Tecla^0,c
-   236  000142  D7E5               	goto	l872
-   237  000144                     __end_of_main:
-   238                           	callstack 0
-   239                           
-   240 ;; *************** function _ISR *****************
-   241 ;; Defined at:
-   242 ;;		line 95 in file "PruebaTeclado.c"
-   243 ;; Parameters:    Size  Location     Type
-   244 ;;		None
-   245 ;; Auto vars:     Size  Location     Type
-   246 ;;		None
-   247 ;; Return value:  Size  Location     Type
-   248 ;;                  1    wreg      void 
-   249 ;; Registers used:
-   250 ;;		wreg, status,2, status,0
-   251 ;; Tracked objects:
-   252 ;;		On entry : 0/0
-   253 ;;		On exit  : 0/0
-   254 ;;		Unchanged: 0/0
-   255 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   256 ;;      Params:         0       0       0       0       0       0       0       0       0
-   257 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   258 ;;      Temps:          1       0       0       0       0       0       0       0       0
-   259 ;;      Totals:         1       0       0       0       0       0       0       0       0
-   260 ;;Total ram usage:        1 bytes
-   261 ;; Hardware stack levels used: 1
-   262 ;; This function calls:
-   263 ;;		Nothing
-   264 ;; This function is called by:
-   265 ;;		Interrupt level 2
-   266 ;; This function uses a non-reentrant model
-   267 ;;
-   268                           
-   269                           	psect	intcode
-   270  000008                     __pintcode:
-   271                           	callstack 0
-   272  000008                     _ISR:
-   273                           	callstack 30
-   274                           
-   275                           ;incstack = 0
-   276  000008  8205               	bsf	btemp,1,c	;set compiler interrupt flag (level 2)
-   277  00000A  ED09  F000         	call	int_func,f	;refresh shadow registers
-   278                           
-   279                           	psect	intcode_body
-   280  000012                     __pintcode_body:
-   281                           	callstack 30
-   282  000012                     int_func:
-   283                           	callstack 30
-   284  000012  0006               	pop		; remove dummy address from shadow register refresh
-   285                           
-   286                           ;PruebaTeclado.c: 96: if(RBIF==1){
-   287  000014  A0F2               	btfss	4082,0,c	;volatile
-   288  000016  D059               	goto	i2l938
-   289                           
-   290                           ;PruebaTeclado.c: 97: if(PORTB!=0b11110000){
-   291  000018  0EF0               	movlw	240
-   292  00001A  1881               	xorwf	129,w,c	;volatile
-   293  00001C  B4D8               	btfsc	status,2,c
-   294  00001E  D04C               	goto	i2l934
-   295                           
-   296                           ;PruebaTeclado.c: 98: Tecla=0;
-   297  000020  0E00               	movlw	0
-   298  000022  6E04               	movwf	_Tecla^0,c
-   299                           
-   300                           ;PruebaTeclado.c: 99: LATB=0b11111110;
-   301  000024  0EFE               	movlw	254
-   302  000026  6E8A               	movwf	138,c	;volatile
-   303                           
-   304                           ;PruebaTeclado.c: 100: if(RB4==0) Tecla=1;
-   305  000028  B881               	btfsc	3969,4,c	;volatile
-   306  00002A  D002               	goto	i2l80
-   307  00002C  0E01               	movlw	1
-   308  00002E  D041               	goto	L15
-   309  000030                     i2l80:
-   310                           
-   311                           ;PruebaTeclado.c: 101: else if(RB5==0) Tecla=2;
-   312  000030  BA81               	btfsc	3969,5,c	;volatile
-   313  000032  D002               	goto	i2l82
-   314  000034  0E02               	movlw	2
-   315  000036  D03D               	goto	L15
-   316  000038                     i2l82:
+    52   000FE0                     bsr             equ	4064
+    53   000FE9                     fsr0            equ	4073
+    54   000FEA                     fsr0h           equ	4074
+    55   000FE9                     fsr0l           equ	4073
+    56   000FE1                     fsr1            equ	4065
+    57   000FE2                     fsr1h           equ	4066
+    58   000FE1                     fsr1l           equ	4065
+    59   000FD9                     fsr2            equ	4057
+    60   000FDA                     fsr2h           equ	4058
+    61   000FD9                     fsr2l           equ	4057
+    62   000FEF                     indf0           equ	4079
+    63   000FE7                     indf1           equ	4071
+    64   000FDF                     indf2           equ	4063
+    65   000FF2                     intcon          equ	4082
+    66   000000                     nvmcon          equ	0
+    67   000FF9                     pcl             equ	4089
+    68   000FFA                     pclath          equ	4090
+    69   000FFB                     pclatu          equ	4091
+    70   000FEB                     plusw0          equ	4075
+    71   000FE3                     plusw1          equ	4067
+    72   000FDB                     plusw2          equ	4059
+    73   000FED                     postdec0        equ	4077
+    74   000FE5                     postdec1        equ	4069
+    75   000FDD                     postdec2        equ	4061
+    76   000FEE                     postinc0        equ	4078
+    77   000FE6                     postinc1        equ	4070
+    78   000FDE                     postinc2        equ	4062
+    79   000FEC                     preinc0         equ	4076
+    80   000FE4                     preinc1         equ	4068
+    81   000FDC                     preinc2         equ	4060
+    82   000FF3                     prod            equ	4083
+    83   000FF4                     prodh           equ	4084
+    84   000FF3                     prodl           equ	4083
+    85   000FD8                     status          equ	4056
+    86   000FF5                     tablat          equ	4085
+    87   000FF6                     tblptr          equ	4086
+    88   000FF7                     tblptrh         equ	4087
+    89   000FF6                     tblptrl         equ	4086
+    90   000FF8                     tblptru         equ	4088
+    91   000FFD                     tosl            equ	4093
+    92   000FE8                     wreg            equ	4072
+    93   000F62                     SPPDATA         equ	3938	;# 
+    94   000F63                     SPPCFG          equ	3939	;# 
+    95   000F64                     SPPEPS          equ	3940	;# 
+    96   000F65                     SPPCON          equ	3941	;# 
+    97   000F66                     UFRM            equ	3942	;# 
+    98   000F66                     UFRML           equ	3942	;# 
+    99   000F67                     UFRMH           equ	3943	;# 
+   100   000F68                     UIR             equ	3944	;# 
+   101   000F69                     UIE             equ	3945	;# 
+   102   000F6A                     UEIR            equ	3946	;# 
+   103   000F6B                     UEIE            equ	3947	;# 
+   104   000F6C                     USTAT           equ	3948	;# 
+   105   000F6D                     UCON            equ	3949	;# 
+   106   000F6E                     UADDR           equ	3950	;# 
+   107   000F6F                     UCFG            equ	3951	;# 
+   108   000F70                     UEP0            equ	3952	;# 
+   109   000F71                     UEP1            equ	3953	;# 
+   110   000F72                     UEP2            equ	3954	;# 
+   111   000F73                     UEP3            equ	3955	;# 
+   112   000F74                     UEP4            equ	3956	;# 
+   113   000F75                     UEP5            equ	3957	;# 
+   114   000F76                     UEP6            equ	3958	;# 
+   115   000F77                     UEP7            equ	3959	;# 
+   116   000F78                     UEP8            equ	3960	;# 
+   117   000F79                     UEP9            equ	3961	;# 
+   118   000F7A                     UEP10           equ	3962	;# 
+   119   000F7B                     UEP11           equ	3963	;# 
+   120   000F7C                     UEP12           equ	3964	;# 
+   121   000F7D                     UEP13           equ	3965	;# 
+   122   000F7E                     UEP14           equ	3966	;# 
+   123   000F7F                     UEP15           equ	3967	;# 
+   124   000F80                     PORTA           equ	3968	;# 
+   125   000F81                     PORTB           equ	3969	;# 
+   126   000F82                     PORTC           equ	3970	;# 
+   127   000F83                     PORTD           equ	3971	;# 
+   128   000F84                     PORTE           equ	3972	;# 
+   129   000F89                     LATA            equ	3977	;# 
+   130   000F8A                     LATB            equ	3978	;# 
+   131   000F8B                     LATC            equ	3979	;# 
+   132   000F8C                     LATD            equ	3980	;# 
+   133   000F8D                     LATE            equ	3981	;# 
+   134   000F92                     TRISA           equ	3986	;# 
+   135   000F92                     DDRA            equ	3986	;# 
+   136   000F93                     TRISB           equ	3987	;# 
+   137   000F93                     DDRB            equ	3987	;# 
+   138   000F94                     TRISC           equ	3988	;# 
+   139   000F94                     DDRC            equ	3988	;# 
+   140   000F95                     TRISD           equ	3989	;# 
+   141   000F95                     DDRD            equ	3989	;# 
+   142   000F96                     TRISE           equ	3990	;# 
+   143   000F96                     DDRE            equ	3990	;# 
+   144   000F9B                     OSCTUNE         equ	3995	;# 
+   145   000F9D                     PIE1            equ	3997	;# 
+   146   000F9E                     PIR1            equ	3998	;# 
+   147   000F9F                     IPR1            equ	3999	;# 
+   148   000FA0                     PIE2            equ	4000	;# 
+   149   000FA1                     PIR2            equ	4001	;# 
+   150   000FA2                     IPR2            equ	4002	;# 
+   151   000FA6                     EECON1          equ	4006	;# 
+   152   000FA7                     EECON2          equ	4007	;# 
+   153   000FA8                     EEDATA          equ	4008	;# 
+   154   000FA9                     EEADR           equ	4009	;# 
+   155   000FAB                     RCSTA           equ	4011	;# 
+   156   000FAB                     RCSTA1          equ	4011	;# 
+   157   000FAC                     TXSTA           equ	4012	;# 
+   158   000FAC                     TXSTA1          equ	4012	;# 
+   159   000FAD                     TXREG           equ	4013	;# 
+   160   000FAD                     TXREG1          equ	4013	;# 
+   161   000FAE                     RCREG           equ	4014	;# 
+   162   000FAE                     RCREG1          equ	4014	;# 
+   163   000FAF                     SPBRG           equ	4015	;# 
+   164   000FAF                     SPBRG1          equ	4015	;# 
+   165   000FB0                     SPBRGH          equ	4016	;# 
+   166   000FB1                     T3CON           equ	4017	;# 
+   167   000FB2                     TMR3            equ	4018	;# 
+   168   000FB2                     TMR3L           equ	4018	;# 
+   169   000FB3                     TMR3H           equ	4019	;# 
+   170   000FB4                     CMCON           equ	4020	;# 
+   171   000FB5                     CVRCON          equ	4021	;# 
+   172   000FB6                     ECCP1AS         equ	4022	;# 
+   173   000FB6                     CCP1AS          equ	4022	;# 
+   174   000FB7                     ECCP1DEL        equ	4023	;# 
+   175   000FB7                     CCP1DEL         equ	4023	;# 
+   176   000FB8                     BAUDCON         equ	4024	;# 
+   177   000FB8                     BAUDCTL         equ	4024	;# 
+   178   000FBA                     CCP2CON         equ	4026	;# 
+   179   000FBB                     CCPR2           equ	4027	;# 
+   180   000FBB                     CCPR2L          equ	4027	;# 
+   181   000FBC                     CCPR2H          equ	4028	;# 
+   182   000FBD                     CCP1CON         equ	4029	;# 
+   183   000FBD                     ECCP1CON        equ	4029	;# 
+   184   000FBE                     CCPR1           equ	4030	;# 
+   185   000FBE                     CCPR1L          equ	4030	;# 
+   186   000FBF                     CCPR1H          equ	4031	;# 
+   187   000FC0                     ADCON2          equ	4032	;# 
+   188   000FC1                     ADCON1          equ	4033	;# 
+   189   000FC2                     ADCON0          equ	4034	;# 
+   190   000FC3                     ADRES           equ	4035	;# 
+   191   000FC3                     ADRESL          equ	4035	;# 
+   192   000FC4                     ADRESH          equ	4036	;# 
+   193   000FC5                     SSPCON2         equ	4037	;# 
+   194   000FC6                     SSPCON1         equ	4038	;# 
+   195   000FC7                     SSPSTAT         equ	4039	;# 
+   196   000FC8                     SSPADD          equ	4040	;# 
+   197   000FC9                     SSPBUF          equ	4041	;# 
+   198   000FCA                     T2CON           equ	4042	;# 
+   199   000FCB                     PR2             equ	4043	;# 
+   200   000FCB                     MEMCON          equ	4043	;# 
+   201   000FCC                     TMR2            equ	4044	;# 
+   202   000FCD                     T1CON           equ	4045	;# 
+   203   000FCE                     TMR1            equ	4046	;# 
+   204   000FCE                     TMR1L           equ	4046	;# 
+   205   000FCF                     TMR1H           equ	4047	;# 
+   206   000FD0                     RCON            equ	4048	;# 
+   207   000FD1                     WDTCON          equ	4049	;# 
+   208   000FD2                     HLVDCON         equ	4050	;# 
+   209   000FD2                     LVDCON          equ	4050	;# 
+   210   000FD3                     OSCCON          equ	4051	;# 
+   211   000FD5                     T0CON           equ	4053	;# 
+   212   000FD6                     TMR0            equ	4054	;# 
+   213   000FD6                     TMR0L           equ	4054	;# 
+   214   000FD7                     TMR0H           equ	4055	;# 
+   215   000FD8                     STATUS          equ	4056	;# 
+   216   000FD9                     FSR2            equ	4057	;# 
+   217   000FD9                     FSR2L           equ	4057	;# 
+   218   000FDA                     FSR2H           equ	4058	;# 
+   219   000FDB                     PLUSW2          equ	4059	;# 
+   220   000FDC                     PREINC2         equ	4060	;# 
+   221   000FDD                     POSTDEC2        equ	4061	;# 
+   222   000FDE                     POSTINC2        equ	4062	;# 
+   223   000FDF                     INDF2           equ	4063	;# 
+   224   000FE0                     BSR             equ	4064	;# 
+   225   000FE1                     FSR1            equ	4065	;# 
+   226   000FE1                     FSR1L           equ	4065	;# 
+   227   000FE2                     FSR1H           equ	4066	;# 
+   228   000FE3                     PLUSW1          equ	4067	;# 
+   229   000FE4                     PREINC1         equ	4068	;# 
+   230   000FE5                     POSTDEC1        equ	4069	;# 
+   231   000FE6                     POSTINC1        equ	4070	;# 
+   232   000FE7                     INDF1           equ	4071	;# 
+   233   000FE8                     WREG            equ	4072	;# 
+   234   000FE9                     FSR0            equ	4073	;# 
+   235   000FE9                     FSR0L           equ	4073	;# 
+   236   000FEA                     FSR0H           equ	4074	;# 
+   237   000FEB                     PLUSW0          equ	4075	;# 
+   238   000FEC                     PREINC0         equ	4076	;# 
+   239   000FED                     POSTDEC0        equ	4077	;# 
+   240   000FEE                     POSTINC0        equ	4078	;# 
+   241   000FEF                     INDF0           equ	4079	;# 
+   242   000FF0                     INTCON3         equ	4080	;# 
+   243   000FF1                     INTCON2         equ	4081	;# 
+   244   000FF2                     INTCON          equ	4082	;# 
+   245   000FF3                     PROD            equ	4083	;# 
+   246   000FF3                     PRODL           equ	4083	;# 
+   247   000FF4                     PRODH           equ	4084	;# 
+   248   000FF5                     TABLAT          equ	4085	;# 
+   249   000FF6                     TBLPTR          equ	4086	;# 
+   250   000FF6                     TBLPTRL         equ	4086	;# 
+   251   000FF7                     TBLPTRH         equ	4087	;# 
+   252   000FF8                     TBLPTRU         equ	4088	;# 
+   253   000FF9                     PCLAT           equ	4089	;# 
+   254   000FF9                     PC              equ	4089	;# 
+   255   000FF9                     PCL             equ	4089	;# 
+   256   000FFA                     PCLATH          equ	4090	;# 
+   257   000FFB                     PCLATU          equ	4091	;# 
+   258   000FFC                     STKPTR          equ	4092	;# 
+   259   000FFD                     TOS             equ	4093	;# 
+   260   000FFD                     TOSL            equ	4093	;# 
+   261   000FFE                     TOSH            equ	4094	;# 
+   262   000FFF                     TOSU            equ	4095	;# 
+   263   007C61                     _LATD1          set	31841
+   264   007F92                     _TMR0IF         set	32658
+   265   007C0F                     _RB7            set	31759
+   266   007C0E                     _RB6            set	31758
+   267   007C0D                     _RB5            set	31757
+   268   007C0C                     _RB4            set	31756
+   269   007C60                     _LATD0          set	31840
+   270   007F97                     _GIE            set	32663
+   271   007F93                     _RBIE           set	32659
+   272   007F90                     _RBIF           set	32656
+   273   007F8F                     _RBPU           set	32655
+   274   000FD6                     _TMR0           set	4054
+   275   000F81                     _PORTB          set	3969
+   276   000F8C                     _LATD           set	3980
+   277   000F8A                     _LATB           set	3978
+   278   000F95                     _TRISD          set	3989
+   279   000F93                     _TRISB          set	3987
+   280                           
+   281                           ; #config settings
+   282                           
+   283                           	psect	cinit
+   284   000928                     __pcinit:
+   285                           	callstack 0
+   286   000928                     start_initialization:
+   287                           	callstack 0
+   288   000928                     __initialization:
+   289                           	callstack 0
+   290                           
+   291                           ; Clear objects allocated to COMRAM (1 bytes)
+   292   000928  6A04               	clrf	__pbssCOMRAM& (0+255),c
+   293   00092A                     end_of_initialization:
+   294                           	callstack 0
+   295   00092A                     __end_of__initialization:
+   296                           	callstack 0
+   297   00092A  9005               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
+   298   00092C  9205               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+   299   00092E  0100               	movlb	0
+   300   000930  EF6A  F004         	goto	_main	;jump to C main() function
+   301                           
+   302                           	psect	bssCOMRAM
+   303   000004                     __pbssCOMRAM:
+   304                           	callstack 0
+   305   000004                     _Tecla:
+   306                           	callstack 0
+   307   000004                     	ds	1
+   308                           
+   309                           	psect	cstackCOMRAM
+   310   000001                     __pcstackCOMRAM:
+   311                           	callstack 0
+   312   000001                     ??_ISR:
+   313                           
+   314                           ; 1 bytes @ 0x0
+   315   000001                     	ds	1
+   316   000002                     ??_main:
    317                           
-   318                           ;PruebaTeclado.c: 102: else if(RB6==0) Tecla=3;
-   319  000038  BC81               	btfsc	3969,6,c	;volatile
-   320  00003A  D002               	goto	i2l84
-   321  00003C  0E03               	movlw	3
-   322  00003E  D039               	goto	L15
-   323  000040                     i2l84:
-   324                           
-   325                           ;PruebaTeclado.c: 103: else if(RB7==0) Tecla=4;
-   326  000040  BE81               	btfsc	3969,7,c	;volatile
-   327  000042  D002               	goto	i2l898
-   328  000044  0E04               	movlw	4
-   329  000046  D035               	goto	L15
-   330  000048                     i2l898:
-   331                           
-   332                           ;PruebaTeclado.c: 104: else{;PruebaTeclado.c: 105: LATB=0b11111101;
-   333  000048  0EFD               	movlw	253
-   334  00004A  6E8A               	movwf	138,c	;volatile
-   335                           
-   336                           ;PruebaTeclado.c: 106: if(RB4==0) Tecla=5;
-   337  00004C  B881               	btfsc	3969,4,c	;volatile
-   338  00004E  D002               	goto	i2l88
-   339  000050  0E05               	movlw	5
-   340  000052  D02F               	goto	L15
-   341  000054                     i2l88:
-   342                           
-   343                           ;PruebaTeclado.c: 107: else if(RB5==0) Tecla=6;
-   344  000054  BA81               	btfsc	3969,5,c	;volatile
-   345  000056  D002               	goto	i2l90
-   346  000058  0E06               	movlw	6
-   347  00005A  D02B               	goto	L15
-   348  00005C                     i2l90:
-   349                           
-   350                           ;PruebaTeclado.c: 108: else if(RB6==0) Tecla=7;
-   351  00005C  BC81               	btfsc	3969,6,c	;volatile
-   352  00005E  D002               	goto	i2l92
-   353  000060  0E07               	movlw	7
-   354  000062  D027               	goto	L15
-   355  000064                     i2l92:
-   356                           
-   357                           ;PruebaTeclado.c: 109: else if(RB7==0) Tecla=8;
-   358  000064  BE81               	btfsc	3969,7,c	;volatile
-   359  000066  D002               	goto	i2l910
-   360  000068  0E08               	movlw	8
-   361  00006A  D023               	goto	L15
-   362  00006C                     i2l910:
+   318                           ; 1 bytes @ 0x1
+   319   000002                     	ds	1
+   320   000003                     main@i:
+   321                           	callstack 0
+   322                           
+   323                           ; 1 bytes @ 0x2
+   324   000003                     	ds	1
+   325                           
+   326 ;;
+   327 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   328 ;;
+   329 ;; *************** function _main *****************
+   330 ;; Defined at:
+   331 ;;		line 14 in file "PruebaTeclado.c"
+   332 ;; Parameters:    Size  Location     Type
+   333 ;;		None
+   334 ;; Auto vars:     Size  Location     Type
+   335 ;;  i               1    2[COMRAM] unsigned char 
+   336 ;; Return value:  Size  Location     Type
+   337 ;;                  1    wreg      void 
+   338 ;; Registers used:
+   339 ;;		wreg, status,2, status,0
+   340 ;; Tracked objects:
+   341 ;;		On entry : 0/0
+   342 ;;		On exit  : 0/0
+   343 ;;		Unchanged: 0/0
+   344 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   345 ;;      Params:         0       0       0       0       0       0       0       0       0
+   346 ;;      Locals:         1       0       0       0       0       0       0       0       0
+   347 ;;      Temps:          1       0       0       0       0       0       0       0       0
+   348 ;;      Totals:         2       0       0       0       0       0       0       0       0
+   349 ;;Total ram usage:        2 bytes
+   350 ;; Hardware stack levels required when called: 1
+   351 ;; This function calls:
+   352 ;;		Nothing
+   353 ;; This function is called by:
+   354 ;;		Startup code after reset
+   355 ;; This function uses a non-reentrant model
+   356 ;;
+   357                           
+   358                           	psect	text0
+   359   0008D4                     __ptext0:
+   360                           	callstack 0
+   361   0008D4                     _main:
+   362                           	callstack 30
    363                           
-   364                           ;PruebaTeclado.c: 110: else{;PruebaTeclado.c: 111: LATB=0b11111011;
-   365  00006C  0EFB               	movlw	251
-   366  00006E  6E8A               	movwf	138,c	;volatile
-   367                           
-   368                           ;PruebaTeclado.c: 112: if(RB4==0) Tecla=9;
-   369  000070  B881               	btfsc	3969,4,c	;volatile
-   370  000072  D002               	goto	i2l96
-   371  000074  0E09               	movlw	9
-   372  000076  D01D               	goto	L15
-   373  000078                     i2l96:
-   374                           
-   375                           ;PruebaTeclado.c: 113: else if(RB5==0) Tecla=10;
-   376  000078  BA81               	btfsc	3969,5,c	;volatile
-   377  00007A  D002               	goto	i2l98
-   378  00007C  0E0A               	movlw	10
-   379  00007E  D019               	goto	L15
-   380  000080                     i2l98:
+   364                           ;PruebaTeclado.c: 15: unsigned char i;;PruebaTeclado.c: 16: TRISB=0b11110000;
+   365                           
+   366                           ;incstack = 0
+   367   0008D4  0EF0               	movlw	240
+   368   0008D6  6E93               	movwf	147,c	;volatile
+   369                           
+   370                           ;PruebaTeclado.c: 17: TRISD=0;
+   371   0008D8  6A95               	clrf	149,c	;volatile
+   372                           
+   373                           ;PruebaTeclado.c: 18: LATB=0b00000000;
+   374   0008DA  6A8A               	clrf	138,c	;volatile
+   375                           
+   376                           ;PruebaTeclado.c: 19: LATD=0;
+   377   0008DC  6A8C               	clrf	140,c	;volatile
+   378                           
+   379                           ;PruebaTeclado.c: 20: RBPU=0;
+   380   0008DE  9EF1               	bcf	4081,7,c	;volatile
    381                           
-   382                           ;PruebaTeclado.c: 114: else if(RB6==0) Tecla=11;
-   383  000080  BC81               	btfsc	3969,6,c	;volatile
-   384  000082  D002               	goto	i2l100
-   385  000084  0E0B               	movlw	11
-   386  000086  D015               	goto	L15
-   387  000088                     i2l100:
-   388                           
-   389                           ;PruebaTeclado.c: 115: else if(RB7==0) Tecla=12;
-   390  000088  BE81               	btfsc	3969,7,c	;volatile
-   391  00008A  D002               	goto	i2l922
-   392  00008C  0E0C               	movlw	12
-   393  00008E  D011               	goto	L15
-   394  000090                     i2l922:
+   382                           ;PruebaTeclado.c: 21: _delay((unsigned long)((100)*(1000000/4000.0)));
+   383   0008E0  0E21               	movlw	33
+   384   0008E2  6E02               	movwf	??_main^0,c
+   385   0008E4  0E76               	movlw	118
+   386   0008E6                     u237:
+   387   0008E6  2EE8               	decfsz	wreg,f,c
+   388   0008E8  D7FE               	bra	u237
+   389   0008EA  2E02               	decfsz	??_main^0,f,c
+   390   0008EC  D7FC               	bra	u237
+   391   0008EE  D000               	nop2	
+   392                           
+   393                           ;PruebaTeclado.c: 27: RBIF=0;
+   394   0008F0  90F2               	bcf	4082,0,c	;volatile
    395                           
-   396                           ;PruebaTeclado.c: 116: else{;PruebaTeclado.c: 117: LATB=0b11110111;
-   397  000090  0EF7               	movlw	247
-   398  000092  6E8A               	movwf	138,c	;volatile
-   399                           
-   400                           ;PruebaTeclado.c: 118: if(RB4==0) Tecla=13;
-   401  000094  B881               	btfsc	3969,4,c	;volatile
-   402  000096  D002               	goto	i2l104
-   403  000098  0E0D               	movlw	13
-   404  00009A  D00B               	goto	L15
-   405  00009C                     i2l104:
-   406                           
-   407                           ;PruebaTeclado.c: 119: else if(RB5==0) Tecla=14;
-   408  00009C  BA81               	btfsc	3969,5,c	;volatile
-   409  00009E  D002               	goto	i2l106
-   410  0000A0  0E0E               	movlw	14
-   411  0000A2  D007               	goto	L15
-   412  0000A4                     i2l106:
-   413                           
-   414                           ;PruebaTeclado.c: 120: else if(RB6==0) Tecla=15;
-   415  0000A4  BC81               	btfsc	3969,6,c	;volatile
-   416  0000A6  D002               	goto	i2l108
-   417  0000A8  0E0F               	movlw	15
-   418  0000AA  D003               	goto	L15
-   419  0000AC                     i2l108:
+   396                           ;PruebaTeclado.c: 28: RBIE=1;
+   397   0008F2  86F2               	bsf	4082,3,c	;volatile
+   398                           
+   399                           ;PruebaTeclado.c: 29: GIE=1;
+   400   0008F4  8EF2               	bsf	4082,7,c	;volatile
+   401   0008F6                     l878:
+   402                           
+   403                           ;PruebaTeclado.c: 62: for(i=0;i<Tecla;i++){
+   404   0008F6  6A03               	clrf	main@i^0,c
+   405   0008F8  D011               	goto	l44
+   406   0008FA                     l45:
+   407                           
+   408                           ;PruebaTeclado.c: 63: LATD0=1;
+   409   0008FA  808C               	bsf	3980,0,c	;volatile
+   410                           
+   411                           ;PruebaTeclado.c: 64: _delay((unsigned long)((400)*(1000000/4000.0)));
+   412   0008FC  0E82               	movlw	130
+   413   0008FE  6E02               	movwf	??_main^0,c
+   414   000900  0EDE               	movlw	222
+   415   000902                     u247:
+   416   000902  2EE8               	decfsz	wreg,f,c
+   417   000904  D7FE               	bra	u247
+   418   000906  2E02               	decfsz	??_main^0,f,c
+   419   000908  D7FC               	bra	u247
    420                           
-   421                           ;PruebaTeclado.c: 121: else if(RB7==0) Tecla=16;
-   422  0000AC  BE81               	btfsc	3969,7,c	;volatile
-   423  0000AE  D002               	goto	i2l105
-   424  0000B0  0E10               	movlw	16
-   425  0000B2                     L15:
-   426  0000B2  6E04               	movwf	_Tecla^0,c
-   427  0000B4                     i2l105:
-   428                           
-   429                           ;PruebaTeclado.c: 122: };PruebaTeclado.c: 123: };PruebaTeclado.c: 124: };PruebaTeclado.c
-      +                          : 125: LATB=0b11110000;
-   430  0000B4  0EF0               	movlw	240
-   431  0000B6  6E8A               	movwf	138,c	;volatile
-   432  0000B8                     i2l934:
-   433                           
-   434                           ;PruebaTeclado.c: 126: };PruebaTeclado.c: 127: _delay((unsigned long)((100)*(1000000/400
-      +                          0.0)));
-   435  0000B8  0E21               	movlw	33
-   436  0000BA  6E01               	movwf	??_ISR^0,c
-   437  0000BC  0E76               	movlw	118
-   438  0000BE                     i2u26_47:
-   439  0000BE  2EE8               	decfsz	wreg,f,c
-   440  0000C0  D7FE               	bra	i2u26_47
-   441  0000C2  2E01               	decfsz	??_ISR^0,f,c
-   442  0000C4  D7FC               	bra	i2u26_47
-   443  0000C6  D000               	nop2	
-   444                           
-   445                           ;PruebaTeclado.c: 128: RBIF=0;
-   446  0000C8  90F2               	bcf	4082,0,c	;volatile
-   447  0000CA                     i2l938:
-   448                           
-   449                           ;PruebaTeclado.c: 129: };PruebaTeclado.c: 130: if(TMR0IF==1){
-   450  0000CA  A4F2               	btfss	4082,2,c	;volatile
-   451  0000CC  D00A               	goto	i2u22_45
-   452                           
-   453                           ;PruebaTeclado.c: 131: TMR0IF=0;
-   454  0000CE  94F2               	bcf	4082,2,c	;volatile
-   455                           
-   456                           ;PruebaTeclado.c: 132: TMR0=3036;
-   457  0000D0  0E0B               	movlw	11
-   458  0000D2  6ED7               	movwf	215,c	;volatile
-   459  0000D4  0EDC               	movlw	220
-   460  0000D6  6ED6               	movwf	214,c	;volatile
-   461                           
-   462                           ;PruebaTeclado.c: 133: LATD1=LATD1^1;
-   463  0000D8  B28C               	btfsc	3980,1,c	;volatile
-   464  0000DA  D002               	goto	i2u21_40
-   465  0000DC  828C               	bsf	3980,1,c	;volatile
-   466  0000DE  D001               	goto	i2u22_45
-   467  0000E0                     i2u21_40:
-   468  0000E0  928C               	bcf	3980,1,c	;volatile
-   469  0000E2                     i2u22_45:
-   470  0000E2  9205               	bcf	btemp,1,c	;clear compiler interrupt flag (level 2)
-   471  0000E4  0011               	retfie		f
-   472  0000E6                     __end_of_ISR:
-   473                           	callstack 0
-   474  0000                     
-   475                           	psect	rparam
-   476  0000                     
-   477                           	psect	temp
-   478  000005                     btemp:
-   479                           	callstack 0
-   480  000005                     	ds	1
-   481  0000                     int$flags	set	btemp
-   482  0000                     wtemp8	set	btemp+1
-   483  0000                     ttemp5	set	btemp+1
-   484  0000                     ttemp6	set	btemp+4
-   485  0000                     ttemp7	set	btemp+8
-   486                           
-   487                           	psect	idloc
-   488                           
-   489                           ;Config register IDLOC0 @ 0x200000
-   490                           ;	unspecified, using default values
-   491  200000                     	org	2097152
-   492  200000  FF                 	db	255
-   493                           
-   494                           ;Config register IDLOC1 @ 0x200001
-   495                           ;	unspecified, using default values
-   496  200001                     	org	2097153
-   497  200001  FF                 	db	255
-   498                           
-   499                           ;Config register IDLOC2 @ 0x200002
-   500                           ;	unspecified, using default values
-   501  200002                     	org	2097154
-   502  200002  FF                 	db	255
-   503                           
-   504                           ;Config register IDLOC3 @ 0x200003
-   505                           ;	unspecified, using default values
-   506  200003                     	org	2097155
-   507  200003  FF                 	db	255
+   421                           ;PruebaTeclado.c: 65: LATD0=0;
+   422   00090A  908C               	bcf	3980,0,c	;volatile
+   423                           
+   424                           ;PruebaTeclado.c: 66: _delay((unsigned long)((400)*(1000000/4000.0)));
+   425   00090C  0E82               	movlw	130
+   426   00090E  6E02               	movwf	??_main^0,c
+   427   000910  0EDE               	movlw	222
+   428   000912                     u257:
+   429   000912  2EE8               	decfsz	wreg,f,c
+   430   000914  D7FE               	bra	u257
+   431   000916  2E02               	decfsz	??_main^0,f,c
+   432   000918  D7FC               	bra	u257
+   433   00091A  2A03               	incf	main@i^0,f,c
+   434   00091C                     l44:
+   435   00091C  5004               	movf	_Tecla^0,w,c
+   436   00091E  5C03               	subwf	main@i^0,w,c
+   437   000920  A0D8               	btfss	status,0,c
+   438   000922  D7EB               	goto	l45
+   439                           
+   440                           ;PruebaTeclado.c: 67: };PruebaTeclado.c: 68: Tecla=0;
+   441   000924  6A04               	clrf	_Tecla^0,c
+   442   000926  D7E7               	goto	l878
+   443   000928                     __end_of_main:
+   444                           	callstack 0
+   445                           
+   446 ;; *************** function _ISR *****************
+   447 ;; Defined at:
+   448 ;;		line 95 in file "PruebaTeclado.c"
+   449 ;; Parameters:    Size  Location     Type
+   450 ;;		None
+   451 ;; Auto vars:     Size  Location     Type
+   452 ;;		None
+   453 ;; Return value:  Size  Location     Type
+   454 ;;                  1    wreg      void 
+   455 ;; Registers used:
+   456 ;;		wreg, status,2, status,0
+   457 ;; Tracked objects:
+   458 ;;		On entry : 0/0
+   459 ;;		On exit  : 0/0
+   460 ;;		Unchanged: 0/0
+   461 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   462 ;;      Params:         0       0       0       0       0       0       0       0       0
+   463 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   464 ;;      Temps:          1       0       0       0       0       0       0       0       0
+   465 ;;      Totals:         1       0       0       0       0       0       0       0       0
+   466 ;;Total ram usage:        1 bytes
+   467 ;; Hardware stack levels used: 1
+   468 ;; This function calls:
+   469 ;;		Nothing
+   470 ;; This function is called by:
+   471 ;;		Interrupt level 2
+   472 ;; This function uses a non-reentrant model
+   473 ;;
+   474                           
+   475                           	psect	intcode
+   476   000008                     __pintcode:
+   477                           	callstack 0
+   478   000008                     _ISR:
+   479                           	callstack 30
+   480                           
+   481                           ;incstack = 0
+   482   000008  8205               	bsf	btemp,1,c	;set compiler interrupt flag (level 2)
+   483   00000A  ED01  F004         	call	int_func,f	;refresh shadow registers
+   484                           
+   485                           	psect	intcode_body
+   486   000802                     __pintcode_body:
+   487                           	callstack 30
+   488   000802                     int_func:
+   489                           	callstack 30
+   490   000802  0006               	pop		; remove dummy address from shadow register refresh
+   491                           
+   492                           ;PruebaTeclado.c: 96: if(RBIF==1){
+   493   000804  A0F2               	btfss	4082,0,c	;volatile
+   494   000806  D058               	goto	i2l944
+   495                           
+   496                           ;PruebaTeclado.c: 97: if(PORTB!=0b11110000){
+   497   000808  0EF0               	movlw	240
+   498   00080A  1881               	xorwf	129,w,c	;volatile
+   499   00080C  B4D8               	btfsc	status,2,c
+   500   00080E  D04B               	goto	i2l940
+   501                           
+   502                           ;PruebaTeclado.c: 98: Tecla=0;
+   503   000810  6A04               	clrf	_Tecla^0,c
+   504                           
+   505                           ;PruebaTeclado.c: 99: LATB=0b11111110;
+   506   000812  0EFE               	movlw	254
+   507   000814  6E8A               	movwf	138,c	;volatile
    508                           
-   509                           ;Config register IDLOC4 @ 0x200004
-   510                           ;	unspecified, using default values
-   511  200004                     	org	2097156
-   512  200004  FF                 	db	255
-   513                           
-   514                           ;Config register IDLOC5 @ 0x200005
-   515                           ;	unspecified, using default values
-   516  200005                     	org	2097157
-   517  200005  FF                 	db	255
-   518                           
-   519                           ;Config register IDLOC6 @ 0x200006
-   520                           ;	unspecified, using default values
-   521  200006                     	org	2097158
-   522  200006  FF                 	db	255
-   523                           
-   524                           ;Config register IDLOC7 @ 0x200007
-   525                           ;	unspecified, using default values
-   526  200007                     	org	2097159
-   527  200007  FF                 	db	255
-   528                           
-   529                           	psect	config
-   530                           
-   531                           ;Config register CONFIG1L @ 0x300000
-   532                           ;	unspecified, using default values
-   533                           ;	PLL Prescaler Selection bits
-   534                           ;	PLLDIV = 0x0, unprogrammed default
-   535                           ;	System Clock Postscaler Selection bits
-   536                           ;	CPUDIV = 0x0, unprogrammed default
-   537                           ;	USB Clock Selection bit (used in Full-Speed USB mode only; UCFG:FSEN = 1)
-   538                           ;	USBDIV = 0x0, unprogrammed default
-   539  300000                     	org	3145728
-   540  300000  00                 	db	0
-   541                           
-   542                           ;Config register CONFIG1H @ 0x300001
-   543                           ;	Oscillator Selection bits
-   544                           ;	FOSC = INTOSC_EC, Internal oscillator, CLKO function on RA6, EC used by USB (INTCKO)
-   545                           ;	Fail-Safe Clock Monitor Enable bit
-   546                           ;	FCMEN = 0x0, unprogrammed default
-   547                           ;	Internal/External Oscillator Switchover bit
-   548                           ;	IESO = 0x0, unprogrammed default
-   549  300001                     	org	3145729
-   550  300001  09                 	db	9
-   551                           
-   552                           ;Config register CONFIG2L @ 0x300002
-   553                           ;	unspecified, using default values
-   554                           ;	Power-up Timer Enable bit
-   555                           ;	PWRT = 0x1, unprogrammed default
-   556                           ;	Brown-out Reset Enable bits
-   557                           ;	BOR = 0x3, unprogrammed default
-   558                           ;	Brown-out Reset Voltage bits
-   559                           ;	BORV = 0x3, unprogrammed default
-   560                           ;	USB Voltage Regulator Enable bit
-   561                           ;	VREGEN = 0x0, unprogrammed default
-   562  300002                     	org	3145730
-   563  300002  1F                 	db	31
-   564                           
-   565                           ;Config register CONFIG2H @ 0x300003
-   566                           ;	Watchdog Timer Enable bit
-   567                           ;	WDT = OFF, WDT disabled (control is placed on the SWDTEN bit)
-   568                           ;	Watchdog Timer Postscale Select bits
-   569                           ;	WDTPS = 0xF, unprogrammed default
-   570  300003                     	org	3145731
-   571  300003  1E                 	db	30
+   509                           ;PruebaTeclado.c: 100: if(RB4==0) Tecla=1;
+   510   000816  B881               	btfsc	3969,4,c	;volatile
+   511   000818  D002               	goto	i2l80
+   512   00081A  0E01               	movlw	1
+   513   00081C  D041               	goto	L15
+   514   00081E                     i2l80:
+   515                           
+   516                           ;PruebaTeclado.c: 101: else if(RB5==0) Tecla=2;
+   517   00081E  BA81               	btfsc	3969,5,c	;volatile
+   518   000820  D002               	goto	i2l82
+   519   000822  0E02               	movlw	2
+   520   000824  D03D               	goto	L15
+   521   000826                     i2l82:
+   522                           
+   523                           ;PruebaTeclado.c: 102: else if(RB6==0) Tecla=3;
+   524   000826  BC81               	btfsc	3969,6,c	;volatile
+   525   000828  D002               	goto	i2l84
+   526   00082A  0E03               	movlw	3
+   527   00082C  D039               	goto	L15
+   528   00082E                     i2l84:
+   529                           
+   530                           ;PruebaTeclado.c: 103: else if(RB7==0) Tecla=4;
+   531   00082E  BE81               	btfsc	3969,7,c	;volatile
+   532   000830  D002               	goto	i2l904
+   533   000832  0E04               	movlw	4
+   534   000834  D035               	goto	L15
+   535   000836                     i2l904:
+   536                           
+   537                           ;PruebaTeclado.c: 104: else{;PruebaTeclado.c: 105: LATB=0b11111101;
+   538   000836  0EFD               	movlw	253
+   539   000838  6E8A               	movwf	138,c	;volatile
+   540                           
+   541                           ;PruebaTeclado.c: 106: if(RB4==0) Tecla=5;
+   542   00083A  B881               	btfsc	3969,4,c	;volatile
+   543   00083C  D002               	goto	i2l88
+   544   00083E  0E05               	movlw	5
+   545   000840  D02F               	goto	L15
+   546   000842                     i2l88:
+   547                           
+   548                           ;PruebaTeclado.c: 107: else if(RB5==0) Tecla=6;
+   549   000842  BA81               	btfsc	3969,5,c	;volatile
+   550   000844  D002               	goto	i2l90
+   551   000846  0E06               	movlw	6
+   552   000848  D02B               	goto	L15
+   553   00084A                     i2l90:
+   554                           
+   555                           ;PruebaTeclado.c: 108: else if(RB6==0) Tecla=7;
+   556   00084A  BC81               	btfsc	3969,6,c	;volatile
+   557   00084C  D002               	goto	i2l92
+   558   00084E  0E07               	movlw	7
+   559   000850  D027               	goto	L15
+   560   000852                     i2l92:
+   561                           
+   562                           ;PruebaTeclado.c: 109: else if(RB7==0) Tecla=8;
+   563   000852  BE81               	btfsc	3969,7,c	;volatile
+   564   000854  D002               	goto	i2l916
+   565   000856  0E08               	movlw	8
+   566   000858  D023               	goto	L15
+   567   00085A                     i2l916:
+   568                           
+   569                           ;PruebaTeclado.c: 110: else{;PruebaTeclado.c: 111: LATB=0b11111011;
+   570   00085A  0EFB               	movlw	251
+   571   00085C  6E8A               	movwf	138,c	;volatile
    572                           
-   573                           ; Padding undefined space
-   574  300004                     	org	3145732
-   575  300004  FF                 	db	255
-   576                           
-   577                           ;Config register CONFIG3H @ 0x300005
-   578                           ;	CCP2 MUX bit
-   579                           ;	CCP2MX = 0x1, unprogrammed default
-   580                           ;	PORTB A/D Enable bit
-   581                           ;	PBADEN = OFF, PORTB<4:0> pins are configured as digital I/O on Reset
-   582                           ;	Low-Power Timer 1 Oscillator Enable bit
-   583                           ;	LPT1OSC = 0x0, unprogrammed default
-   584                           ;	MCLR Pin Enable bit
-   585                           ;	MCLRE = 0x1, unprogrammed default
-   586  300005                     	org	3145733
-   587  300005  81                 	db	129
-   588                           
-   589                           ;Config register CONFIG4L @ 0x300006
-   590                           ;	Stack Full/Underflow Reset Enable bit
-   591                           ;	STVREN = 0x1, unprogrammed default
-   592                           ;	Single-Supply ICSP Enable bit
-   593                           ;	LVP = OFF, Single-Supply ICSP disabled
-   594                           ;	Dedicated In-Circuit Debug/Programming Port (ICPORT) Enable bit
-   595                           ;	ICPRT = 0x0, unprogrammed default
-   596                           ;	Extended Instruction Set Enable bit
-   597                           ;	XINST = 0x0, unprogrammed default
-   598                           ;	Background Debugger Enable bit
-   599                           ;	DEBUG = 0x1, unprogrammed default
-   600  300006                     	org	3145734
-   601  300006  81                 	db	129
-   602                           
-   603                           ; Padding undefined space
-   604  300007                     	org	3145735
-   605  300007  FF                 	db	255
-   606                           
-   607                           ;Config register CONFIG5L @ 0x300008
-   608                           ;	unspecified, using default values
-   609                           ;	Code Protection bit
-   610                           ;	CP0 = 0x1, unprogrammed default
-   611                           ;	Code Protection bit
-   612                           ;	CP1 = 0x1, unprogrammed default
-   613                           ;	Code Protection bit
-   614                           ;	CP2 = 0x1, unprogrammed default
-   615                           ;	Code Protection bit
-   616                           ;	CP3 = 0x1, unprogrammed default
-   617  300008                     	org	3145736
-   618  300008  0F                 	db	15
-   619                           
-   620                           ;Config register CONFIG5H @ 0x300009
-   621                           ;	unspecified, using default values
-   622                           ;	Boot Block Code Protection bit
-   623                           ;	CPB = 0x1, unprogrammed default
-   624                           ;	Data EEPROM Code Protection bit
-   625                           ;	CPD = 0x1, unprogrammed default
-   626  300009                     	org	3145737
-   627  300009  C0                 	db	192
-   628                           
-   629                           ;Config register CONFIG6L @ 0x30000A
-   630                           ;	unspecified, using default values
-   631                           ;	Write Protection bit
-   632                           ;	WRT0 = 0x1, unprogrammed default
-   633                           ;	Write Protection bit
-   634                           ;	WRT1 = 0x1, unprogrammed default
-   635                           ;	Write Protection bit
-   636                           ;	WRT2 = 0x1, unprogrammed default
-   637                           ;	Write Protection bit
-   638                           ;	WRT3 = 0x1, unprogrammed default
-   639  30000A                     	org	3145738
-   640  30000A  0F                 	db	15
-   641                           
-   642                           ;Config register CONFIG6H @ 0x30000B
-   643                           ;	unspecified, using default values
-   644                           ;	Configuration Register Write Protection bit
-   645                           ;	WRTC = 0x1, unprogrammed default
-   646                           ;	Boot Block Write Protection bit
-   647                           ;	WRTB = 0x1, unprogrammed default
-   648                           ;	Data EEPROM Write Protection bit
-   649                           ;	WRTD = 0x1, unprogrammed default
-   650  30000B                     	org	3145739
-   651  30000B  E0                 	db	224
-   652                           
-   653                           ;Config register CONFIG7L @ 0x30000C
-   654                           ;	unspecified, using default values
-   655                           ;	Table Read Protection bit
-   656                           ;	EBTR0 = 0x1, unprogrammed default
-   657                           ;	Table Read Protection bit
-   658                           ;	EBTR1 = 0x1, unprogrammed default
-   659                           ;	Table Read Protection bit
-   660                           ;	EBTR2 = 0x1, unprogrammed default
-   661                           ;	Table Read Protection bit
-   662                           ;	EBTR3 = 0x1, unprogrammed default
-   663  30000C                     	org	3145740
-   664  30000C  0F                 	db	15
-   665                           
-   666                           ;Config register CONFIG7H @ 0x30000D
-   667                           ;	unspecified, using default values
-   668                           ;	Boot Block Table Read Protection bit
-   669                           ;	EBTRB = 0x1, unprogrammed default
-   670  30000D                     	org	3145741
-   671  30000D  40                 	db	64
-   672                           tosu	equ	0xFFF
-   673                           tosh	equ	0xFFE
-   674                           tosl	equ	0xFFD
-   675                           stkptr	equ	0xFFC
-   676                           pclatu	equ	0xFFB
-   677                           pclath	equ	0xFFA
-   678                           pcl	equ	0xFF9
-   679                           tblptru	equ	0xFF8
-   680                           tblptrh	equ	0xFF7
-   681                           tblptrl	equ	0xFF6
-   682                           tablat	equ	0xFF5
-   683                           prodh	equ	0xFF4
-   684                           prodl	equ	0xFF3
-   685                           indf0	equ	0xFEF
-   686                           postinc0	equ	0xFEE
-   687                           postdec0	equ	0xFED
-   688                           preinc0	equ	0xFEC
-   689                           plusw0	equ	0xFEB
-   690                           fsr0h	equ	0xFEA
-   691                           fsr0l	equ	0xFE9
-   692                           wreg	equ	0xFE8
-   693                           indf1	equ	0xFE7
-   694                           postinc1	equ	0xFE6
-   695                           postdec1	equ	0xFE5
-   696                           preinc1	equ	0xFE4
-   697                           plusw1	equ	0xFE3
-   698                           fsr1h	equ	0xFE2
-   699                           fsr1l	equ	0xFE1
-   700                           bsr	equ	0xFE0
-   701                           indf2	equ	0xFDF
-   702                           postinc2	equ	0xFDE
-   703                           postdec2	equ	0xFDD
-   704                           preinc2	equ	0xFDC
-   705                           plusw2	equ	0xFDB
-   706                           fsr2h	equ	0xFDA
-   707                           fsr2l	equ	0xFD9
-   708                           status	equ	0xFD8
+   573                           ;PruebaTeclado.c: 112: if(RB4==0) Tecla=9;
+   574   00085E  B881               	btfsc	3969,4,c	;volatile
+   575   000860  D002               	goto	i2l96
+   576   000862  0E09               	movlw	9
+   577   000864  D01D               	goto	L15
+   578   000866                     i2l96:
+   579                           
+   580                           ;PruebaTeclado.c: 113: else if(RB5==0) Tecla=10;
+   581   000866  BA81               	btfsc	3969,5,c	;volatile
+   582   000868  D002               	goto	i2l98
+   583   00086A  0E0A               	movlw	10
+   584   00086C  D019               	goto	L15
+   585   00086E                     i2l98:
+   586                           
+   587                           ;PruebaTeclado.c: 114: else if(RB6==0) Tecla=11;
+   588   00086E  BC81               	btfsc	3969,6,c	;volatile
+   589   000870  D002               	goto	i2l100
+   590   000872  0E0B               	movlw	11
+   591   000874  D015               	goto	L15
+   592   000876                     i2l100:
+   593                           
+   594                           ;PruebaTeclado.c: 115: else if(RB7==0) Tecla=12;
+   595   000876  BE81               	btfsc	3969,7,c	;volatile
+   596   000878  D002               	goto	i2l928
+   597   00087A  0E0C               	movlw	12
+   598   00087C  D011               	goto	L15
+   599   00087E                     i2l928:
+   600                           
+   601                           ;PruebaTeclado.c: 116: else{;PruebaTeclado.c: 117: LATB=0b11110111;
+   602   00087E  0EF7               	movlw	247
+   603   000880  6E8A               	movwf	138,c	;volatile
+   604                           
+   605                           ;PruebaTeclado.c: 118: if(RB4==0) Tecla=13;
+   606   000882  B881               	btfsc	3969,4,c	;volatile
+   607   000884  D002               	goto	i2l104
+   608   000886  0E0D               	movlw	13
+   609   000888  D00B               	goto	L15
+   610   00088A                     i2l104:
+   611                           
+   612                           ;PruebaTeclado.c: 119: else if(RB5==0) Tecla=14;
+   613   00088A  BA81               	btfsc	3969,5,c	;volatile
+   614   00088C  D002               	goto	i2l106
+   615   00088E  0E0E               	movlw	14
+   616   000890  D007               	goto	L15
+   617   000892                     i2l106:
+   618                           
+   619                           ;PruebaTeclado.c: 120: else if(RB6==0) Tecla=15;
+   620   000892  BC81               	btfsc	3969,6,c	;volatile
+   621   000894  D002               	goto	i2l108
+   622   000896  0E0F               	movlw	15
+   623   000898  D003               	goto	L15
+   624   00089A                     i2l108:
+   625                           
+   626                           ;PruebaTeclado.c: 121: else if(RB7==0) Tecla=16;
+   627   00089A  BE81               	btfsc	3969,7,c	;volatile
+   628   00089C  D002               	goto	i2l105
+   629   00089E  0E10               	movlw	16
+   630   0008A0                     L15:
+   631   0008A0  6E04               	movwf	_Tecla^0,c
+   632   0008A2                     i2l105:
+   633                           
+   634                           ;PruebaTeclado.c: 122: };PruebaTeclado.c: 123: };PruebaTeclado.c: 124: };PruebaTeclado.c
+      +                          : 125: LATB=0b11110000;
+   635   0008A2  0EF0               	movlw	240
+   636   0008A4  6E8A               	movwf	138,c	;volatile
+   637   0008A6                     i2l940:
+   638                           
+   639                           ;PruebaTeclado.c: 126: };PruebaTeclado.c: 127: _delay((unsigned long)((100)*(1000000/400
+      +                          0.0)));
+   640   0008A6  0E21               	movlw	33
+   641   0008A8  6E01               	movwf	??_ISR^0,c
+   642   0008AA  0E76               	movlw	118
+   643   0008AC                     i2u26_47:
+   644   0008AC  2EE8               	decfsz	wreg,f,c
+   645   0008AE  D7FE               	bra	i2u26_47
+   646   0008B0  2E01               	decfsz	??_ISR^0,f,c
+   647   0008B2  D7FC               	bra	i2u26_47
+   648   0008B4  D000               	nop2	
+   649                           
+   650                           ;PruebaTeclado.c: 128: RBIF=0;
+   651   0008B6  90F2               	bcf	4082,0,c	;volatile
+   652   0008B8                     i2l944:
+   653                           
+   654                           ;PruebaTeclado.c: 129: };PruebaTeclado.c: 130: if(TMR0IF==1){
+   655   0008B8  A4F2               	btfss	4082,2,c	;volatile
+   656   0008BA  D00A               	goto	i2u22_45
+   657                           
+   658                           ;PruebaTeclado.c: 131: TMR0IF=0;
+   659   0008BC  94F2               	bcf	4082,2,c	;volatile
+   660                           
+   661                           ;PruebaTeclado.c: 132: TMR0=3036;
+   662   0008BE  0E0B               	movlw	11
+   663   0008C0  6ED7               	movwf	215,c	;volatile
+   664   0008C2  0EDC               	movlw	220
+   665   0008C4  6ED6               	movwf	214,c	;volatile
+   666                           
+   667                           ;PruebaTeclado.c: 133: LATD1=LATD1^1;
+   668   0008C6  B28C               	btfsc	3980,1,c	;volatile
+   669   0008C8  D002               	goto	i2u21_40
+   670   0008CA  828C               	bsf	3980,1,c	;volatile
+   671   0008CC  D001               	goto	i2u22_45
+   672   0008CE                     i2u21_40:
+   673   0008CE  928C               	bcf	3980,1,c	;volatile
+   674   0008D0                     i2u22_45:
+   675   0008D0  9205               	bcf	btemp,1,c	;clear compiler interrupt flag (level 2)
+   676   0008D2  0011               	retfie		f
+   677   0008D4                     __end_of_ISR:
+   678                           	callstack 0
+   679                           
+   680                           	psect	smallconst
+   681   000800                     __psmallconst:
+   682                           	callstack 0
+   683   000800  00                 	db	0
+   684   000801  00                 	db	0	; dummy byte at the end
+   685   000000                     __activetblptr  equ	0
+   686                           
+   687                           	psect	rparam
+   688   000001                     ___rparam_used  equ	1
+   689   000000                     ___param_bank   equ	0
+   690   000000                     __Lparam        equ	__Lrparam
+   691   000000                     __Hparam        equ	__Hrparam
+   692                           
+   693                           	psect	temp
+   694   000005                     btemp:
+   695                           	callstack 0
+   696   000005                     	ds	1
+   697   000005                     int$flags       set	btemp
+   698   000006                     wtemp8          set	btemp+1
+   699   000006                     ttemp5          set	btemp+1
+   700   000009                     ttemp6          set	btemp+4
+   701   00000D                     ttemp7          set	btemp+8
+   702                           
+   703                           	psect	idloc
+   704                           
+   705                           ;Config register IDLOC0 @ 0x200000
+   706                           ;	unspecified, using default values
+   707   200000                     	org	2097152
+   708   200000  FF                 	db	255
+   709                           
+   710                           ;Config register IDLOC1 @ 0x200001
+   711                           ;	unspecified, using default values
+   712   200001                     	org	2097153
+   713   200001  FF                 	db	255
+   714                           
+   715                           ;Config register IDLOC2 @ 0x200002
+   716                           ;	unspecified, using default values
+   717   200002                     	org	2097154
+   718   200002  FF                 	db	255
+   719                           
+   720                           ;Config register IDLOC3 @ 0x200003
+   721                           ;	unspecified, using default values
+   722   200003                     	org	2097155
+   723   200003  FF                 	db	255
+   724                           
+   725                           ;Config register IDLOC4 @ 0x200004
+   726                           ;	unspecified, using default values
+   727   200004                     	org	2097156
+   728   200004  FF                 	db	255
+   729                           
+   730                           ;Config register IDLOC5 @ 0x200005
+   731                           ;	unspecified, using default values
+   732   200005                     	org	2097157
+   733   200005  FF                 	db	255
+   734                           
+   735                           ;Config register IDLOC6 @ 0x200006
+   736                           ;	unspecified, using default values
+   737   200006                     	org	2097158
+   738   200006  FF                 	db	255
+   739                           
+   740                           ;Config register IDLOC7 @ 0x200007
+   741                           ;	unspecified, using default values
+   742   200007                     	org	2097159
+   743   200007  FF                 	db	255
+   744                           
+   745                           	psect	config
+   746                           
+   747                           ;Config register CONFIG1L @ 0x300000
+   748                           ;	unspecified, using default values
+   749                           ;	PLL Prescaler Selection bits
+   750                           ;	PLLDIV = 0x0, unprogrammed default
+   751                           ;	System Clock Postscaler Selection bits
+   752                           ;	CPUDIV = 0x0, unprogrammed default
+   753                           ;	USB Clock Selection bit (used in Full-Speed USB mode only; UCFG:FSEN = 1)
+   754                           ;	USBDIV = 0x0, unprogrammed default
+   755   300000                     	org	3145728
+   756   300000  00                 	db	0
+   757                           
+   758                           ;Config register CONFIG1H @ 0x300001
+   759                           ;	Oscillator Selection bits
+   760                           ;	FOSC = INTOSC_EC, Internal oscillator, CLKO function on RA6, EC used by USB (INTCKO)
+   761                           ;	Fail-Safe Clock Monitor Enable bit
+   762                           ;	FCMEN = 0x0, unprogrammed default
+   763                           ;	Internal/External Oscillator Switchover bit
+   764                           ;	IESO = 0x0, unprogrammed default
+   765   300001                     	org	3145729
+   766   300001  09                 	db	9
+   767                           
+   768                           ;Config register CONFIG2L @ 0x300002
+   769                           ;	unspecified, using default values
+   770                           ;	Power-up Timer Enable bit
+   771                           ;	PWRT = 0x1, unprogrammed default
+   772                           ;	Brown-out Reset Enable bits
+   773                           ;	BOR = 0x3, unprogrammed default
+   774                           ;	Brown-out Reset Voltage bits
+   775                           ;	BORV = 0x3, unprogrammed default
+   776                           ;	USB Voltage Regulator Enable bit
+   777                           ;	VREGEN = 0x0, unprogrammed default
+   778   300002                     	org	3145730
+   779   300002  1F                 	db	31
+   780                           
+   781                           ;Config register CONFIG2H @ 0x300003
+   782                           ;	Watchdog Timer Enable bit
+   783                           ;	WDT = OFF, WDT disabled (control is placed on the SWDTEN bit)
+   784                           ;	Watchdog Timer Postscale Select bits
+   785                           ;	WDTPS = 0xF, unprogrammed default
+   786   300003                     	org	3145731
+   787   300003  1E                 	db	30
+   788                           
+   789                           ; Padding undefined space
+   790   300004                     	org	3145732
+   791   300004  FF                 	db	255
+   792                           
+   793                           ;Config register CONFIG3H @ 0x300005
+   794                           ;	CCP2 MUX bit
+   795                           ;	CCP2MX = 0x1, unprogrammed default
+   796                           ;	PORTB A/D Enable bit
+   797                           ;	PBADEN = OFF, PORTB<4:0> pins are configured as digital I/O on Reset
+   798                           ;	Low-Power Timer 1 Oscillator Enable bit
+   799                           ;	LPT1OSC = 0x0, unprogrammed default
+   800                           ;	MCLR Pin Enable bit
+   801                           ;	MCLRE = 0x1, unprogrammed default
+   802   300005                     	org	3145733
+   803   300005  81                 	db	129
+   804                           
+   805                           ;Config register CONFIG4L @ 0x300006
+   806                           ;	Stack Full/Underflow Reset Enable bit
+   807                           ;	STVREN = 0x1, unprogrammed default
+   808                           ;	Single-Supply ICSP Enable bit
+   809                           ;	LVP = OFF, Single-Supply ICSP disabled
+   810                           ;	Dedicated In-Circuit Debug/Programming Port (ICPORT) Enable bit
+   811                           ;	ICPRT = 0x0, unprogrammed default
+   812                           ;	Extended Instruction Set Enable bit
+   813                           ;	XINST = 0x0, unprogrammed default
+   814                           ;	Background Debugger Enable bit
+   815                           ;	DEBUG = 0x1, unprogrammed default
+   816   300006                     	org	3145734
+   817   300006  81                 	db	129
+   818                           
+   819                           ; Padding undefined space
+   820   300007                     	org	3145735
+   821   300007  FF                 	db	255
+   822                           
+   823                           ;Config register CONFIG5L @ 0x300008
+   824                           ;	unspecified, using default values
+   825                           ;	Code Protection bit
+   826                           ;	CP0 = 0x1, unprogrammed default
+   827                           ;	Code Protection bit
+   828                           ;	CP1 = 0x1, unprogrammed default
+   829                           ;	Code Protection bit
+   830                           ;	CP2 = 0x1, unprogrammed default
+   831                           ;	Code Protection bit
+   832                           ;	CP3 = 0x1, unprogrammed default
+   833   300008                     	org	3145736
+   834   300008  0F                 	db	15
+   835                           
+   836                           ;Config register CONFIG5H @ 0x300009
+   837                           ;	unspecified, using default values
+   838                           ;	Boot Block Code Protection bit
+   839                           ;	CPB = 0x1, unprogrammed default
+   840                           ;	Data EEPROM Code Protection bit
+   841                           ;	CPD = 0x1, unprogrammed default
+   842   300009                     	org	3145737
+   843   300009  C0                 	db	192
+   844                           
+   845                           ;Config register CONFIG6L @ 0x30000A
+   846                           ;	unspecified, using default values
+   847                           ;	Write Protection bit
+   848                           ;	WRT0 = 0x1, unprogrammed default
+   849                           ;	Write Protection bit
+   850                           ;	WRT1 = 0x1, unprogrammed default
+   851                           ;	Write Protection bit
+   852                           ;	WRT2 = 0x1, unprogrammed default
+   853                           ;	Write Protection bit
+   854                           ;	WRT3 = 0x1, unprogrammed default
+   855   30000A                     	org	3145738
+   856   30000A  0F                 	db	15
+   857                           
+   858                           ;Config register CONFIG6H @ 0x30000B
+   859                           ;	unspecified, using default values
+   860                           ;	Configuration Register Write Protection bit
+   861                           ;	WRTC = 0x1, unprogrammed default
+   862                           ;	Boot Block Write Protection bit
+   863                           ;	WRTB = 0x1, unprogrammed default
+   864                           ;	Data EEPROM Write Protection bit
+   865                           ;	WRTD = 0x1, unprogrammed default
+   866   30000B                     	org	3145739
+   867   30000B  E0                 	db	224
+   868                           
+   869                           ;Config register CONFIG7L @ 0x30000C
+   870                           ;	unspecified, using default values
+   871                           ;	Table Read Protection bit
+   872                           ;	EBTR0 = 0x1, unprogrammed default
+   873                           ;	Table Read Protection bit
+   874                           ;	EBTR1 = 0x1, unprogrammed default
+   875                           ;	Table Read Protection bit
+   876                           ;	EBTR2 = 0x1, unprogrammed default
+   877                           ;	Table Read Protection bit
+   878                           ;	EBTR3 = 0x1, unprogrammed default
+   879   30000C                     	org	3145740
+   880   30000C  0F                 	db	15
+   881                           
+   882                           ;Config register CONFIG7H @ 0x30000D
+   883                           ;	unspecified, using default values
+   884                           ;	Boot Block Table Read Protection bit
+   885                           ;	EBTRB = 0x1, unprogrammed default
+   886   30000D                     	org	3145741
+   887   30000D  40                 	db	64
+   888                           tosu	equ	0xFFF
+   889                           tosh	equ	0xFFE
+   890                           tosl	equ	0xFFD
+   891                           stkptr	equ	0xFFC
+   892                           pclatu	equ	0xFFB
+   893                           pclath	equ	0xFFA
+   894                           pcl	equ	0xFF9
+   895                           tblptru	equ	0xFF8
+   896                           tblptrh	equ	0xFF7
+   897                           tblptrl	equ	0xFF6
+   898                           tablat	equ	0xFF5
+   899                           prodh	equ	0xFF4
+   900                           prodl	equ	0xFF3
+   901                           indf0	equ	0xFEF
+   902                           postinc0	equ	0xFEE
+   903                           postdec0	equ	0xFED
+   904                           preinc0	equ	0xFEC
+   905                           plusw0	equ	0xFEB
+   906                           fsr0h	equ	0xFEA
+   907                           fsr0l	equ	0xFE9
+   908                           wreg	equ	0xFE8
+   909                           indf1	equ	0xFE7
+   910                           postinc1	equ	0xFE6
+   911                           postdec1	equ	0xFE5
+   912                           preinc1	equ	0xFE4
+   913                           plusw1	equ	0xFE3
+   914                           fsr1h	equ	0xFE2
+   915                           fsr1l	equ	0xFE1
+   916                           bsr	equ	0xFE0
+   917                           indf2	equ	0xFDF
+   918                           postinc2	equ	0xFDE
+   919                           postdec2	equ	0xFDD
+   920                           preinc2	equ	0xFDC
+   921                           plusw2	equ	0xFDB
+   922                           fsr2h	equ	0xFDA
+   923                           fsr2l	equ	0xFD9
+   924                           status	equ	0xFD8
 
 Data Sizes:
     Strings     0
@@ -843,67 +1059,64 @@ Call Graph Tables:
 
  _ISR (ROOT)
 
- Address spaces:
-Name               Size   Autos  Total    Cost      Usage
-BIGRAM             7FF      0       0      21        0.0%
-EEDATA             100      0       0       0        0.0%
-BITBANK7           100      0       0      18        0.0%
-BANK7              100      0       0      19        0.0%
-BITBANK6           100      0       0      16        0.0%
-BANK6              100      0       0      17        0.0%
-BITBANK5           100      0       0      14        0.0%
-BANK5              100      0       0      15        0.0%
-BITBANK4           100      0       0      12        0.0%
-BANK4              100      0       0      13        0.0%
-BITBANK3           100      0       0      10        0.0%
-BANK3              100      0       0      11        0.0%
-BITBANK2           100      0       0       8        0.0%
-BANK2              100      0       0       9        0.0%
-BITBANK1           100      0       0       6        0.0%
-BANK1              100      0       0       7        0.0%
-BITBANK0            A0      0       0       4        0.0%
-BANK0               A0      0       0       5        0.0%
-BITCOMRAM           5E      0       0       0        0.0%
-COMRAM              5E      3       4       1        4.3%
-BITSFR               0      0       0     200        0.0%
-SFR                  0      0       0     200        0.0%
-STACK                0      0       0       2        0.0%
-NULL                 0      0       0       0        0.0%
-ABS                  0      0       4      20        0.0%
-DATA                 0      0       4       3        0.0%
-CODE                 0      0       0       0        0.0%
+Address spaces:
+Name               Size   Autos  Total    Usage
+BIGRAM            2047      0       0      0.0%
+BITBANK7           256      0       0      0.0%
+BANK7              256      0       0      0.0%
+BITBANK6           256      0       0      0.0%
+BANK6              256      0       0      0.0%
+BITBANK5           256      0       0      0.0%
+BANK5              256      0       0      0.0%
+BITBANK4           256      0       0      0.0%
+BANK4              256      0       0      0.0%
+BITBANK3           256      0       0      0.0%
+BANK3              256      0       0      0.0%
+BITBANK2           256      0       0      0.0%
+BANK2              256      0       0      0.0%
+BITBANK1           256      0       0      0.0%
+BANK1              256      0       0      0.0%
+BITBANK0           160      0       0      0.0%
+BANK0              160      0       0      0.0%
+BITBIGSFRlh        111      0       0      0.0%
+BITCOMRAM           94      0       0      0.0%
+COMRAM              94      3       4      4.3%
+BITBIGSFRll         33      0       0      0.0%
+BITBIGSFRh          14      0       0      0.0%
+STACK                0      0       0      0.0%
+DATA                 0      0       4      0.0%
 
 
-Microchip Technology PIC18 Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Tue Nov 23 15:50:57 2021
+Microchip Technology PIC18 Macro Assembler V2.50 build 20240725155939 
+Symbol Table                                                                                   Thu Jul 17 12:34:37 2025
 
-                     l44 0136                       l45 0114                      l872 010E  
-                    _GIE 007F97                      _RB4 007C0C                      _RB5 007C0D  
-                    _RB6 007C0E                      _RB7 007C0F                      u237 00FE  
-                    u247 011C                      u257 012C                      _ISR 0008  
-                    wreg 000FE8                     ?_ISR 0001                     _LATB 000F8A  
-                   _LATD 000F8C                     _RBIE 007F93                     _RBIF 007F90  
-                   i2l80 0030                     i2l90 005C                     i2l82 0038  
-                   i2l92 0064                     i2l84 0040                     i2l96 0078  
-                   i2l88 0054                     i2l98 0080                     _RBPU 007F8F  
-                   _TMR0 000FD6                     _main 00E6                     btemp 0005  
-                   start 000E             ___param_bank 000000                    ??_ISR 0001  
-                  ?_main 0001                    _LATD0 007C60                    _LATD1 007C61  
-                  i2l100 0088                    i2l104 009C                    i2l105 00B4  
-                  i2l106 00A4                    i2l108 00AC                    i2l910 006C  
-                  i2l922 0090                    i2l934 00B8                    i2l938 00CA  
-                  i2l898 0048                    _PORTB 000F81                    _TRISB 000F93  
-                  _TRISD 000F95                    _Tecla 0004                    main@i 0003  
+                     l44 091C                       l45 08FA                      l878 08F6  
+                    _GIE 7F97                      _RB4 7C0C                      _RB5 7C0D  
+                    _RB6 7C0E                      _RB7 7C0F                      u237 08E6  
+                    u247 0902                      u257 0912                      _ISR 0008  
+                    wreg 0FE8                     ?_ISR 0001                     _LATB 0F8A  
+                   _LATD 0F8C                     _RBIE 7F93                     _RBIF 7F90  
+                   i2l80 081E                     i2l90 084A                     i2l82 0826  
+                   i2l92 0852                     i2l84 082E                     i2l96 0866  
+                   i2l88 0842                     i2l98 086E                     _RBPU 7F8F  
+                   _TMR0 0FD6                     _main 08D4                     btemp 0005  
+                   start 000E             ___param_bank 0000                    ??_ISR 0001  
+                  ?_main 0001                    _LATD0 7C60                    _LATD1 7C61  
+                  i2l100 0876                    i2l104 088A                    i2l105 08A2  
+                  i2l106 0892                    i2l108 089A                    i2l904 0836  
+                  i2l916 085A                    i2l940 08A6                    i2l928 087E  
+                  i2l944 08B8                    _PORTB 0F81                    _TRISB 0F93  
+                  _TRISD 0F95                    _Tecla 0004                    main@i 0003  
                   ttemp5 0006                    ttemp6 0009                    ttemp7 000D  
-                  status 000FD8                    wtemp8 0006          __initialization 0144  
-           __end_of_main 0144                   ??_main 0002            __activetblptr 000000  
-                 _TMR0IF 007F92                   isa$std 000001               __accesstop 0060  
-__end_of__initialization 0146            ___rparam_used 000001           __pcstackCOMRAM 0001  
-                i2u21_40 00E0                  i2u22_45 00E2                  i2u26_47 00BE  
-                __Hparam 0000                  __Lparam 0000                  __pcinit 0144  
-                __ramtop 0800                  __ptext0 00E6             __size_of_ISR 00DE  
-         __pintcode_body 0012     end_of_initialization 0146                  int_func 0012  
-    start_initialization 0144              __end_of_ISR 00E6              __pbssCOMRAM 0004  
-              __pintcode 0008                 __Hrparam 0000                 __Lrparam 0000  
-          __size_of_main 005E                 isa$xinst 000000                 int$flags 0005  
-               intlevel2 0000  
+                  status 0FD8                    wtemp8 0006          __initialization 0928  
+           __end_of_main 0928                   ??_main 0002            __activetblptr 0000  
+                 _TMR0IF 7F92                   isa$std 0001             __mediumconst 0000  
+             __accesstop 0060  __end_of__initialization 092A            ___rparam_used 0001  
+         __pcstackCOMRAM 0001                  i2u21_40 08CE                  i2u22_45 08D0  
+                i2u26_47 08AC                  __Hparam 0000                  __Lparam 0000  
+           __psmallconst 0800                  __pcinit 0928                  __ramtop 0800  
+                __ptext0 08D4           __pintcode_body 0802     end_of_initialization 092A  
+                int_func 0802      start_initialization 0928              __end_of_ISR 08D4  
+            __pbssCOMRAM 0004                __pintcode 0008              __smallconst 0800  
+               __Hrparam 0000                 __Lrparam 0000                 isa$xinst 0000  
+               int$flags 0005                 intlevel2 0000  

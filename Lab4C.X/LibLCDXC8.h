@@ -20,16 +20,16 @@ extern "C" {
 #endif
 #include<xc.h>
 #ifndef _XTAL_FREQ
-#define _XTAL_FREQ 20000000
+#define _XTAL_FREQ 1000000
 #endif
 #ifndef Datos
 #define Datos LATD	//El puerto de conexión de los datos el cual se puede cambiar
 #endif
 #ifndef RS
-#define RS LATD0	//Los pines de control al LCD los cuales se
+#define RS LATA3	//Los pines de control al LCD los cuales se
 #endif
 #ifndef E
-#define E LATD1	//pueden cambiar
+#define E LATA4	//pueden cambiar
 #endif
 
 unsigned char interfaz=8;

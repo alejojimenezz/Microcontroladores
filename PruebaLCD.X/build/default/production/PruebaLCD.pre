@@ -1,5 +1,5 @@
 
-# 1 "PruebaTeclado.c"
+# 1 "PruebaLCD.c"
 
 # 18 "C:\Program Files\Microchip\xc8\v2.50\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -5667,105 +5667,304 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 
+# 35 "LibLCDXC8.h"
+unsigned char interfaz=8;
 
-# 4 "PruebaTeclado.c"
+void ConfiguraLCD(unsigned char);
+void RetardoLCD(unsigned char);
+void EnviaDato(unsigned char);
+void InicializaLCD(void);
+void HabilitaLCD(void);
+void BorraLCD(void);
+void CursorAInicio(void);
+void ComandoLCD(unsigned char);
+void EscribeLCD_c(unsigned char);
+void EscribeLCD_n8(unsigned char, unsigned char);
+void EscribeLCD_n16(unsigned int, unsigned char);
+void EscribeLCD_d(double, unsigned char, unsigned char);
+void MensajeLCD_Var(char *);
+void DireccionaLCD(unsigned char);
+void FijaCursorLCD(unsigned char,unsigned char);
+void DesplazaPantallaD(void);
+void DesplazaPantallaI(void);
+
+void ConfiguraLCD(unsigned char a){
+if(a==4 | a ==8)
+interfaz=a;
+}
+void EnviaDato(unsigned char a){
+if(interfaz==4){
+LATD=(LATD & 0b00001111) | (a & 0b11110000);
+HabilitaLCD();
+RetardoLCD(1);
+LATD=(LATD & 0b00001111) | (a<<4);
+
+
+}else if(interfaz==8){
+LATD=a;
+}
+}
+void InicializaLCD(void){
+
+LATA3=0;
+if(interfaz==4)
+LATD=(LATD & 0b00001111) | 0x30;
+else
+LATD=0x3F;
+HabilitaLCD();
+RetardoLCD(1);
+if(interfaz==4)
+LATD=(LATD & 0b00001111) | 0x30;
+else
+LATD=0x3F;
+HabilitaLCD();
+RetardoLCD(3);
+if(interfaz==4)
+LATD=(LATD & 0b00001111) | 0x30;
+else
+LATD=0x3F;
+HabilitaLCD();
+RetardoLCD(4);
+if(interfaz==4){
+LATD=(LATD & 0b00001111) | 0x20;
+HabilitaLCD();
+RetardoLCD(4);
+EnviaDato(0x2F);
+HabilitaLCD();
+RetardoLCD(4);
+}
+BorraLCD();
+EnviaDato(0xF);
+HabilitaLCD();
+RetardoLCD(4);
+}
+void HabilitaLCD(void){
+
+LATA4=1;
+_delay((unsigned long)((40)*(1000000/4000000.0)));
+
+LATA4=0;
+}
+void BorraLCD(void){
+
+LATA3=0;
+EnviaDato(0x01);
+HabilitaLCD();
+RetardoLCD(2);
+}
+void CursorAInicio(){
+
+
+}
+void ComandoLCD(unsigned char a){
+
+LATA3=0;
+if(a==1)
+BorraLCD();
+else if((a&0b11111110)==2)
+CursorAInicio();
+else{
+EnviaDato(a);
+HabilitaLCD();
+RetardoLCD(4);
+}
+}
+void EscribeLCD_c(unsigned char a){
+
+
+
+LATA3=1;
+EnviaDato(a);
+HabilitaLCD();
+RetardoLCD(4);
+}
+void EscribeLCD_n8(unsigned char a,unsigned char b){
+
+
+
+
+unsigned char centena,decena,unidad;
+LATA3=1;
+switch(b){
+case 1: unidad=a%10;
+EnviaDato(unidad+48);
+HabilitaLCD();
+RetardoLCD(4);
+break;
+case 2: decena=(a%100)/10;
+unidad=a%10;
+EnviaDato(decena+48);
+HabilitaLCD();
+RetardoLCD(4);
+EnviaDato(unidad+48);
+HabilitaLCD();
+RetardoLCD(4);
+break;
+case 3: centena=a/100;
+decena=(a%100)/10;
+unidad=a%10;
+EnviaDato(centena+48);
+HabilitaLCD();
+RetardoLCD(4);
+EnviaDato(decena+48);
+HabilitaLCD();
+RetardoLCD(4);
+EnviaDato(unidad+48);
+HabilitaLCD();
+RetardoLCD(4);
+break;
+default: break;
+}
+}
+void EscribeLCD_n16(unsigned int a,unsigned char b){
+
+
+
+
+unsigned char decena,unidad;
+unsigned int centena,millar;
+LATA3=1;
+switch(b){
+case 1: unidad=a%10;
+EscribeLCD_c(unidad+48);
+break;
+case 2: decena=(a%100)/10;
+unidad=a%10;
+EscribeLCD_c(decena+48);
+EscribeLCD_c(unidad+48);
+break;
+case 3: centena=(a%1000)/100;
+decena=(a%100)/10;
+unidad=a%10;
+EscribeLCD_c(centena+48);
+EscribeLCD_c(decena+48);
+EscribeLCD_c(unidad+48);
+break;
+case 4: millar=(a%10000)/1000;
+centena=(a%1000)/100;
+decena=(a%100)/10;
+unidad=a%10;
+EscribeLCD_c(millar+48);
+EscribeLCD_c(centena+48);
+EscribeLCD_c(decena+48);
+EscribeLCD_c(unidad+48);
+break;
+case 5: EscribeLCD_c(a/10000 +48);
+millar=(a%10000)/1000;
+centena=(a%1000)/100;
+decena=(a%100)/10;
+unidad=a%10;
+EscribeLCD_c(millar+48);
+EscribeLCD_c(centena+48);
+EscribeLCD_c(decena+48);
+EscribeLCD_c(unidad+48);
+break;
+default: break;
+}
+}
+void EscribeLCD_d(double num, unsigned char digi, unsigned char digd){
+
+}
+void MensajeLCD_Var(char* a){
+
+
+
+
+}
+void DireccionaLCD(unsigned char a){
+
+
+LATA3=0;
+EnviaDato(a);
+HabilitaLCD();
+RetardoLCD(4);
+}
+void FijaCursorLCD(unsigned char fila,unsigned char columna){
+
+# 254
+}
+void DesplazaPantallaD(void){
+
+LATA3=0;
+EnviaDato(8);
+HabilitaLCD();
+RetardoLCD(4);
+}
+void DesplazaPantallaI(void){
+
+
+}
+void DesplazaCursorD(void){
+
+
+}
+void DesplazaCursorI(void){
+
+
+}
+void RetardoLCD(unsigned char a){
+switch(a){
+case 1: _delay((unsigned long)((15)*(1000000/4000.0)));
+
+break;
+case 2: _delay((unsigned long)((1)*(1000000/4000.0)));
+_delay((unsigned long)((640)*(1000000/4000000.0)));
+
+break;
+case 3: _delay((unsigned long)((100)*(1000000/4000000.0)));
+
+break;
+case 4: _delay((unsigned long)((40)*(1000000/4000000.0)));
+
+break;
+default:
+break;
+}
+}
+
+
+# 4 "PruebaLCD.c"
 #pragma config FOSC=INTOSC_EC
 #pragma config WDT=OFF
-#pragma config PBADEN=OFF
-#pragma config LVP=OFF
 
-unsigned char Tecla=0;
-
-unsigned char LeerTeclado(void);
-void interrupt ISR(void);
-
+# 21
 void main(void){
-unsigned char i;
-TRISB=0b11110000;
-TRISD=0;
-LATB=0b00000000;
-LATD=0;
-RBPU=0;
-_delay((unsigned long)((100)*(1000000/4000.0)));
 
-# 27
-RBIF=0;
-RBIE=1;
-GIE=1;
+# 29
+TRISDbits.TRISD4 = 0;
+TRISDbits.TRISD5 = 0;
+TRISDbits.TRISD6 = 0;
+TRISDbits.TRISD7 = 0;
+
+TRISAbits.TRISA3 = 0;
+TRISAbits.TRISA4 = 0;
+
+LATAbits.LATA3 = 0;
+LATAbits.LATA4 = 0;
+LATDbits.LATD4 = 0;
+LATDbits.LATD5 = 0;
+LATDbits.LATD6 = 0;
+LATDbits.LATD7 = 0;
+
+_delay((unsigned long)((1500)*(1000000/4000.0)));
+ConfiguraLCD(4);
+InicializaLCD();
+
+
+EscribeLCD_c('H');
+EscribeLCD_c('o');
+EscribeLCD_c('l');
+EscribeLCD_c('a');
+EscribeLCD_c(' ');
+EscribeLCD_c('m');
+EscribeLCD_c('u');
+EscribeLCD_c('n');
+EscribeLCD_c('d');
+EscribeLCD_c('o');
+
+DireccionaLCD(0xC0);
+EscribeLCD_c('7');
+EscribeLCD_c(';');
 while(1){
-
-# 62
-for(i=0;i<Tecla;i++){
-LATD0=1;
-_delay((unsigned long)((400)*(1000000/4000.0)));
-LATD0=0;
-_delay((unsigned long)((400)*(1000000/4000.0)));
-}
-Tecla=0;
-}
-}
-
-unsigned char LeerTeclado(void){
-while(RB4==1 && RB5==1 && RB6==1 && RB7==1);
-LATB=0b11111110;
-if(RB4==0) return 1;
-if(RB5==0) return 2;
-if(RB6==0) return 3;
-if(RB7==0) return 4;
-LATB=0b11111101;
-if(RB4==0) return 5;
-if(RB5==0) return 6;
-if(RB6==0) return 7;
-if(RB7==0) return 8;
-LATB=0b11111011;
-if(RB4==0) return 9;
-if(RB5==0) return 10;
-if(RB6==0) return 11;
-if(RB7==0) return 12;
-LATB=0b11110111;
-if(RB4==0) return 13;
-if(RB5==0) return 14;
-if(RB6==0) return 15;
-if(RB7==0) return 16;
-}
-void interrupt ISR(void){
-if(RBIF==1){
-if(PORTB!=0b11110000){
-Tecla=0;
-LATB=0b11111110;
-if(RB4==0) Tecla=1;
-else if(RB5==0) Tecla=2;
-else if(RB6==0) Tecla=3;
-else if(RB7==0) Tecla=4;
-else{
-LATB=0b11111101;
-if(RB4==0) Tecla=5;
-else if(RB5==0) Tecla=6;
-else if(RB6==0) Tecla=7;
-else if(RB7==0) Tecla=8;
-else{
-LATB=0b11111011;
-if(RB4==0) Tecla=9;
-else if(RB5==0) Tecla=10;
-else if(RB6==0) Tecla=11;
-else if(RB7==0) Tecla=12;
-else{
-LATB=0b11110111;
-if(RB4==0) Tecla=13;
-else if(RB5==0) Tecla=14;
-else if(RB6==0) Tecla=15;
-else if(RB7==0) Tecla=16;
-}
-}
-}
-LATB=0b11110000;
-}
-_delay((unsigned long)((100)*(1000000/4000.0)));
-RBIF=0;
-}
-if(TMR0IF==1){
-TMR0IF=0;
-TMR0=3036;
-LATD1=LATD1^1;
 }
 }
