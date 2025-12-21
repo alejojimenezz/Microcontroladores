@@ -1,1 +1,0 @@
- build/default/production/Lab3CFinal.d  build/default/production/Lab3CFinal.p1:  Lab3CFinal.c
