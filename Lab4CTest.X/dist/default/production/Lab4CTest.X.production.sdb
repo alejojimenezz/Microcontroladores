@@ -1,0 +1,520 @@
+[p GLOBOPT AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul64.c
+[v ___omul __omul `(ul  1 e 4 0 ]
+"48 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab4CTest.X\Lab4CTest.c
+[v _main main `(v  1 e 1 0 ]
+"130
+[v _guardarNumero guardarNumero `(v  1 e 1 0 ]
+"172
+[v _iniciarConteo iniciarConteo `(v  1 e 1 0 ]
+"203
+[v _borrarDigito borrarDigito `(v  1 e 1 0 ]
+"226
+[v _mostrarRGB mostrarRGB `(v  1 e 1 0 ]
+"238
+[v _mostrarNumero mostrarNumero `(v  1 e 1 0 ]
+"244
+[v _paradaEmergencia paradaEmergencia `(v  1 e 1 0 ]
+"253
+[v _solicitarTecla solicitarTecla `(uc  1 e 1 0 ]
+"309
+[v _ISR ISR `II(v  1 e 1 0 ]
+"387
+[v _MostrarMensajeBienvenida MostrarMensajeBienvenida `(v  1 e 1 0 ]
+"414
+[v _PreguntarCuentaObjetivo PreguntarCuentaObjetivo `(v  1 e 1 0 ]
+"419
+[v _mostrarMensajeCumplido mostrarMensajeCumplido `(v  1 e 1 0 ]
+"444
+[v _EncenderBacklightLCD EncenderBacklightLCD `(v  1 e 1 0 ]
+[v i2_EncenderBacklightLCD EncenderBacklightLCD `(v  1 e 1 0 ]
+"449
+[v _ApagarBacklightLCD ApagarBacklightLCD `(v  1 e 1 0 ]
+"56 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab4CTest.X\LibLCDXC8.h
+[v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
+"60
+[v _EnviaDato EnviaDato `(v  1 e 1 0 ]
+[v i2_EnviaDato EnviaDato `(v  1 e 1 0 ]
+"72
+[v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
+"106
+[v _HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
+[v i2_HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
+"113
+[v _BorraLCD BorraLCD `(v  1 e 1 0 ]
+[v i2_BorraLCD BorraLCD `(v  1 e 1 0 ]
+"120
+[v _CursorAInicio CursorAInicio `(v  1 e 1 0 ]
+"128
+[v _ComandoLCD ComandoLCD `(v  1 e 1 0 ]
+"141
+[v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
+"150
+[v _EscribeLCD_n8 EscribeLCD_n8 `(v  1 e 1 0 ]
+"237
+[v _MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
+[v i2_MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
+"250
+[v _CreaCaracterLCD CreaCaracterLCD `(v  1 e 1 0 ]
+"274
+[v _FijaCursorLCD FijaCursorLCD `(v  1 e 1 0 ]
+[v i2_FijaCursorLCD FijaCursorLCD `(v  1 e 1 0 ]
+"297
+[v _DesplazaPantallaD DesplazaPantallaD `(v  1 e 1 0 ]
+"303
+[v _DesplazaPantallaI DesplazaPantallaI `(v  1 e 1 0 ]
+"317
+[v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
+[v i2_RetardoLCD RetardoLCD `(v  1 e 1 0 ]
+"2453 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4550.h
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+[s S99 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"2605
+[s S108 . 1 `uc 1 T1OSO 1 0 :1:0 
+`uc 1 T1OSI 1 0 :1:1 
+`uc 1 CCP1 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 TX 1 0 :1:6 
+`uc 1 RX 1 0 :1:7 
+]
+[s S115 . 1 `uc 1 T13CKI 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 P1A 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 CK 1 0 :1:6 
+`uc 1 DT 1 0 :1:7 
+]
+[s S122 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 CCP2 1 0 :1:1 
+`uc 1 PA1 1 0 :1:2 
+]
+[s S126 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 PA2 1 0 :1:1 
+]
+[u S129 . 1 `S99 1 . 1 0 `S108 1 . 1 0 `S115 1 . 1 0 `S122 1 . 1 0 `S126 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES129  1 e 1 @3970 ]
+"2826
+[v _PORTE PORTE `VEuc  1 e 1 @3972 ]
+[s S180 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+]
+"2998
+[s S188 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+]
+[u S196 . 1 `S180 1 . 1 0 `S188 1 . 1 0 ]
+[v _LATAbits LATAbits `VES196  1 e 1 @3977 ]
+"3073
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"3263
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"3375
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"3625
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"4001
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"4223
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"5587
+[v _CMCON CMCON `VEuc  1 e 1 @4020 ]
+"6581
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"8069
+[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
+"8139
+[v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
+"9745
+[v _GIE GIE `VEb  1 e 0 @32663 ]
+"9934
+[v _LATA1 LATA1 `VEb  1 e 0 @31817 ]
+"9940
+[v _LATA3 LATA3 `VEb  1 e 0 @31819 ]
+"9943
+[v _LATA4 LATA4 `VEb  1 e 0 @31820 ]
+"9946
+[v _LATA5 LATA5 `VEb  1 e 0 @31821 ]
+"10375
+[v _RB4 RB4 `VEb  1 e 0 @31756 ]
+"10378
+[v _RB5 RB5 `VEb  1 e 0 @31757 ]
+"10381
+[v _RB6 RB6 `VEb  1 e 0 @31758 ]
+"10384
+[v _RB7 RB7 `VEb  1 e 0 @31759 ]
+"10387
+[v _RBIE RBIE `VEb  1 e 0 @32659 ]
+"10390
+[v _RBIF RBIF `VEb  1 e 0 @32656 ]
+"10396
+[v _RBPU RBPU `VEb  1 e 0 @32655 ]
+"10816
+[v _TMR0IE TMR0IE `VEb  1 e 0 @32661 ]
+"10819
+[v _TMR0IF TMR0IF `VEb  1 e 0 @32658 ]
+"10825
+[v _TMR0ON TMR0ON `VEb  1 e 0 @32431 ]
+"10888
+[v _TRISA1 TRISA1 `VEb  1 e 0 @31889 ]
+"10894
+[v _TRISA3 TRISA3 `VEb  1 e 0 @31891 ]
+"10897
+[v _TRISA4 TRISA4 `VEb  1 e 0 @31892 ]
+"10900
+[v _TRISA5 TRISA5 `VEb  1 e 0 @31893 ]
+"10933
+[v _TRISC1 TRISC1 `VEb  1 e 0 @31905 ]
+"10 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab4CTest.X\Lab4CTest.c
+[v _Tecla Tecla `uc  1 e 1 0 ]
+"11
+[v _contador contador `uc  1 e 1 0 ]
+"12
+[v _numero numero `uc  1 e 1 0 ]
+"14
+[v _digito digito `uc  1 e 1 0 ]
+"15
+[v _bandera bandera `uc  1 e 1 0 ]
+"16
+[v _inactividad_s inactividad_s `ui  1 e 2 0 ]
+"17
+[v _backlight_on backlight_on `uc  1 e 1 0 ]
+"18
+[v _sistema_suspendido sistema_suspendido `uc  1 e 1 0 ]
+"19
+[v _carita carita `C[8]uc  1 e 8 0 ]
+"29
+[v _mensaje mensaje `[13]uc  1 e 13 0 ]
+"35 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab4CTest.X\LibLCDXC8.h
+[v _interfaz interfaz `uc  1 e 1 0 ]
+"48 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab4CTest.X\Lab4CTest.c
+[v _main main `(v  1 e 1 0 ]
+{
+"105
+[v main@valor valor `uc  1 a 1 33 ]
+"128
+} 0
+"253
+[v _solicitarTecla solicitarTecla `(uc  1 e 1 0 ]
+{
+"260
+[v solicitarTecla@entrada entrada `uc  1 a 1 30 ]
+"284
+} 0
+"130
+[v _guardarNumero guardarNumero `(v  1 e 1 0 ]
+{
+"170
+} 0
+"172
+[v _iniciarConteo iniciarConteo `(v  1 e 1 0 ]
+{
+"201
+} 0
+"419
+[v _mostrarMensajeCumplido mostrarMensajeCumplido `(v  1 e 1 0 ]
+{
+"442
+} 0
+"414
+[v _PreguntarCuentaObjetivo PreguntarCuentaObjetivo `(v  1 e 1 0 ]
+{
+"417
+} 0
+"444
+[v _EncenderBacklightLCD EncenderBacklightLCD `(v  1 e 1 0 ]
+{
+"447
+} 0
+"203
+[v _borrarDigito borrarDigito `(v  1 e 1 0 ]
+{
+"224
+} 0
+"226
+[v _mostrarRGB mostrarRGB `(v  1 e 1 0 ]
+{
+[v mostrarRGB@dec dec `uc  1 p 1 wreg ]
+[v mostrarRGB@dec dec `uc  1 p 1 wreg ]
+[v mostrarRGB@dec dec `uc  1 p 1 14 ]
+"236
+} 0
+"238
+[v _mostrarNumero mostrarNumero `(v  1 e 1 0 ]
+{
+[v mostrarNumero@unidad unidad `uc  1 p 1 wreg ]
+[v mostrarNumero@unidad unidad `uc  1 p 1 wreg ]
+[v mostrarNumero@unidad unidad `uc  1 p 1 14 ]
+"242
+} 0
+"150 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab4CTest.X\LibLCDXC8.h
+[v _EscribeLCD_n8 EscribeLCD_n8 `(v  1 e 1 0 ]
+{
+[v EscribeLCD_n8@a a `uc  1 p 1 wreg ]
+"155
+[v EscribeLCD_n8@unidad unidad `uc  1 a 1 25 ]
+[v EscribeLCD_n8@decena decena `uc  1 a 1 24 ]
+[v EscribeLCD_n8@centena centena `uc  1 a 1 23 ]
+"150
+[v EscribeLCD_n8@a a `uc  1 p 1 wreg ]
+[v EscribeLCD_n8@b b `uc  1 p 1 22 ]
+"156
+[v EscribeLCD_n8@a a `uc  1 p 1 26 ]
+"187
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+{
+[v ___lbmod@dividend dividend `uc  1 p 1 wreg ]
+"6
+[v ___lbmod@rem rem `uc  1 a 1 17 ]
+"7
+[v ___lbmod@counter counter `uc  1 a 1 16 ]
+"4
+[v ___lbmod@dividend dividend `uc  1 p 1 wreg ]
+[v ___lbmod@divisor divisor `uc  1 p 1 14 ]
+"9
+[v ___lbmod@dividend dividend `uc  1 p 1 15 ]
+"18
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+{
+[v ___lbdiv@dividend dividend `uc  1 p 1 wreg ]
+"6
+[v ___lbdiv@quotient quotient `uc  1 a 1 21 ]
+"7
+[v ___lbdiv@counter counter `uc  1 a 1 20 ]
+"4
+[v ___lbdiv@dividend dividend `uc  1 p 1 wreg ]
+[v ___lbdiv@divisor divisor `uc  1 p 1 18 ]
+"9
+[v ___lbdiv@dividend dividend `uc  1 p 1 19 ]
+"26
+} 0
+"387 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab4CTest.X\Lab4CTest.c
+[v _MostrarMensajeBienvenida MostrarMensajeBienvenida `(v  1 e 1 0 ]
+{
+"405
+[v MostrarMensajeBienvenida@i_327 i `i  1 a 2 26 ]
+"399
+[v MostrarMensajeBienvenida@i i `i  1 a 2 24 ]
+"412
+} 0
+"237 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab4CTest.X\LibLCDXC8.h
+[v _MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
+{
+[v MensajeLCD_Var@a a `*.35uc  1 p 2 18 ]
+"248
+} 0
+"274
+[v _FijaCursorLCD FijaCursorLCD `(v  1 e 1 0 ]
+{
+[v FijaCursorLCD@fila fila `uc  1 p 1 wreg ]
+"281
+[v FijaCursorLCD@addr addr `uc  1 a 1 19 ]
+"274
+[v FijaCursorLCD@fila fila `uc  1 p 1 wreg ]
+[v FijaCursorLCD@columna columna `uc  1 p 1 18 ]
+"282
+[v FijaCursorLCD@fila fila `uc  1 p 1 20 ]
+"296
+} 0
+"141
+[v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
+{
+[v EscribeLCD_c@a a `uc  1 p 1 wreg ]
+[v EscribeLCD_c@a a `uc  1 p 1 wreg ]
+"145
+[v EscribeLCD_c@a a `uc  1 p 1 18 ]
+"149
+} 0
+"303
+[v _DesplazaPantallaI DesplazaPantallaI `(v  1 e 1 0 ]
+{
+"308
+} 0
+"297
+[v _DesplazaPantallaD DesplazaPantallaD `(v  1 e 1 0 ]
+{
+"302
+} 0
+"250
+[v _CreaCaracterLCD CreaCaracterLCD `(v  1 e 1 0 ]
+{
+[v CreaCaracterLCD@pos pos `uc  1 p 1 wreg ]
+"252
+[v CreaCaracterLCD@i i `uc  1 a 1 21 ]
+"250
+[v CreaCaracterLCD@pos pos `uc  1 p 1 wreg ]
+[v CreaCaracterLCD@caracter caracter `*.31Cuc  1 p 1 18 ]
+[v CreaCaracterLCD@pos pos `uc  1 p 1 20 ]
+"264
+} 0
+"128
+[v _ComandoLCD ComandoLCD `(v  1 e 1 0 ]
+{
+[v ComandoLCD@a a `uc  1 p 1 wreg ]
+[v ComandoLCD@a a `uc  1 p 1 wreg ]
+"130
+[v ComandoLCD@a a `uc  1 p 1 18 ]
+"140
+} 0
+"120
+[v _CursorAInicio CursorAInicio `(v  1 e 1 0 ]
+{
+"127
+} 0
+"72
+[v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
+{
+"105
+} 0
+"113
+[v _BorraLCD BorraLCD `(v  1 e 1 0 ]
+{
+"119
+} 0
+"60
+[v _EnviaDato EnviaDato `(v  1 e 1 0 ]
+{
+[v EnviaDato@a a `uc  1 p 1 wreg ]
+[v EnviaDato@a a `uc  1 p 1 wreg ]
+[v EnviaDato@a a `uc  1 p 1 17 ]
+"71
+} 0
+"317
+[v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
+{
+[v RetardoLCD@a a `uc  1 p 1 wreg ]
+[v RetardoLCD@a a `uc  1 p 1 wreg ]
+[v RetardoLCD@a a `uc  1 p 1 15 ]
+"335
+} 0
+"106
+[v _HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
+{
+"112
+} 0
+"56
+[v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
+{
+[v ConfiguraLCD@a a `uc  1 p 1 wreg ]
+[v ConfiguraLCD@a a `uc  1 p 1 wreg ]
+[v ConfiguraLCD@a a `uc  1 p 1 14 ]
+"59
+} 0
+"309 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab4CTest.X\Lab4CTest.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"384
+} 0
+"444
+[v i2_EncenderBacklightLCD EncenderBacklightLCD `(v  1 e 1 0 ]
+{
+"447
+} 0
+"244
+[v _paradaEmergencia paradaEmergencia `(v  1 e 1 0 ]
+{
+"251
+} 0
+"237 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab4CTest.X\LibLCDXC8.h
+[v i2_MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
+{
+[v i2MensajeLCD_Var@a a `*.35uc  1 p 2 4 ]
+"248
+} 0
+"274
+[v i2_FijaCursorLCD FijaCursorLCD `(v  1 e 1 0 ]
+{
+[v i2FijaCursorLCD@fila fila `uc  1 p 1 wreg ]
+"281
+[v i2FijaCursorLCD@addr addr `uc  1 a 1 5 ]
+"274
+[v i2FijaCursorLCD@fila fila `uc  1 p 1 wreg ]
+[v i2FijaCursorLCD@columna columna `uc  1 p 1 4 ]
+"282
+[v i2FijaCursorLCD@fila fila `uc  1 p 1 6 ]
+"296
+} 0
+"113
+[v i2_BorraLCD BorraLCD `(v  1 e 1 0 ]
+{
+"119
+} 0
+"60
+[v i2_EnviaDato EnviaDato `(v  1 e 1 0 ]
+{
+[v i2EnviaDato@a a `uc  1 p 1 wreg ]
+[v i2EnviaDato@a a `uc  1 p 1 wreg ]
+[v i2EnviaDato@a a `uc  1 p 1 3 ]
+"71
+} 0
+"317
+[v i2_RetardoLCD RetardoLCD `(v  1 e 1 0 ]
+{
+[v i2RetardoLCD@a a `uc  1 p 1 wreg ]
+[v i2RetardoLCD@a a `uc  1 p 1 wreg ]
+[v i2RetardoLCD@a a `uc  1 p 1 1 ]
+"335
+} 0
+"106
+[v i2_HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
+{
+"112
+} 0
+"449 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab4CTest.X\Lab4CTest.c
+[v _ApagarBacklightLCD ApagarBacklightLCD `(v  1 e 1 0 ]
+{
+"452
+} 0
