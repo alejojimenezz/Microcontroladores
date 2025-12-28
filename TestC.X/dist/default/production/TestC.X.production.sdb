@@ -1,0 +1,187 @@
+[p GLOBOPT AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul64.c
+[v ___omul __omul `(ul  1 e 4 0 ]
+"32 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\TestC.X\TestC.c
+[v _ADC_Read ADC_Read `(ui  1 e 2 0 ]
+"41
+[v _ADC_to_mV ADC_to_mV `(ui  1 e 2 0 ]
+"47
+[v _setRGBColor setRGBColor `(v  1 e 1 0 ]
+"69
+[v _mostrarDisplay mostrarDisplay `(v  1 e 1 0 ]
+"75
+[v _buzzCorto buzzCorto `(v  1 e 1 0 ]
+"82
+[v _buzzLargo buzzLargo `(v  1 e 1 0 ]
+"89
+[v _init init `(v  1 e 1 0 ]
+"115
+[v _esperaAntirebote esperaAntirebote `(v  1 e 1 0 ]
+"120
+[v _main main `(v  1 e 1 0 ]
+"195
+[v _ISR ISR `II(v  1 e 1 0 ]
+"2826 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4550.h
+[v _PORTE PORTE `VEuc  1 e 1 @3972 ]
+"2973
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"3185
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"3263
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"3375
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"3427
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"3625
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"3847
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"4001
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"4223
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"6510
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+"6581
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"6666
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+"6792
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"6799
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"9745
+[v _GIE GIE `VEb  1 e 0 @32663 ]
+"9763
+[v _GO_DONE GO_DONE `VEb  1 e 0 @32273 ]
+"9829
+[v _INT0IE INT0IE `VEb  1 e 0 @32660 ]
+"9832
+[v _INT0IF INT0IF `VEb  1 e 0 @32657 ]
+"10345
+[v _RA1 RA1 `VEb  1 e 0 @31745 ]
+"10348
+[v _RA2 RA2 `VEb  1 e 0 @31746 ]
+"10363
+[v _RB0 RB0 `VEb  1 e 0 @31752 ]
+"10366
+[v _RB1 RB1 `VEb  1 e 0 @31753 ]
+"10399
+[v _RC0 RC0 `VEb  1 e 0 @31760 ]
+"10495
+[v _RE0 RE0 `VEb  1 e 0 @31776 ]
+"10498
+[v _RE1 RE1 `VEb  1 e 0 @31777 ]
+"10501
+[v _RE2 RE2 `VEb  1 e 0 @31778 ]
+"23 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\TestC.X\TestC.c
+[v _contador contador `uc  1 e 1 0 ]
+"24
+[v _contadorHB contadorHB `uc  1 e 1 0 ]
+"25
+[v _color_estado color_estado `uc  1 e 1 0 ]
+"26
+[v _sistema_bloqueado sistema_bloqueado `b  1 e 0 0 ]
+"120
+[v _main main `(v  1 e 1 0 ]
+{
+"126
+[v main@voltaje_mV voltaje_mV `ui  1 a 2 15 ]
+"127
+[v main@delay_HB delay_HB `uc  1 a 1 19 ]
+"125
+[v main@btnResetAnterior btnResetAnterior `uc  1 a 1 18 ]
+"124
+[v main@btnIncAnterior btnIncAnterior `uc  1 a 1 17 ]
+"193
+} 0
+"89
+[v _init init `(v  1 e 1 0 ]
+{
+"112
+} 0
+"47
+[v _setRGBColor setRGBColor `(v  1 e 1 0 ]
+{
+[v setRGBColor@color color `uc  1 p 1 wreg ]
+[v setRGBColor@color color `uc  1 p 1 wreg ]
+[v setRGBColor@color color `uc  1 p 1 0 ]
+"66
+} 0
+"69
+[v _mostrarDisplay mostrarDisplay `(v  1 e 1 0 ]
+{
+[v mostrarDisplay@numero numero `uc  1 p 1 wreg ]
+[v mostrarDisplay@numero numero `uc  1 p 1 wreg ]
+[v mostrarDisplay@numero numero `uc  1 p 1 0 ]
+"72
+} 0
+"115
+[v _esperaAntirebote esperaAntirebote `(v  1 e 1 0 ]
+{
+"117
+} 0
+"82
+[v _buzzLargo buzzLargo `(v  1 e 1 0 ]
+{
+"86
+} 0
+"75
+[v _buzzCorto buzzCorto `(v  1 e 1 0 ]
+{
+"79
+} 0
+"41
+[v _ADC_to_mV ADC_to_mV `(ui  1 e 2 0 ]
+{
+[v ADC_to_mV@valor_adc valor_adc `ui  1 p 2 12 ]
+"44
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 8 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"32 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\TestC.X\TestC.c
+[v _ADC_Read ADC_Read `(ui  1 e 2 0 ]
+{
+[v ADC_Read@canal canal `uc  1 p 1 wreg ]
+[v ADC_Read@canal canal `uc  1 p 1 wreg ]
+[v ADC_Read@canal canal `uc  1 p 1 4 ]
+"38
+} 0
+"195
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"201
+} 0
