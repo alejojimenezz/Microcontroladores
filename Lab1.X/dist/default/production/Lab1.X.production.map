@@ -1,0 +1,31 @@
+MPLINK 5.08, LINKER
+Linker Map File - Created Thu Oct 02 12:16:21 2025
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x0000ac
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x0000ab      
+            172 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   Inicio   0x000000    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab1.X\Lab1.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   Inicio   0x000000    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab1.X\Lab1.asm
+
+
