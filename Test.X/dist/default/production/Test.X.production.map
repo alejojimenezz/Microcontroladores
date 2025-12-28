@@ -1,0 +1,52 @@
+MPLINK 5.08, LINKER
+Linker Map File - Created Thu Oct 02 14:36:45 2025
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000006
+    .config_300000_TEST.O    romdata   0x300000    program   0x000001
+    .config_300001_TEST.O    romdata   0x300001    program   0x000001
+    .config_300002_TEST.O    romdata   0x300002    program   0x000001
+    .config_300003_TEST.O    romdata   0x300003    program   0x000001
+    .config_300005_TEST.O    romdata   0x300005    program   0x000001
+    .config_300006_TEST.O    romdata   0x300006    program   0x000001
+    .config_300008_TEST.O    romdata   0x300008    program   0x000001
+    .config_300009_TEST.O    romdata   0x300009    program   0x000001
+    .config_30000A_TEST.O    romdata   0x30000a    program   0x000001
+    .config_30000B_TEST.O    romdata   0x30000b    program   0x000001
+    .config_30000C_TEST.O    romdata   0x30000c    program   0x000001
+    .config_30000D_TEST.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000005      
+                            0x300000    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            18 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     Azul   0x000004    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Test.X\Test.asm
+                   Inicio   0x000000    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Test.X\Test.asm
+                     Menu   0x000004    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Test.X\Test.asm
+                            0x000006    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Test.X\Test.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   Inicio   0x000000    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Test.X\Test.asm
+                     Azul   0x000004    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Test.X\Test.asm
+                     Menu   0x000004    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Test.X\Test.asm
+                            0x000006    program     static C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Test.X\Test.asm
+
+
