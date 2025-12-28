@@ -1,0 +1,213 @@
+[p GLOBOPT AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul64.c
+[v ___omul __omul `(ul  1 e 4 0 ]
+"37 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab3C.X\Lab3C.c
+[v _setRGBColor setRGBColor `(v  1 e 1 0 ]
+[v i1_setRGBColor setRGBColor `(v  1 e 1 0 ]
+[v i2_setRGBColor setRGBColor `(v  1 e 1 0 ]
+"59
+[v _mostrarDisplay mostrarDisplay `(v  1 e 1 0 ]
+[v i1_mostrarDisplay mostrarDisplay `(v  1 e 1 0 ]
+"65
+[v _buzzCorto buzzCorto `(v  1 e 1 0 ]
+"72
+[v _buzzLargo buzzLargo `(v  1 e 1 0 ]
+"79
+[v _init init `(v  1 e 1 0 ]
+"130
+[v _esperaAntirebote esperaAntirebote `(v  1 e 1 0 ]
+[v i1_esperaAntirebote esperaAntirebote `(v  1 e 1 0 ]
+"135
+[v _main main `(v  1 e 1 0 ]
+"215
+[v _ISR_HIGH ISR_HIGH `IIH(v  1 e 1 0 ]
+"259
+[v _ISR_LOW ISR_LOW `IIL(v  1 e 1 0 ]
+"2973 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4550.h
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"3185
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"3263
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"3375
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"3427
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"3625
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"3847
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"4001
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"4223
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"6581
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"7716
+[v _HLVDCON HLVDCON `VEuc  1 e 1 @4050 ]
+"8069
+[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
+"8139
+[v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
+"9748
+[v _GIEH GIEH `VEb  1 e 0 @32663 ]
+"9751
+[v _GIEL GIEL `VEb  1 e 0 @32662 ]
+"9772
+[v _HLVDEN HLVDEN `VEb  1 e 0 @32404 ]
+"9775
+[v _HLVDIE HLVDIE `VEb  1 e 0 @32002 ]
+"9778
+[v _HLVDIF HLVDIF `VEb  1 e 0 @32010 ]
+"9829
+[v _INT0IE INT0IE `VEb  1 e 0 @32660 ]
+"9832
+[v _INT0IF INT0IF `VEb  1 e 0 @32657 ]
+"9844
+[v _INT1IE INT1IE `VEb  1 e 0 @32643 ]
+"9847
+[v _INT1IF INT1IF `VEb  1 e 0 @32640 ]
+"9850
+[v _INT1IP INT1IP `VEb  1 e 0 @32646 ]
+"9877
+[v _INTEDG0 INTEDG0 `VEb  1 e 0 @32654 ]
+"9880
+[v _INTEDG1 INTEDG1 `VEb  1 e 0 @32653 ]
+"9892
+[v _IPEN IPEN `VEb  1 e 0 @32391 ]
+"10273
+[v _PEIE PEIE `VEb  1 e 0 @32662 ]
+"10345
+[v _RA1 RA1 `VEb  1 e 0 @31745 ]
+"10348
+[v _RA2 RA2 `VEb  1 e 0 @31746 ]
+"10366
+[v _RB1 RB1 `VEb  1 e 0 @31753 ]
+"10399
+[v _RC0 RC0 `VEb  1 e 0 @31760 ]
+"10495
+[v _RE0 RE0 `VEb  1 e 0 @31776 ]
+"10498
+[v _RE1 RE1 `VEb  1 e 0 @31777 ]
+"10501
+[v _RE2 RE2 `VEb  1 e 0 @31778 ]
+"10816
+[v _TMR0IE TMR0IE `VEb  1 e 0 @32661 ]
+"10819
+[v _TMR0IF TMR0IF `VEb  1 e 0 @32658 ]
+"10822
+[v _TMR0IP TMR0IP `VEb  1 e 0 @32650 ]
+"10825
+[v _TMR0ON TMR0ON `VEb  1 e 0 @32431 ]
+"24 C:\Users\ThinkPad\MPLABXProjects\Microcontroladores II\Lab3C.X\Lab3C.c
+[v _contador contador `uc  1 e 1 0 ]
+"26
+[v _color_estado color_estado `uc  1 e 1 0 ]
+"28
+[v _low_voltage low_voltage `VEb  1 e 0 0 ]
+"135
+[v _main main `(v  1 e 1 0 ]
+{
+"138
+[v main@btnIncAnterior btnIncAnterior `uc  1 a 1 8 ]
+"213
+} 0
+"79
+[v _init init `(v  1 e 1 0 ]
+{
+"127
+} 0
+"37
+[v _setRGBColor setRGBColor `(v  1 e 1 0 ]
+{
+[v setRGBColor@color color `uc  1 p 1 wreg ]
+[v setRGBColor@color color `uc  1 p 1 wreg ]
+[v setRGBColor@color color `uc  1 p 1 5 ]
+"56
+} 0
+"59
+[v _mostrarDisplay mostrarDisplay `(v  1 e 1 0 ]
+{
+[v mostrarDisplay@numero numero `uc  1 p 1 wreg ]
+[v mostrarDisplay@numero numero `uc  1 p 1 wreg ]
+[v mostrarDisplay@numero numero `uc  1 p 1 5 ]
+"62
+} 0
+"130
+[v _esperaAntirebote esperaAntirebote `(v  1 e 1 0 ]
+{
+"132
+} 0
+"72
+[v _buzzLargo buzzLargo `(v  1 e 1 0 ]
+{
+"76
+} 0
+"65
+[v _buzzCorto buzzCorto `(v  1 e 1 0 ]
+{
+"69
+} 0
+"259
+[v _ISR_LOW ISR_LOW `IIL(v  1 e 1 0 ]
+{
+"290
+} 0
+"37
+[v i1_setRGBColor setRGBColor `(v  1 e 1 0 ]
+{
+[v i1setRGBColor@color color `uc  1 p 1 wreg ]
+[v i1setRGBColor@color color `uc  1 p 1 wreg ]
+[v i1setRGBColor@color color `uc  1 p 1 1 ]
+"56
+} 0
+"59
+[v i1_mostrarDisplay mostrarDisplay `(v  1 e 1 0 ]
+{
+[v i1mostrarDisplay@numero numero `uc  1 p 1 wreg ]
+[v i1mostrarDisplay@numero numero `uc  1 p 1 wreg ]
+[v i1mostrarDisplay@numero numero `uc  1 p 1 1 ]
+"62
+} 0
+"130
+[v i1_esperaAntirebote esperaAntirebote `(v  1 e 1 0 ]
+{
+"132
+} 0
+"215
+[v _ISR_HIGH ISR_HIGH `IIH(v  1 e 1 0 ]
+{
+"234
+} 0
+"37
+[v i2_setRGBColor setRGBColor `(v  1 e 1 0 ]
+{
+[v i2setRGBColor@color color `uc  1 p 1 wreg ]
+[v i2setRGBColor@color color `uc  1 p 1 wreg ]
+[v i2setRGBColor@color color `uc  1 p 1 0 ]
+"56
+} 0
